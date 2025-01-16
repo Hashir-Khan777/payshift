@@ -38,11 +38,10 @@ const SliderComponent = ({ cards, headingWhite, headingBlack }) => {
               >
                 {card.alertType === "danger" ? (
                   <svg
-                    width="27"
-                    height="25"
                     viewBox="0 0 27 25"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
+                    className="w-[25px] h-[25px] md:w-[27px] md:h-[25px]"
                   >
                     <path
                       d="M11.0809 1.92012C12.1561 0.026628 14.844 0.0266264 15.9192 1.92012L26.3216 20.2396C27.3968 22.1331 26.0528 24.5 23.9025 24.5H3.09763C0.94726 24.5 -0.396723 22.1331 0.678463 20.2396L11.0809 1.92012Z"
@@ -54,7 +53,7 @@ const SliderComponent = ({ cards, headingWhite, headingBlack }) => {
                     />
                   </svg>
                 ) : null}
-                <h1>{card.alert}</h1>
+                <h1 className="text-[18px] md:text-[28px]">{card.alert}</h1>
               </div>
             ) : null}
             <div
@@ -63,9 +62,11 @@ const SliderComponent = ({ cards, headingWhite, headingBlack }) => {
               } justify-between w-full`}
             >
               <div>
-                <h1 className="text-2xl font-semibold">{card.title}</h1>
+                <h1 className="text-base md:text-2xl font-semibold">
+                  {card.title}
+                </h1>
                 {card.propertyId ? (
-                  <p className="text-base font-medium bg-[#D1BCFF] rounded-full px-5 py-2 mt-3">
+                  <p className="text-[12px] md:text-base font-medium bg-[#D1BCFF] rounded-full px-5 py-2 mt-3">
                     Property ID:{" "}
                     <span className="font-bold">{card.propertyId}</span>
                   </p>
@@ -73,40 +74,44 @@ const SliderComponent = ({ cards, headingWhite, headingBlack }) => {
               </div>
               <Link
                 href="/"
-                className="text-black text-lg underline font-medium"
+                className="text-black text-base md:text-lg underline font-medium"
               >
                 More Info
               </Link>
             </div>
             {card.payment ? (
-              <p className="font-bold text-3xl text-center my-12">
+              <p className="font-bold text-2xl md:text-3xl text-center my-6 md:my-12">
                 AED {card.amount}
               </p>
             ) : null}
             {card.appointment ? (
-              <p className="font-bold text-3xl text-center my-12">
+              <p className="font-bold text-2xl md:text-3xl text-center my-12">
                 {card.date}
               </p>
             ) : null}
             {!card.payment && !card.appointment ? (
-              <p className="py-9 text-xl">
+              <p className="py-4 md:py-9 text-[12px] md:text-xl">
                 {card.info}{" "}
                 {card.offer ? (
-                  <span className="text-3xl font-semibold">{card.ref_no}</span>
+                  <span className="text-[16px] md:text-3xl font-semibold">
+                    {card.ref_no}
+                  </span>
                 ) : null}
               </p>
             ) : null}
             {card.ref_no && !card.offer ? (
-              <p className="text-xl font-medium mb-12">
+              <p className="text-[12px] md:text-xl font-medium mb-12">
                 Refrence Number:{" "}
-                <span className="text-3xl font-semibold">{card.ref_no}</span>
+                <span className="text-[16px] md:text-3xl font-semibold">
+                  {card.ref_no}
+                </span>
               </p>
             ) : null}
             <button className="mx-auto animated-button flex items-center justify-center space-x-2 mt-4 px-3 py-2 bg-black text-white font-medium rounded-full hover:bg-gray-800">
-              <span className="relative left-0 pl-6 pr-4 text-3xl animated-text transition-all ease-linear duration-[400ms]">
+              <span className="relative left-0 pl-6 pr-4 text-base md:text-3xl animated-text transition-all ease-linear duration-[400ms]">
                 {card.btnText}
               </span>
-              <FaRegCircleRight className="relative right-0 transition-all ease-linear duration-[400ms] text-3xl animated-icon" />
+              <FaRegCircleRight className="relative right-0 transition-all ease-linear duration-[400ms] text-base md:text-3xl animated-icon" />
             </button>
           </div>
         ))}
