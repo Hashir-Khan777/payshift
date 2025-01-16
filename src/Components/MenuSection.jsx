@@ -66,6 +66,75 @@ const MenuSection = () => {
     },
   ];
 
+  const paymentsCards = [
+    {
+      title: "Maintenance Fee",
+      propertyId: "#PRO50",
+      btnText: "Pay",
+      amount: 150,
+      payment: true,
+      active: false,
+      alert: "Due Jan 2024",
+      alertType: "danger",
+    },
+    {
+      title: "Maintenance Fee",
+      propertyId: "#PRO50",
+      btnText: "Pay",
+      amount: 150,
+      payment: true,
+      active: true,
+      alert: "Due Jan 2024",
+      alertType: "danger",
+    },
+    {
+      title: "Maintenance Fee",
+      propertyId: "#PRO50",
+      btnText: "Pay",
+      amount: 150,
+      payment: true,
+      active: false,
+      alert: "Due Jan 2024",
+      alertType: "danger",
+    },
+  ];
+
+  const appointmentsCards = [
+    {
+      title: "Agent Appointment",
+      propertyId: "#PRO50",
+      btnText: "Check",
+      amount: 150,
+      appointment: true,
+      active: false,
+      alert: "Upcoming in 48H",
+      date: "20th Feb 8:30 AM",
+      alertType: "success",
+    },
+    {
+      title: "Agent Appointment",
+      propertyId: "#PRO50",
+      btnText: "Check",
+      amount: 150,
+      appointment: true,
+      active: true,
+      alert: "Upcoming in 48H",
+      date: "20th Feb 8:30 AM",
+      alertType: "success",
+    },
+    {
+      title: "Agent Appointment",
+      propertyId: "#PRO50",
+      btnText: "Check",
+      amount: 150,
+      appointment: true,
+      active: false,
+      alert: "Upcoming in 48H",
+      date: "20th Feb 8:30 AM",
+      alertType: "success",
+    },
+  ];
+
   return (
     <div
       className="py-20"
@@ -117,8 +186,16 @@ const MenuSection = () => {
           headingBlack="& Promos"
           cards={offersCards}
         />
-        <SliderComponent headingWhite="Upcoming" headingBlack="Payments" />
-        <SliderComponent headingWhite="Upcoming" headingBlack="Appointments" />
+        <SliderComponent
+          headingWhite="Upcoming"
+          headingBlack="Payments"
+          cards={paymentsCards}
+        />
+        <SliderComponent
+          headingWhite="Upcoming"
+          headingBlack="Appointments"
+          cards={appointmentsCards}
+        />
       </div>
     </div>
   );
