@@ -4,33 +4,23 @@ import { FaRegCircleRight } from "react-icons/fa6";
 const Hero = () => {
   return (
     <div className="relative w-full h-screen">
-      {/* Background Video */}
       <video
-        className="absolute inset-0 w-full h-full object-cover"
+        className="w-full h-full object-cover"
         src="/Images/video.mp4"
         autoPlay
         loop
         muted
         playsInline
       />
-
-      {/* Content */}
       <div className="absolute inset-0 flex items-center justify-center">
-        {/* Card */}
-        <div className="relative w-80 h-80 bg-white/30 backdrop-blur-md rounded-xl shadow-lg">
-          {/* Card Image */}
-          <img
-            src="/Images/card.png"
-            alt="Card"
-            className="absolute inset-0 w-full h-full object-cover rounded-xl"
-          />
-
-          {/* Overlay */}
-          <div className="absolute inset-0 bg-white/70 rounded-xl"></div>
-
-          {/* Text & Button */}
+        <div
+          className="relative w-[700px] h-[500px] bg-white/35 backdrop-blur-md rounded-xl shadow-lg"
+          style={{
+            clipPath: "polygon(20% 0%, 100% 0, 100% 100%, 0 100%, 0% 23%)",
+          }}
+        >
           <div className="relative flex flex-col items-center justify-center h-full text-center">
-            <h1 className="text-white text-3xl leading-9 tracking-wider font-medium">
+            <h1 className="text-white text-[65px] tracking-wider font-medium">
               Pay <span className="text-black">Now</span>
               <br />
               <span className="text-black">With</span> PayShift
