@@ -27,7 +27,7 @@ const Hero = () => {
             </h1>
             <div>
               <button className="flex items-center justify-center space-x-2 mt-4 px-3 py-2 bg-black text-white font-medium rounded-full hover:bg-gray-800">
-                <span className="pl-6 pr-4 text-xl">Pay</span>
+                <span className="pl-6 pr-4 text-3xl">Pay</span>
                 <FaRegCircleRight className="text-3xl" />
               </button>
             </div>
