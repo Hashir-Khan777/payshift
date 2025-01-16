@@ -12,7 +12,7 @@ const Footer = () => {
       <p className="text-center text-[64px] font-medium text-white mb-20">
         Thanks For Using PayShift
       </p>
-      <div className="flex gap-10 justify-center items-center mb-20">
+      <div className="flex flex-wrap gap-10 justify-center items-center mb-20">
         <div className="w-[400px] bg-white/10 rounded-[4px] py-[36px] px-[24px] shadow-md shrink-0">
           <p className="text-2xl font-medium text-white mb-16">
             Lets Do This Together
