@@ -9,20 +9,20 @@ import { FaRegCircleRight } from "react-icons/fa6";
 const SliderComponent = ({ cards, headingWhite, headingBlack }) => {
   return (
     <div
-      className="container mx-auto mt-20 py-20 px-5 lg:px-16"
+      className="container mx-auto mt-20 py-20 px-5 md:px-16"
       style={{
         background: "linear-gradient(0deg, #E8F3FF 15.92%, #92A8FF 100%)",
         boxShadow: "0px 4px 24px 0px rgba(0, 69, 197, 0.64)",
       }}
     >
-      <h1 className="text-center text-5xl mb-16 font-medium">
+      <h1 className="text-center text-3xl md:text-5xl mb-16 font-medium">
         <span className="text-white">{headingWhite}</span> {headingBlack}
       </h1>
       <div className="flex items-center justify-center mb-4 overflow-hidden">
         {cards?.map((card, index) => (
           <div
             key={index}
-            className={`shrink-0 w-[412px] py-16 px-6 shadow-lg ${
+            className={`shrink-0 w-full md:w-[412px] py-16 px-3 md:px-6 shadow-lg ${
               card.active
                 ? "bg-gradient-to-b from-white to-[#C2DEFF] border border-white"
                 : "bg-white/50 scale-90 opacity-50"
@@ -102,9 +102,11 @@ const SliderComponent = ({ cards, headingWhite, headingBlack }) => {
                 <span className="text-3xl font-semibold">{card.ref_no}</span>
               </p>
             ) : null}
-            <button className="mx-auto flex items-center justify-center space-x-2 mt-4 px-3 py-2 bg-black text-white font-medium rounded-full hover:bg-gray-800">
-              <span className="pl-6 pr-4 text-xl">{card.btnText}</span>
-              <FaRegCircleRight className="text-3xl" />
+            <button className="mx-auto animated-button flex items-center justify-center space-x-2 mt-4 px-3 py-2 bg-black text-white font-medium rounded-full hover:bg-gray-800">
+              <span className="relative left-0 pl-6 pr-4 text-3xl animated-text transition-all ease-linear duration-[400ms]">
+                {card.btnText}
+              </span>
+              <FaRegCircleRight className="relative right-0 transition-all ease-linear duration-[400ms] text-3xl animated-icon" />
             </button>
           </div>
         ))}

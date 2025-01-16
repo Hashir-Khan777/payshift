@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.animated-button:hover > .animated-icon {
+  right: 75%;
+  transition: all linear 400ms;
+}
+
+.animated-button:hover > .animated-text {
+  left: 40px;
+  transition: all linear 400ms;
+}

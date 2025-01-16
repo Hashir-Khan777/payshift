@@ -143,9 +143,9 @@ const MenuSection = () => {
           "linear-gradient(90deg, rgba(125, 184, 255, 0.64) 0%, #FFF 100%);",
       }}
     >
-      <div className="container mx-auto">
+      <div className="container mx-auto px-3">
         <div
-          className="flex items-center gap-14 mb-4 overflow-hidden"
+          className="flex items-center gap-4 md:gap-14 mb-4 overflow-hidden"
           style={{ marginTop: "4rem" }}
         >
           {cards.map((card, index) => (

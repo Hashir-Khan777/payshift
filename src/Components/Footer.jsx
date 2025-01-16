@@ -6,30 +6,30 @@ import { AiOutlineFacebook } from "react-icons/ai";
 const Footer = () => {
   return (
     <div
-      className="relative bg-cover bg-center py-[100px] px-[162px]"
+      className="relative bg-cover bg-center py-[100px] px-[12px] md:px-[162px]"
       style={{ backgroundImage: `url(/Images/footerbg.png)` }}
     >
-      <p className="text-center text-[64px] font-medium text-white mb-20">
+      <p className="text-center text-[36px] md:text-[64px] font-medium text-white mb-20">
         Thanks For Using PayShift
       </p>
       <div className="flex flex-wrap gap-10 justify-center items-center mb-20">
-        <div className="w-[400px] bg-white/10 rounded-[4px] py-[36px] px-[24px] shadow-md shrink-0">
+        <div className="w-full md:w-[400px] bg-white/10 rounded-[4px] py-[36px] px-[24px] shadow-md shrink-0">
           <p className="text-2xl font-medium text-white mb-16">
             Lets Do This Together
           </p>
           <div className="flex items-center justify-between">
-            <p className="uppercase text-white text-[40px] font-semibold">
+            <p className="uppercase text-white text-[24px] md:text-[40px] font-semibold">
               Contact Us
             </p>
             <FaRegCircleRight className="text-[40px] text-white" />
           </div>
         </div>
-        <div className="w-[400px] bg-white/10 rounded-[4px] py-[36px] px-[24px] shadow-md shrink-0">
+        <div className="w-full md:w-[400px] bg-white/10 rounded-[4px] py-[36px] px-[24px] shadow-md shrink-0">
           <p className="text-2xl font-medium text-white mb-16">
             Check Latest Insights
           </p>
           <div className="flex items-center justify-between">
-            <p className="uppercase text-white text-[40px] font-semibold">
+            <p className="uppercase text-white text-[24px] md:text-[40px] font-semibold">
               Media Centre
             </p>
             <FaRegCircleRight className="text-[40px] text-white" />
