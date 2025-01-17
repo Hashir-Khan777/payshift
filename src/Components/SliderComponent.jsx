@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   FaRegArrowAltCircleLeft,
   FaRegArrowAltCircleRight,
@@ -13,10 +13,21 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 const SliderComponent = ({ cards, headingWhite, headingBlack }) => {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(1);
 
   const prevRef = useRef(null);
   const nextRef = useRef(null);
+
+  useEffect(() => {
+    if (window) {
+      const breakpoint = window.matchMedia("(min-width: 1024px)");
+      if (breakpoint.matches) {
+        setActiveIndex(1);
+      } else {
+        setActiveIndex(0);
+      }
+    }
+  }, []);
 
   return (
     <div
@@ -32,19 +43,32 @@ const SliderComponent = ({ cards, headingWhite, headingBlack }) => {
       <div className="flex items-center justify-center mb-4 overflow-hidden">
         <Swiper
           autoplay
-          slidesPerView={3}
+          breakpoints={{
+            1024: {
+              slidesPerView: 3,
+            },
+            320: {
+              slidesPerView: 1,
+            },
+          }}
           navigation={{
             prevEl: prevRef.current,
             nextEl: nextRef.current,
           }}
           modules={[Navigation]}
-          onSlideChange={(e) => setActiveIndex(e.activeIndex)}
+          onSlideChange={(e) => {
+            if (e.currentBreakpoint >= 1024) {
+              setActiveIndex(e.activeIndex + 1);
+            } else {
+              setActiveIndex(e.activeIndex);
+            }
+          }}
         >
           {cards?.map((card, index) => (
             <SwiperSlide key={index}>
               <div
-                className={`shrink-0 w-full md:w-[412px] py-16 px-3 md:px-6 shadow-lg ${
-                  index === activeIndex + 1
+                className={`shrink-0 w-full py-16 px-3 md:px-6 shadow-lg ${
+                  index === activeIndex
                     ? "bg-gradient-to-b from-white to-[#C2DEFF] border border-white"
                     : "bg-white/50 scale-90 opacity-50"
                 } transition-transform duration-300`}
