@@ -1,12 +1,23 @@
+"use client";
+
 import Link from "next/link";
-import React from "react";
+import React, { useRef, useState } from "react";
 import {
   FaRegArrowAltCircleLeft,
   FaRegArrowAltCircleRight,
 } from "react-icons/fa";
 import { FaRegCircleRight } from "react-icons/fa6";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
 
 const SliderComponent = ({ cards, headingWhite, headingBlack }) => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
+
   return (
     <div
       className="container mx-auto mt-20 py-20 px-5 md:px-16"
@@ -19,108 +30,120 @@ const SliderComponent = ({ cards, headingWhite, headingBlack }) => {
         <span className="text-white">{headingWhite}</span> {headingBlack}
       </h1>
       <div className="flex items-center justify-center mb-4 overflow-hidden">
-        {cards?.map((card, index) => (
-          <div
-            key={index}
-            className={`shrink-0 w-full md:w-[412px] py-16 px-3 md:px-6 shadow-lg ${
-              card.active
-                ? "bg-gradient-to-b from-white to-[#C2DEFF] border border-white"
-                : "bg-white/50 scale-90 opacity-50"
-            } transition-transform duration-300`}
-          >
-            {card.payment || card.appointment ? (
+        <Swiper
+          autoplay
+          slidesPerView={3}
+          navigation={{
+            prevEl: prevRef.current,
+            nextEl: nextRef.current,
+          }}
+          modules={[Navigation]}
+          onSlideChange={(e) => setActiveIndex(e.activeIndex)}
+        >
+          {cards?.map((card, index) => (
+            <SwiperSlide key={index}>
               <div
-                className={`flex gap-6 text-3xl items-center justify-center w-full ${
-                  card.alertType === "success"
-                    ? "text-[#17A900]"
-                    : "text-[#F93434]"
-                } font-semibold mb-9`}
+                className={`shrink-0 w-full md:w-[412px] py-16 px-3 md:px-6 shadow-lg ${
+                  index === activeIndex + 1
+                    ? "bg-gradient-to-b from-white to-[#C2DEFF] border border-white"
+                    : "bg-white/50 scale-90 opacity-50"
+                } transition-transform duration-300`}
               >
-                {card.alertType === "danger" ? (
-                  <svg
-                    viewBox="0 0 27 25"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="w-[25px] h-[25px] md:w-[27px] md:h-[25px]"
+                {card.payment || card.appointment ? (
+                  <div
+                    className={`flex gap-6 text-3xl items-center justify-center w-full ${
+                      card.alertType === "success"
+                        ? "text-[#17A900]"
+                        : "text-[#F93434]"
+                    } font-semibold mb-9`}
                   >
-                    <path
-                      d="M11.0809 1.92012C12.1561 0.026628 14.844 0.0266264 15.9192 1.92012L26.3216 20.2396C27.3968 22.1331 26.0528 24.5 23.9025 24.5H3.09763C0.94726 24.5 -0.396723 22.1331 0.678463 20.2396L11.0809 1.92012Z"
-                      fill="#F93434"
-                    />
-                    <path
-                      d="M15.0296 16.7564H11.9702C11.9702 15.088 11.5447 10.5915 11.5447 9.02483V7.60059H15.4551V9.02483C15.4551 10.5915 15.0296 15.1084 15.0296 16.7564ZM15.2323 21.2326H11.7675V17.9162H15.2323V21.2326Z"
-                      fill="white"
-                    />
-                  </svg>
+                    {card.alertType === "danger" ? (
+                      <svg
+                        viewBox="0 0 27 25"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="w-[25px] h-[25px] md:w-[27px] md:h-[25px]"
+                      >
+                        <path
+                          d="M11.0809 1.92012C12.1561 0.026628 14.844 0.0266264 15.9192 1.92012L26.3216 20.2396C27.3968 22.1331 26.0528 24.5 23.9025 24.5H3.09763C0.94726 24.5 -0.396723 22.1331 0.678463 20.2396L11.0809 1.92012Z"
+                          fill="#F93434"
+                        />
+                        <path
+                          d="M15.0296 16.7564H11.9702C11.9702 15.088 11.5447 10.5915 11.5447 9.02483V7.60059H15.4551V9.02483C15.4551 10.5915 15.0296 15.1084 15.0296 16.7564ZM15.2323 21.2326H11.7675V17.9162H15.2323V21.2326Z"
+                          fill="white"
+                        />
+                      </svg>
+                    ) : null}
+                    <h1 className="text-[18px] md:text-[28px]">{card.alert}</h1>
+                  </div>
                 ) : null}
-                <h1 className="text-[18px] md:text-[28px]">{card.alert}</h1>
-              </div>
-            ) : null}
-            <div
-              className={`flex ${
-                card.propertyId ? "items-start" : "items-center"
-              } justify-between w-full`}
-            >
-              <div>
-                <h1 className="text-base md:text-2xl font-semibold">
-                  {card.title}
-                </h1>
-                {card.propertyId ? (
-                  <p className="text-[12px] md:text-base font-medium bg-[#D1BCFF] rounded-full px-5 py-2 mt-3">
-                    Property ID:{" "}
-                    <span className="font-bold">{card.propertyId}</span>
+                <div
+                  className={`flex ${
+                    card.propertyId ? "items-start" : "items-center"
+                  } justify-between w-full`}
+                >
+                  <div>
+                    <h1 className="text-base md:text-2xl font-semibold">
+                      {card.title}
+                    </h1>
+                    {card.propertyId ? (
+                      <p className="text-[12px] md:text-base font-medium bg-[#D1BCFF] rounded-full px-5 py-2 mt-3">
+                        Property ID:{" "}
+                        <span className="font-bold">{card.propertyId}</span>
+                      </p>
+                    ) : null}
+                  </div>
+                  <Link
+                    href="/"
+                    className="text-black text-base md:text-lg underline font-medium"
+                  >
+                    More Info
+                  </Link>
+                </div>
+                {card.payment ? (
+                  <p className="font-bold text-2xl md:text-3xl text-center my-6 md:my-12">
+                    AED {card.amount}
                   </p>
                 ) : null}
-              </div>
-              <Link
-                href="/"
-                className="text-black text-base md:text-lg underline font-medium"
-              >
-                More Info
-              </Link>
-            </div>
-            {card.payment ? (
-              <p className="font-bold text-2xl md:text-3xl text-center my-6 md:my-12">
-                AED {card.amount}
-              </p>
-            ) : null}
-            {card.appointment ? (
-              <p className="font-bold text-2xl md:text-3xl text-center my-12">
-                {card.date}
-              </p>
-            ) : null}
-            {!card.payment && !card.appointment ? (
-              <p className="py-4 md:py-9 text-[12px] md:text-xl">
-                {card.info}{" "}
-                {card.offer ? (
-                  <span className="text-[16px] md:text-3xl font-semibold">
-                    {card.ref_no}
-                  </span>
+                {card.appointment ? (
+                  <p className="font-bold text-2xl md:text-3xl text-center my-12">
+                    {card.date}
+                  </p>
                 ) : null}
-              </p>
-            ) : null}
-            {card.ref_no && !card.offer ? (
-              <p className="text-[12px] md:text-xl font-medium mb-12">
-                Refrence Number:{" "}
-                <span className="text-[16px] md:text-3xl font-semibold">
-                  {card.ref_no}
-                </span>
-              </p>
-            ) : null}
-            <button className="mx-auto animated-button flex items-center justify-center space-x-2 mt-4 px-3 py-2 bg-black text-white font-medium rounded-full hover:bg-gray-800">
-              <span className="relative left-0 pl-6 pr-4 text-base md:text-3xl animated-text transition-all ease-linear duration-[400ms]">
-                {card.btnText}
-              </span>
-              <FaRegCircleRight className="relative right-0 transition-all ease-linear duration-[400ms] text-base md:text-3xl animated-icon" />
-            </button>
-          </div>
-        ))}
+                {!card.payment && !card.appointment ? (
+                  <p className="py-4 md:py-9 text-[12px] md:text-xl">
+                    {card.info}{" "}
+                    {card.offer ? (
+                      <span className="text-[16px] md:text-3xl font-semibold">
+                        {card.ref_no}
+                      </span>
+                    ) : null}
+                  </p>
+                ) : null}
+                {card.ref_no && !card.offer ? (
+                  <p className="text-[12px] md:text-xl font-medium mb-12">
+                    Refrence Number:{" "}
+                    <span className="text-[16px] md:text-3xl font-semibold">
+                      {card.ref_no}
+                    </span>
+                  </p>
+                ) : null}
+                <button className="mx-auto animated-button flex items-center justify-center space-x-2 mt-4 px-3 py-2 bg-black text-white font-medium rounded-full hover:bg-gray-800">
+                  <span className="relative left-0 pl-6 pr-4 text-base md:text-3xl animated-text transition-all ease-linear duration-[400ms]">
+                    {card.btnText}
+                  </span>
+                  <FaRegCircleRight className="relative right-0 transition-all ease-linear duration-[400ms] text-base md:text-3xl animated-icon" />
+                </button>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
       <div className="flex justify-end items-end gap-4 container">
-        <button className="text-3xl " aria-label="Scroll Left">
+        <button className="text-3xl " aria-label="Scroll Left" ref={prevRef}>
           <FaRegArrowAltCircleLeft />
         </button>
-        <button className="text-3xl" aria-label="Scroll Right">
+        <button className="text-3xl" aria-label="Scroll Right" ref={nextRef}>
           <FaRegArrowAltCircleRight />
         </button>
       </div>
