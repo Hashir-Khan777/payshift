@@ -7,6 +7,7 @@ import React from "react";
 import { useState } from "react";
 import HomeTab from "./HomeTab";
 import Properties from "./Properties";
+import MakePaymentTab from "./MakePaymentTab";
 
 const MenuSection = () => {
   // For toggle between tabs
@@ -78,12 +79,7 @@ const MenuSection = () => {
         {activeTab === "Home" && <HomeTab />}
         {activeTab === "Services" && <h1>Services</h1>}
         {activeTab === "My Properties" && <Properties />}
-        {activeTab === "Make A Payment" && (
-          <section>
-            <h2>Make A Payment</h2>
-            <p>Payment instructions and forms go here...</p>
-          </section>
-        )}
+        {activeTab === "Make A Payment" && <MakePaymentTab/>}
         {activeTab === "Register Interest" && (
           <section>
             <h2>Register Your Interest</h2>
