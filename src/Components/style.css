@@ -1,0 +1,17 @@
+.tab{
+    cursor: pointer;
+    height: 80px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .tab.active{
+    background: linear-gradient(to bottom, white, #96a7e8);
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid white;
+  } 

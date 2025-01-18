@@ -67,19 +67,17 @@ const SliderComponent = ({ cards, headingWhite, headingBlack }) => {
           {cards?.map((card, index) => (
             <SwiperSlide key={index}>
               <div
-                className={`shrink-0 w-full py-16 px-3 md:px-6 shadow-lg ${
-                  index === activeIndex
+                className={`shrink-0 w-full py-16 px-3 md:px-6 shadow-lg ${index === activeIndex
                     ? "bg-gradient-to-b from-white to-[#C2DEFF] border border-white"
                     : "bg-white/50 scale-90 opacity-50"
-                } transition-transform duration-300`}
+                  } transition-transform duration-300`}
               >
                 {card.payment || card.appointment ? (
                   <div
-                    className={`flex gap-6 text-3xl items-center justify-center w-full ${
-                      card.alertType === "success"
+                    className={`flex gap-6 text-3xl items-center justify-center w-full ${card.alertType === "success"
                         ? "text-[#17A900]"
                         : "text-[#F93434]"
-                    } font-semibold mb-9`}
+                      } font-semibold mb-9`}
                   >
                     {card.alertType === "danger" ? (
                       <svg
@@ -101,10 +99,10 @@ const SliderComponent = ({ cards, headingWhite, headingBlack }) => {
                     <h1 className="text-[18px] md:text-[28px]">{card.alert}</h1>
                   </div>
                 ) : null}
+                {/* ---- Card ---- */}
                 <div
-                  className={`flex ${
-                    card.propertyId ? "items-start" : "items-center"
-                  } justify-between w-full`}
+                  className={`flex ${card.propertyId ? "items-start" : "items-center"
+                    } justify-between w-full`}
                 >
                   <div>
                     <h1 className="text-base md:text-2xl font-semibold">
@@ -117,12 +115,21 @@ const SliderComponent = ({ cards, headingWhite, headingBlack }) => {
                       </p>
                     ) : null}
                   </div>
-                  <Link
+                  {/* <Link
                     href="/"
                     className="text-black text-base md:text-lg underline font-medium"
                   >
                     More Info
-                  </Link>
+                  </Link> */}
+                  {card.showMoreInfo && (
+                    <Link
+                      href="/"
+                      className="text-black text-base md:text-lg underline font-medium"
+                    >
+                      More Info
+                    </Link>
+                  )}
+
                 </div>
                 {card.payment ? (
                   <p className="font-bold text-2xl md:text-3xl text-center my-6 md:my-12">
