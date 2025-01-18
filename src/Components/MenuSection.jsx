@@ -5,7 +5,6 @@ import {
 } from "react-icons/fa";
 import React from "react";
 import { useState } from "react";
-import "./style.css";
 import HomeTab from "./HomeTab";
 import Properties from "./Properties";
 
