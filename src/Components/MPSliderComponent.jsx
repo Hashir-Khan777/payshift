@@ -12,7 +12,7 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 
-const MPSliderComponent = ({ cards, headingWhite, headingBlack }) => {
+const ReferSliderComponent = ({ cards, headingWhite, headingBlack }) => {
     const [activeIndex, setActiveIndex] = useState(1);
 
     const prevRef = useRef(null);
@@ -62,8 +62,6 @@ const MPSliderComponent = ({ cards, headingWhite, headingBlack }) => {
             <p>Total of <span className="font-bold">AED 250</span> urgently due.</p>
             </div>
             {/* =========== Payment Due End =========== */}
-
-
 
             <div className="flex items-center justify-center mb-4 overflow-hidden rounded">
                 <Swiper
@@ -186,4 +184,4 @@ const MPSliderComponent = ({ cards, headingWhite, headingBlack }) => {
     );
 };
 
-export default MPSliderComponent;
+export default ReferSliderComponent;

@@ -8,6 +8,7 @@ import { useState } from "react";
 import HomeTab from "./HomeTab";
 import Properties from "./Properties";
 import MakePaymentTab from "./MakePaymentTab";
+import ReferFriendTab from "./ReferFriendTab";
 
 const MenuSection = () => {
   // For toggle between tabs
@@ -45,8 +46,8 @@ const MenuSection = () => {
             <div
               key={card.id}
               onClick={() => handleTabClick(card.title)}
-              className={`shrink-0 w-[250px] h-20 flex items-center justify-center shadow-lg ${activeTab === card.title
-                  ? "bg-gradient-to-b from-white to-[#96a7e8] border border-white"
+              className={`shrink-0 w-[250px] h-20 flex items-center justify-center shadow-lg cursor-pointer ${activeTab === card.title
+                  ? "bg-gradient-to-b from-white to-[#96a7e8] border border-white cursor-pointer"
                   : "bg-white/50"
                 } hover:scale-105 transition-transform duration-300`}
             >
@@ -80,12 +81,8 @@ const MenuSection = () => {
         {activeTab === "Services" && <h1>Services</h1>}
         {activeTab === "My Properties" && <Properties />}
         {activeTab === "Make A Payment" && <MakePaymentTab/>}
-        {activeTab === "Register Interest" && (
-          <section>
-            <h2>Register Your Interest</h2>
-            <p>Details about registering interest go here...</p>
-          </section>
-        )}
+        {activeTab === "Register Interest" && <h2>Register Your Interest</h2> }
+        {activeTab === "Refer a Friend" && <ReferFriendTab/> }
       </div>
     </div>
   );
