@@ -9,6 +9,7 @@ import HomeTab from "./HomeTab";
 import Properties from "./Properties";
 import MakePaymentTab from "./MakePaymentTab";
 import ReferFriendTab from "./ReferFriendTab";
+import ServicesTab from "./ServicesTab";
 
 const MenuSection = () => {
   // For toggle between tabs
@@ -78,7 +79,7 @@ const MenuSection = () => {
         {/* Render Tab Content */}
 
         {activeTab === "Home" && <HomeTab />}
-        {activeTab === "Services" && <h1>Services</h1>}
+        {activeTab === "Services" && <ServicesTab/> }
         {activeTab === "My Properties" && <Properties />}
         {activeTab === "Make A Payment" && <MakePaymentTab/>}
         {activeTab === "Register Interest" && <h2>Register Your Interest</h2> }

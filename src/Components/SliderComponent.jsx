@@ -104,8 +104,8 @@ const SliderComponent = ({ cards, headingWhite, headingBlack }) => {
                   className={`flex ${card.propertyId ? "items-start" : "items-center"
                     } justify-between w-full`}
                 >
-                  <div>
-                    <h1 className="text-base md:text-2xl font-semibold">
+                  <div >
+                    <h1 className="text-base md:text-2xl font-bold">
                       {card.title}
                     </h1>
                     {card.propertyId ? (
@@ -124,7 +124,7 @@ const SliderComponent = ({ cards, headingWhite, headingBlack }) => {
                   {card.showMoreInfo && (
                     <Link
                       href="/"
-                      className="text-black text-base md:text-lg underline font-medium"
+                      className="text-black text-sm md:text-base underline font-medium"
                     >
                       More Info
                     </Link>
@@ -159,12 +159,14 @@ const SliderComponent = ({ cards, headingWhite, headingBlack }) => {
                     </span>
                   </p>
                 ) : null}
-                <button className="mx-auto animated-button flex items-center justify-center space-x-2 mt-4 px-3 py-2 bg-black text-white font-medium rounded-full hover:bg-gray-800">
-                  <span className="relative left-0 pl-6 pr-4 text-base md:text-3xl animated-text transition-all ease-linear duration-[400ms]">
+
+                <button className="mx-auto animated-button flex items-center justify-center space-x-2 mt-4 px-3 py-2 bg-black text-white font-medium rounded-full hover:bg-gray-800 ">
+                  <span className="relative left-0 pl-6 pr-4 text-base md:text-2xl animated-text transition-all ease-linear duration-[400ms]">
                     {card.btnText}
                   </span>
                   <FaRegCircleRight className="relative right-0 transition-all ease-linear duration-[400ms] text-base md:text-3xl animated-icon" />
                 </button>
+
               </div>
             </SwiperSlide>
           ))}
