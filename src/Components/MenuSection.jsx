@@ -1,417 +1,89 @@
+"use client";
 import {
   FaRegArrowAltCircleLeft,
   FaRegArrowAltCircleRight,
 } from "react-icons/fa";
 import React from "react";
-import SliderComponent from "./SliderComponent";
+import { useState } from "react";
+import HomeTab from "./HomeTab";
+import Properties from "./Properties";
+import MakePaymentTab from "./MakePaymentTab";
+import ReferFriendTab from "./ReferFriendTab";
+import ServicesTab from "./ServicesTab";
 
 const MenuSection = () => {
+  // For toggle between tabs
   const cards = [
-    { title: "Home", active: true },
-    { title: "Services", active: false },
-    { title: "My Properties", active: false },
-    { title: "Make A Payment", active: false },
-    { title: "Register Interest", active: false },
-    { title: "Register Interest", active: false },
+    { id: 1, title: "Home" },
+    { id: 2, title: "Services" },
+    { id: 3, title: "My Properties" },
+    { id: 4, title: "Make A Payment" },
+    { id: 5, title: "Register Interest" },
+    { id: 6, title: "Refer a Friend" },
   ];
 
-  const recentHighlightsCards = [
-    {
-      title: "Request Closed",
-      info: "Your request is closed for Owner and Tenant Registration is closed.",
-      ref_no: 12345,
-      btnText: "Check",
-      active: false,
-    },
-    {
-      title: "Request Closed",
-      info: "Your request is closed for Owner and Tenant Registration is closed.",
-      ref_no: 12345,
-      btnText: "Check",
-      active: true,
-    },
-    {
-      title: "Request Closed",
-      info: "Your request is closed for Owner and Tenant Registration is closed.",
-      ref_no: 12345,
-      btnText: "Check",
-      active: false,
-    },
-    {
-      title: "Request Closed",
-      info: "Your request is closed for Owner and Tenant Registration is closed.",
-      ref_no: 12345,
-      btnText: "Check",
-      active: false,
-    },
-    {
-      title: "Request Closed",
-      info: "Your request is closed for Owner and Tenant Registration is closed.",
-      ref_no: 12345,
-      btnText: "Check",
-      active: true,
-    },
-    {
-      title: "Request Closed",
-      info: "Your request is closed for Owner and Tenant Registration is closed.",
-      ref_no: 12345,
-      btnText: "Check",
-      active: false,
-    },
-    {
-      title: "Request Closed",
-      info: "Your request is closed for Owner and Tenant Registration is closed.",
-      ref_no: 12345,
-      btnText: "Check",
-      active: false,
-    },
-    {
-      title: "Request Closed",
-      info: "Your request is closed for Owner and Tenant Registration is closed.",
-      ref_no: 12345,
-      btnText: "Check",
-      active: true,
-    },
-    {
-      title: "Request Closed",
-      info: "Your request is closed for Owner and Tenant Registration is closed.",
-      ref_no: 12345,
-      btnText: "Check",
-      active: false,
-    },
-  ];
 
-  const offersCards = [
-    {
-      title: "Get AED 50 OFF",
-      info: "Refer a friend and get AED 50 OFF using code",
-      ref_no: "REF50",
-      btnText: "Claim",
-      offer: true,
-      active: false,
-    },
-    {
-      title: "Get AED 50 OFF",
-      info: "Refer a friend and get AED 50 OFF using code",
-      ref_no: "REF50",
-      btnText: "Claim",
-      offer: true,
-      active: true,
-    },
-    {
-      title: "Get AED 50 OFF",
-      info: "Refer a friend and get AED 50 OFF using code",
-      ref_no: "REF50",
-      btnText: "Claim",
-      offer: true,
-      active: false,
-    },
-    {
-      title: "Get AED 50 OFF",
-      info: "Refer a friend and get AED 50 OFF using code",
-      ref_no: "REF50",
-      btnText: "Claim",
-      offer: true,
-      active: false,
-    },
-    {
-      title: "Get AED 50 OFF",
-      info: "Refer a friend and get AED 50 OFF using code",
-      ref_no: "REF50",
-      btnText: "Claim",
-      offer: true,
-      active: true,
-    },
-    {
-      title: "Get AED 50 OFF",
-      info: "Refer a friend and get AED 50 OFF using code",
-      ref_no: "REF50",
-      btnText: "Claim",
-      offer: true,
-      active: false,
-    },
-    {
-      title: "Get AED 50 OFF",
-      info: "Refer a friend and get AED 50 OFF using code",
-      ref_no: "REF50",
-      btnText: "Claim",
-      offer: true,
-      active: false,
-    },
-    {
-      title: "Get AED 50 OFF",
-      info: "Refer a friend and get AED 50 OFF using code",
-      ref_no: "REF50",
-      btnText: "Claim",
-      offer: true,
-      active: true,
-    },
-    {
-      title: "Get AED 50 OFF",
-      info: "Refer a friend and get AED 50 OFF using code",
-      ref_no: "REF50",
-      btnText: "Claim",
-      offer: true,
-      active: false,
-    },
-  ];
+  const [activeTab, setActiveTab] = useState("Home"); 
 
-  const paymentsCards = [
-    {
-      title: "Maintenance Fee",
-      propertyId: "#PRO50",
-      btnText: "Pay",
-      amount: 150,
-      payment: true,
-      active: false,
-      alert: "Due Jan 2024",
-      alertType: "danger",
-    },
-    {
-      title: "Maintenance Fee",
-      propertyId: "#PRO50",
-      btnText: "Pay",
-      amount: 150,
-      payment: true,
-      active: true,
-      alert: "Due Jan 2024",
-      alertType: "danger",
-    },
-    {
-      title: "Maintenance Fee",
-      propertyId: "#PRO50",
-      btnText: "Pay",
-      amount: 150,
-      payment: true,
-      active: false,
-      alert: "Due Jan 2024",
-      alertType: "danger",
-    },
-    {
-      title: "Maintenance Fee",
-      propertyId: "#PRO50",
-      btnText: "Pay",
-      amount: 150,
-      payment: true,
-      active: false,
-      alert: "Due Jan 2024",
-      alertType: "danger",
-    },
-    {
-      title: "Maintenance Fee",
-      propertyId: "#PRO50",
-      btnText: "Pay",
-      amount: 150,
-      payment: true,
-      active: true,
-      alert: "Due Jan 2024",
-      alertType: "danger",
-    },
-    {
-      title: "Maintenance Fee",
-      propertyId: "#PRO50",
-      btnText: "Pay",
-      amount: 150,
-      payment: true,
-      active: false,
-      alert: "Due Jan 2024",
-      alertType: "danger",
-    },
-    {
-      title: "Maintenance Fee",
-      propertyId: "#PRO50",
-      btnText: "Pay",
-      amount: 150,
-      payment: true,
-      active: false,
-      alert: "Due Jan 2024",
-      alertType: "danger",
-    },
-    {
-      title: "Maintenance Fee",
-      propertyId: "#PRO50",
-      btnText: "Pay",
-      amount: 150,
-      payment: true,
-      active: true,
-      alert: "Due Jan 2024",
-      alertType: "danger",
-    },
-    {
-      title: "Maintenance Fee",
-      propertyId: "#PRO50",
-      btnText: "Pay",
-      amount: 150,
-      payment: true,
-      active: false,
-      alert: "Due Jan 2024",
-      alertType: "danger",
-    },
-  ];
-
-  const appointmentsCards = [
-    {
-      title: "Agent Appointment",
-      propertyId: "#PRO50",
-      btnText: "Check",
-      amount: 150,
-      appointment: true,
-      active: false,
-      alert: "Upcoming in 48H",
-      date: "20th Feb 8:30 AM",
-      alertType: "success",
-    },
-    {
-      title: "Agent Appointment",
-      propertyId: "#PRO50",
-      btnText: "Check",
-      amount: 150,
-      appointment: true,
-      active: true,
-      alert: "Upcoming in 48H",
-      date: "20th Feb 8:30 AM",
-      alertType: "success",
-    },
-    {
-      title: "Agent Appointment",
-      propertyId: "#PRO50",
-      btnText: "Check",
-      amount: 150,
-      appointment: true,
-      active: false,
-      alert: "Upcoming in 48H",
-      date: "20th Feb 8:30 AM",
-      alertType: "success",
-    },
-    {
-      title: "Agent Appointment",
-      propertyId: "#PRO50",
-      btnText: "Check",
-      amount: 150,
-      appointment: true,
-      active: false,
-      alert: "Upcoming in 48H",
-      date: "20th Feb 8:30 AM",
-      alertType: "success",
-    },
-    {
-      title: "Agent Appointment",
-      propertyId: "#PRO50",
-      btnText: "Check",
-      amount: 150,
-      appointment: true,
-      active: true,
-      alert: "Upcoming in 48H",
-      date: "20th Feb 8:30 AM",
-      alertType: "success",
-    },
-    {
-      title: "Agent Appointment",
-      propertyId: "#PRO50",
-      btnText: "Check",
-      amount: 150,
-      appointment: true,
-      active: false,
-      alert: "Upcoming in 48H",
-      date: "20th Feb 8:30 AM",
-      alertType: "success",
-    },
-    {
-      title: "Agent Appointment",
-      propertyId: "#PRO50",
-      btnText: "Check",
-      amount: 150,
-      appointment: true,
-      active: false,
-      alert: "Upcoming in 48H",
-      date: "20th Feb 8:30 AM",
-      alertType: "success",
-    },
-    {
-      title: "Agent Appointment",
-      propertyId: "#PRO50",
-      btnText: "Check",
-      amount: 150,
-      appointment: true,
-      active: true,
-      alert: "Upcoming in 48H",
-      date: "20th Feb 8:30 AM",
-      alertType: "success",
-    },
-    {
-      title: "Agent Appointment",
-      propertyId: "#PRO50",
-      btnText: "Check",
-      amount: 150,
-      appointment: true,
-      active: false,
-      alert: "Upcoming in 48H",
-      date: "20th Feb 8:30 AM",
-      alertType: "success",
-    },
-  ];
+  const handleTabClick = (cardTitle) => {
+    setActiveTab(cardTitle);
+  };
 
   return (
     <div
       className="py-20"
       style={{
         background:
-          "linear-gradient(90deg, rgba(125, 184, 255, 0.64) 0%, #FFF 100%);",
+          "linear-gradient(90deg, rgba(125, 184, 255, 0.64) 0%, #FFF 100%)",
       }}
     >
       <div className="container mx-auto px-3">
+        {/* MenuTabs Start */}
         <div
-          className="flex items-center gap-4 md:gap-14 mb-4 overflow-hidden"
+          className="flex items-center justify-start gap-4 md:gap-14 mb-4 overflow-hidden"
           style={{ marginTop: "4rem" }}
         >
-          {cards.map((card, index) => (
+          {cards.map((card) => (
             <div
-              key={index}
-              className={`shrink-0 w-[250px] h-20 flex items-center justify-center shadow-lg ${
-                card.active
-                  ? "bg-gradient-to-b from-white to-[#96a7e8] border border-white"
+              key={card.id}
+              onClick={() => handleTabClick(card.title)}
+              className={`shrink-0 w-[250px] h-20 flex items-center justify-center shadow-lg cursor-pointer ${activeTab === card.title
+                  ? "bg-gradient-to-b from-white to-[#96a7e8] border border-white cursor-pointer"
                   : "bg-white/50"
-              } hover:scale-105 transition-transform duration-300`}
+                } hover:scale-105 transition-transform duration-300`}
             >
               <span
-                className={`text-lg font-medium ${
-                  card.active ? "text-black" : "text-gray-500"
-                }`}
+                className={`pointer text-lg font-medium ${activeTab === card.title ? "text-black" : "text-gray-500"
+                  }`}
               >
                 {card.title}
               </span>
             </div>
           ))}
-        </div>
 
+
+        </div>
+        {/* MenuTabs End */}
+
+        
         <div className="flex justify-end items-end gap-4 container">
-          <button className="text-3xl " aria-label="Scroll Left">
+          <button className="text-3xl" aria-label="Scroll Left">
             <FaRegArrowAltCircleLeft />
           </button>
           <button className="text-3xl" aria-label="Scroll Right">
             <FaRegArrowAltCircleRight />
           </button>
         </div>
-        <SliderComponent
-          headingWhite="Recent"
-          headingBlack="Highlights"
-          cards={recentHighlightsCards}
-        />
-        <SliderComponent
-          headingWhite="Offers"
-          headingBlack="& Promos"
-          cards={offersCards}
-        />
-        <SliderComponent
-          headingWhite="Upcoming"
-          headingBlack="Payments"
-          cards={paymentsCards}
-        />
-        <SliderComponent
-          headingWhite="Upcoming"
-          headingBlack="Appointments"
-          cards={appointmentsCards}
-        />
+
+
+        {/* Render Tab Content */}
+
+        {activeTab === "Home" && <HomeTab />}
+        {activeTab === "Services" && <ServicesTab/> }
+        {activeTab === "My Properties" && <Properties />}
+        {activeTab === "Make A Payment" && <MakePaymentTab/>}
+        {activeTab === "Register Interest" && <h2>Register Your Interest</h2> }
+        {activeTab === "Refer a Friend" && <ReferFriendTab/> }
       </div>
     </div>
   );
