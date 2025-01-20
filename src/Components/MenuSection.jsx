@@ -23,20 +23,23 @@ const MenuSection = () => {
     { id: 6, title: "Refer a Friend" },
   ];
 
-  // Initialize activeTab from localStorage or default to "Home"
-  const [activeTab, setActiveTab] = useState(() => {
-    return localStorage.getItem("activeTab") || "Home";
-  });
+  const [activeTab, setActiveTab] = useState("Home");
 
-  // Save activeTab to localStorage whenever it changes
   useEffect(() => {
-    localStorage.setItem("activeTab", activeTab);
-  }, [activeTab]);
+    if (typeof window !== "undefined") {
+      const storedTab = localStorage.getItem("activeTab");
+      if (storedTab) {
+        setActiveTab(storedTab);
+      }
+    }
+  }, []);
 
-  const handleTabClick = (cardTitle) => {
-    setActiveTab(cardTitle);
+  const handleTabClick = (tab) => {
+    setActiveTab(tab);
+    if (typeof window !== "undefined") {
+      localStorage.setItem("activeTab", tab);
+    }
   };
-
   return (
     <div
       className="py-20"
