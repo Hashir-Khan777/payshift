@@ -32,7 +32,7 @@ const CardSection = () => {
             className="bg-white shadow-lg backdrop-blur-md rounded-lg flex flex-col items-center justify-center py-8 px-4 text-center hover:scale-105 transition-transform duration-300"
           >
             <div className="text-4xl mb-4 text-gray-700">{card.icon}</div>
-            <h3 className="text-[12px] md:text-lg font-semibold text-gray-800">
+            <h3 className="text-[12px] md:text-lg font-semibold font-btnText text-gray-800">
               {card.title}
             </h3>
           </div>
