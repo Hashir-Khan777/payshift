@@ -5,7 +5,7 @@ const Hero = () => {
   return (
     <div className="relative w-full h-screen">
       <video
-        className="w-full h-full object-cover"
+         className="w-full h-full object-cover"
         src="/Images/video.mp4"
         autoPlay
         loop
@@ -27,7 +27,7 @@ const Hero = () => {
             </h1>
             <div>
               <button className="animated-button flex items-center justify-center space-x-2 mt-4 px-3 py-2 bg-black text-white font-medium rounded-full hover:bg-gray-800">
-                <span className="relative left-0 pl-6 pr-4 text-base md:text-3xl animated-text transition-all ease-linear duration-[400ms]">
+                <span className="relative left-0 pl-6 pr-4 text-base md:text-3xl animated-text transition-all ease-linear duration-[400ms] font-lexend">
                   Pay
                 </span>
                 <FaRegCircleRight className="relative right-0 transition-all ease-linear duration-[400ms] text-base md:text-3xl animated-icon" />
