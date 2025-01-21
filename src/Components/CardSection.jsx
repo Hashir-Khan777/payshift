@@ -10,29 +10,29 @@ import {
 
 const CardSection = () => {
   const cards = [
-    { title: "Requests", icon: <FaFileAlt /> },
-    { title: "Services", icon: <FaTools /> },
-    { title: "Properties", icon: <FaHome /> },
-    { title: "Appointments", icon: <FaCalendarAlt /> },
-    { title: "Support", icon: <FaHeadphonesAlt /> },
-    { title: "Refer", icon: <FaUserFriends /> },
+    { title: "Requests", icon: <img src="/svgIcons/file.svg" alt="Call Icon" className="cursor-pointer w-[28px] h-[28px]]" /> },
+    { title: "Services", icon: <img src="/svgIcons/service.svg" alt="Call Icon" className="cursor-pointer w-[28px] h-[28px]" />  },
+    { title: "Properties", icon: <img src="/svgIcons/property.svg" alt="Call Icon" className="cursor-pointer w-[28px] h-[28px]" /> },
+    { title: "Appointments", icon: <img src="/svgIcons/appointment.svg" alt="Call Icon" className="cursor-pointer w-[28px] h-[28px]" /> },
+    { title: "Support", icon: <img src="/svgIcons/support.svg" alt="Call Icon" className="cursor-pointer w-[28px] h-[28px]" /> },
+    { title: "Refer", icon: <img src="/svgIcons/referFriend.svg" alt="Call Icon" className="cursor-pointer w-[28px] h-[28px]" /> },
   ];
 
   return (
     <div
-      className="relative bg-cover bg-center"
+      className="md:h-[22vh] relative bg-cover bg-center flex flex-row justify-center items-center"
       style={{ backgroundImage: `url(/Images/section2.png)` }}
     >
-      <div className="absolute inset-0"></div>
+      {/* <div className="absolute inset-0"></div> */}
 
-      <div className="relative z-10 container mx-auto grid grid-cols-3 sm:grid-cols-3 lg:grid-cols-6 md:gap-3 gap-2 py-10 px-3">
+      <div className="z-10 container grid grid-cols-3 md:grid-cols-6 py-5 px-2 md:w-[80vw] w-[90vw] sm:w-full md:gap-5 gap-2 overflow-hidden">
         {cards.map((card, index) => (
           <div
             key={index}
-            className="bg-white shadow-lg backdrop-blur-md rounded-lg flex flex-col items-center justify-center py-8 px-4 text-center hover:scale-105 transition-transform duration-300"
+            className="bg-white shadow-xl cursor-pointer backdrop-blur-md rounded-sm flex flex-col items-center justify-center gap-2 text-center hover:scale-105 transition-transform duration-300 py-5"
           >
-            <div className="text-4xl mb-4 text-gray-700">{card.icon}</div>
-            <h3 className="text-[12px] md:text-lg font-semibold font-btnText text-gray-800">
+            <div className="">{card.icon}</div>
+            <h3 className="text-[12px] md:text-[15px] font-medium font-lexend text-[#030055]">
               {card.title}
             </h3>
           </div>
