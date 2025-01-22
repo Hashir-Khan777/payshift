@@ -42,7 +42,7 @@ const MenuSection = () => {
   };
   return (
     <section
-      className="overflow-x-hidden flex flex-col"
+      className="flex flex-col"
       style={{
         background:
           "linear-gradient(90deg, rgba(125, 184, 255, 0.64) 0%, #FFF 100%)",
@@ -52,7 +52,7 @@ const MenuSection = () => {
         <div className="container mx-auto">
           {/* MenuTabs Start */}
           <div
-            className="container flex items-center justify-start gap-4 md:gap-5 mb-4 overflow-x-hidden overflow-y-auto"
+            className="container flex items-center justify-start gap-4 md:gap-5 mb-4 overflow-y-auto scroll"
             style={{ marginTop: "4rem" }}
           >
             {cards.map((card) => (
