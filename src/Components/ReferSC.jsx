@@ -12,7 +12,7 @@ import "swiper/css/navigation";
 import { ClientPageRoot } from "next/dist/client/components/client-page";
 
 const ReferSliderComponent = ({ cards, headingWhite, headingBlack }) => {
-console.log(cards)
+    console.log(cards)
 
     const [activeIndex, setActiveIndex] = useState(1);
 
@@ -32,13 +32,13 @@ console.log(cards)
 
     return (
         <div
-            className="container mx-auto mt-20 py-20 px-5 md:px-16"
+            className="container rounded-lg mx-auto mt-20 py-20 px-5 md:px-16 border-[4px] border-white font-lexend"
             style={{
                 background: "linear-gradient(0deg, #E8F3FF 15.92%, #92A8FF 100%)",
                 boxShadow: "0px 4px 24px 0px rgba(0, 69, 197, 0.64)",
             }}
         >
-            <h1 className="text-center text-3xl md:text-5xl mb-16 font-medium">
+            <h1 className="text-center text-2xl md:text-4xl mb-16 font-normal">
                 <span className="text-white">{headingWhite}</span> {headingBlack}
             </h1>
 
@@ -70,13 +70,18 @@ console.log(cards)
                         <SwiperSlide key={index}>
 
                             <div
-                                className={`flex flex-col gap-3 justify-center items-center shrink-0 w-full py-16 px-3 md:px-6 shadow-lg rounded-md border-[2px] border-white ${index === activeIndex
-                                    ? "bg-gradient-to-b from-white to-[#C2DEFF] border border-white"
-                                    : "bg-white/50 scale-90 opacity-50"
+                                className={`shrink-0 w-full py-16 px-3 md:px-6 rounded-md  border-4 border-white${index === activeIndex
+                                    ? "bg-gradient-to-b from-white to-[#c7e1ff] shadow-lg my-3"
+                                    : "bg-white/50 scale-90 opacity-40"
                                     } transition-transform duration-300`}
+                                style={{
+                                    background: "linear-gradient(180deg, #E8F3FF 15.92%, #92A8FF 100%)",
+                                    boxShadow: "0px 0px 20px rgba(146, 168, 255, 1)",
+                                }}
+
                             >
-                            
-                            <div className="flex flex-col gap-3 md:gap-6 justify-center items-center">
+
+                                <div className="flex flex-col gap-3 md:gap-6 justify-center items-center">
                                     {/* Title */}
                                     <h1 className="text-base md:text-xl font-semibold">
                                         {card.title}
@@ -88,24 +93,24 @@ console.log(cards)
                                     {/* Info */}
                                     {
                                         card.discount_amount ? <h1 className="text-sm md:text-[18px] font-normal text-start">
-                                        Refer a friend and get AED {card.discount_amount} off using code 
-                                        <span className="text-lg font-bold underline"> {card.discount_code}</span>
-                                        </h1>:null 
+                                            Refer a friend and get AED {card.discount_amount} off using code
+                                            <span className="text-xl font-bold underline"> {card.discount_code}</span>
+                                        </h1> : null
                                     }
-                                    
 
-                                <p className="text-base my-0">
-                                    {card.info}
-                                </p>
-                                
+
+                                    <p className="text-base my-0">
+                                        {card.info}
+                                    </p>
+
                                 </div>
-
-                                <button className="mx-auto animated-button flex items-center justify-center space-x-2 mt-4 px-5 py-2 bg-black text-white font-medium rounded-full hover:bg-gray-800">
-                                    <span className="relative left-0 pl-6 pr-4 text-base md:text-lg leading-relaxed animated-text transition-all ease-linear duration-[400ms]">
+                                <button className="mx-auto animated-button flex items-center justify-center gap-7 px-5 py-2 bg-black text-white font-normal rounded-full hover:bg-gray-800">
+                                    <span className="relative  text-base left-0 md:text-xl animated-text transition-all ease-linear duration-[400ms] font-lexend">
                                         {card.btnText}
                                     </span>
-                                    <FaRegCircleRight className="relative right-0 transition-all ease-linear duration-[400ms] text-base md:text-3xl animated-icon" />
+                                    <FaRegCircleRight className="relative right-0 transition-all ease-linear duration-[400ms] text-base md:text-xl animated-icon" />
                                 </button>
+
 
                             </div>
                         </SwiperSlide>

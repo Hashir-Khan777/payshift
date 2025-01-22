@@ -45,7 +45,7 @@ const MenuSection = () => {
       background:
         "linear-gradient(90deg, rgba(125, 184, 255, 0.64) 0%, #FFF 100%)",
     }}>
-      <div className="py-14">
+      <div className="pt-8 pb-6">
         <div className="container mx-auto px-3 ps-10 max-w-[100vw] md:ms-10">
           {/* MenuTabs Start */}
           <div

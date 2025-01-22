@@ -1,5 +1,5 @@
 import React from 'react';
-import MPSliderComponent from './MPSliderComponent';
+import  MakePaymentSliderComponent from './MPSliderComponent';
 
 const BillOverViewCard = [
     {
@@ -74,7 +74,7 @@ const BillOverViewCard = [
 const MakePaymentTab = () => {
   return (
     <>
-      <MPSliderComponent headingWhite="Your"
+      <MakePaymentSliderComponent headingWhite="Your"
                 headingBlack="Bill Overview"
                 cards={BillOverViewCard}/>
     </>

@@ -32,13 +32,13 @@ const ReferHistorySliderComponent = ({ cards, headingWhite, headingBlack }) => {
 
     return (
         <div
-            className="container mx-auto mt-20 py-20 px-5 md:px-16"
+            className="container rounded-lg mx-auto mt-20 py-20 px-5 md:px-16 border-[4px] border-white font-lexend"
             style={{
                 background: "linear-gradient(0deg, #E8F3FF 15.92%, #92A8FF 100%)",
                 boxShadow: "0px 4px 24px 0px rgba(0, 69, 197, 0.64)",
             }}
         >
-            <h1 className="text-center text-3xl md:text-5xl mb-16 font-medium">
+            <h1 className="text-center text-2xl md:text-4xl mb-16 font-normal">
                 <span className="text-white">{headingWhite}</span> {headingBlack}
             </h1>
 
@@ -70,10 +70,14 @@ const ReferHistorySliderComponent = ({ cards, headingWhite, headingBlack }) => {
                         <SwiperSlide key={index}>
 
                             <div
-                                className={`flex flex-col gap-3 justify-center items-center shrink-0 w-full py-16 px-3 md:px-6 shadow-lg rounded-md border-[2px] border-white ${index === activeIndex
-                                    ? "bg-gradient-to-b from-white to-[#C2DEFF] border border-white"
-                                    : "bg-white/50 scale-90 opacity-50"
+                                className={`shrink-0 w-full py-16 px-3 md:px-6 rounded-md  border-4 border-white${index === activeIndex
+                                    ? "bg-gradient-to-b from-white to-[#c7e1ff] shadow-lg my-3"
+                                    : "bg-white/50 scale-90 opacity-40"
                                     } transition-transform duration-300`}
+                                style={{
+                                    background: "linear-gradient(180deg, #E8F3FF 15.92%, #92A8FF 100%)",
+                                    boxShadow: "0px 0px 20px rgba(146, 168, 255, 1)",
+                                }}
                             >
 
                                 {/* ============= Card Content ============ */}
@@ -91,7 +95,7 @@ const ReferHistorySliderComponent = ({ cards, headingWhite, headingBlack }) => {
 
                                     </div>
 
-                                    <p className="text-[#290080] md:font-bold font-semibold md:text-xl">+AED {card.amount}</p>
+                                    <p className="text-[#290080] md:font-bold font-semibold md:text-2xl text-xl">+AED {card.amount}</p>
 
                                 </div>
 
