@@ -59,10 +59,11 @@ const MenuSection = () => {
               <div
                 key={card.id}
                 onClick={() => handleTabClick(card.title)}
-                className={`shrink-0 px-10 h-20 flex items-center justify-center shadow-xl cursor-pointer rounded-xl ${
+                style={{ boxShadow: "0px 4.8px 12px 0px #0045C566" }}
+                className={`shrink-0 px-10 h-20 flex items-center justify-center cursor-pointer rounded-[4px] ${
                   activeTab === card.title
                     ? "mx-3 my-2 h-24 bg-gradient-to-b from-white to-[#96a7e8] border-white border-[2px] cursor-pointer transform scale-110 transition-transform duration-300"
-                    : "bg-custom-gradient"
+                    : "bg-custom-gradient mx-2"
                 } hover:scale-[1.05] transition-transform duration-300`}
               >
                 <span
