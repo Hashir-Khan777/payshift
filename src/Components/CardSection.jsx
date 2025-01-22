@@ -10,18 +10,76 @@ import {
 
 const CardSection = () => {
   const cards = [
-    { title: "Requests", icon: <img src="/svgIcons/file.svg" alt="Call Icon" className="cursor-pointer w-[28px] h-[28px]]" /> },
-    { title: "Services", icon: <img src="/svgIcons/service.svg" alt="Call Icon" className="cursor-pointer w-[28px] h-[28px]" />  },
-    { title: "Properties", icon: <img src="/svgIcons/property.svg" alt="Call Icon" className="cursor-pointer w-[28px] h-[28px]" /> },
-    { title: "Appointments", icon: <img src="/svgIcons/appointment.svg" alt="Call Icon" className="cursor-pointer w-[28px] h-[28px]" /> },
-    { title: "Support", icon: <img src="/svgIcons/support.svg" alt="Call Icon" className="cursor-pointer w-[28px] h-[28px]" /> },
-    { title: "Refer", icon: <img src="/svgIcons/referFriend.svg" alt="Call Icon" className="cursor-pointer w-[28px] h-[28px]" /> },
+    {
+      title: "Requests",
+      icon: (
+        <img
+          src="/svgIcons/file.svg"
+          alt="Call Icon"
+          className="cursor-pointer w-[28px] h-[28px]]"
+        />
+      ),
+    },
+    {
+      title: "Services",
+      icon: (
+        <img
+          src="/svgIcons/service.svg"
+          alt="Call Icon"
+          className="cursor-pointer w-[28px] h-[28px]"
+        />
+      ),
+    },
+    {
+      title: "Properties",
+      icon: (
+        <img
+          src="/svgIcons/property.svg"
+          alt="Call Icon"
+          className="cursor-pointer w-[28px] h-[28px]"
+        />
+      ),
+    },
+    {
+      title: "Appointments",
+      icon: (
+        <img
+          src="/svgIcons/appointment.svg"
+          alt="Call Icon"
+          className="cursor-pointer w-[28px] h-[28px]"
+        />
+      ),
+    },
+    {
+      title: "Support",
+      icon: (
+        <img
+          src="/svgIcons/support.svg"
+          alt="Call Icon"
+          className="cursor-pointer w-[28px] h-[28px]"
+        />
+      ),
+    },
+    {
+      title: "Refer",
+      icon: (
+        <img
+          src="/svgIcons/referFriend.svg"
+          alt="Call Icon"
+          className="cursor-pointer w-[28px] h-[28px]"
+        />
+      ),
+    },
   ];
 
   return (
     <div
-      className="md:h-[22vh] relative bg-cover bg-center flex flex-row justify-center items-center"
-      style={{ backgroundImage: `url(/Images/section2.png)` }}
+      className="md:h-[232px] relative bg-cover bg-center flex flex-row justify-center items-center"
+      style={{
+        backgroundImage: `url(/Images/sectionbg.png)`,
+        objectFit: "cover",
+        backgroundSize: "200% 170%",
+      }}
     >
       {/* <div className="absolute inset-0"></div> */}
 
@@ -29,7 +87,7 @@ const CardSection = () => {
         {cards.map((card, index) => (
           <div
             key={index}
-            className="bg-white shadow-xl cursor-pointer backdrop-blur-md rounded-sm flex flex-col items-center justify-center gap-2 text-center hover:scale-105 transition-transform duration-300 py-5"
+            className="bg-gradient-to-b from-white to-[#C2DEFF] shadow-xl cursor-pointer backdrop-blur-md rounded-sm flex flex-col items-center justify-center gap-2 text-center hover:scale-105 transition-transform duration-300 py-8 px-7"
           >
             <div className="">{card.icon}</div>
             <h3 className="text-[12px] md:text-[15px] font-medium font-lexend text-[#030055]">
