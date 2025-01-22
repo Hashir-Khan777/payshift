@@ -1,15 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap");
+@font-face {
+  font-family: cashdisplay;
+  src: url("../fonts/ClashDisplay-Variable.ttf");
+}
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+.heading_font {
+  font-family: cashdisplay !important;
+}
+
 .animated-button:hover > .animated-icon {
-  right: 75%;
+  right: 85%;
   transition: all linear 400ms;
 }
 
 .animated-button:hover > .animated-text {
   left: 40px;
   transition: all linear 400ms;
+}
+
+.swiper-wrapper {
+  align-items: center;
 }

@@ -16,26 +16,28 @@ const Hero = () => {
           playsInline
         />
         {/* Centered Box */}
-        <div  className="absolute inset-0 flex items-center justify-center z-10"
-  style={{ top: "5%", transform: "translateY(5%)", }}>
+        <div
+          className="absolute inset-0 flex items-center justify-center z-10"
+          style={{ top: "5%", transform: "translateY(5%)" }}
+        >
           <div
-            className="shadow-xl m-2 relative w-[300px] h-[280px] md:w-[450px] md:h-[280px] bg-white/5 backdrop-blur-xl rounded-sm  border-[3px] border-white"
+            className="shadow-xl m-2 relative w-[300px] h-[280px] md:w-[460px] md:h-[400px] bg-white/5 backdrop-blur-xl rounded-sm  border-[3px] border-white/20"
             style={{
               clipPath: "polygon(20% 0%, 100% 0, 100% 100%, 0 100%, 0% 23%)",
             }}
           >
             <div className="relative flex flex-col items-center justify-center gap-5 text-center h-full rounded-md z-20 ">
-              <h1 className="text-white text-[30px] md:text-[45px] -tracking-normal font-normal font-lexend">
+              <h1 className="text-white text-[30px] md:text-[45px] -tracking-normal font-normal heading_font">
                 Pay <span className="text-black">Now</span>
                 <br />
                 <span className="text-black">With</span> PayShift
               </h1>
               <div>
-                <button className="animated-button flex items-center justify-center gap-7 px-5 py-1 bg-black text-white font-normal rounded-full hover:bg-gray-800">
-                  <span className="relative  text-base left-0 md:text-xl animated-text transition-all ease-linear duration-[400ms] font-lexend">
+                <button className="animated-button flex items-center justify-center gap-7 px-5 py-2 bg-black text-white font-normal rounded-full hover:bg-gray-800">
+                  <span className="relative text-base left-0 pl-6 pr-4 md:text-3xl animated-text transition-all ease-linear duration-[400ms] font-lexend">
                     Pay
                   </span>
-                  <FaRegCircleRight className="relative right-0 transition-all ease-linear duration-[400ms] text-base md:text-xl animated-icon" />
+                  <FaRegCircleRight className="relative right-0 transition-all ease-linear duration-[400ms] text-base md:text-3xl animated-icon" />
                 </button>
               </div>
             </div>

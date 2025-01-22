@@ -12,8 +12,6 @@ import "swiper/css/navigation";
 import { ClientPageRoot } from "next/dist/client/components/client-page";
 
 const ReferHistorySliderComponent = ({ cards, headingWhite, headingBlack }) => {
-    console.log(cards)
-
     const [activeIndex, setActiveIndex] = useState(1);
 
     const prevRef = useRef(null);
