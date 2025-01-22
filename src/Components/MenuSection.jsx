@@ -80,10 +80,16 @@ const MenuSection = () => {
 
           <div className="flex justify-end items-end gap-4 container">
             <button className="text-3xl" aria-label="Scroll Left">
-              <FaRegArrowAltCircleLeft />
+              <img
+                className="w-[48px] h-[48px]"
+                src="/svgIcons/slidericonleft.svg"
+              />
             </button>
             <button className="text-3xl" aria-label="Scroll Right">
-              <FaRegArrowAltCircleRight />
+              <img
+                className="w-[48px] h-[48px]"
+                src="/svgIcons/slidericon.svg"
+              />
             </button>
           </div>
         </div>
