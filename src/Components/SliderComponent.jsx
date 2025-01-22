@@ -31,13 +31,13 @@ const SliderComponent = ({ cards, headingWhite, headingBlack }) => {
 
   return (
     <div
-      className="container mx-auto mt-20 py-20 px-5 md:px-16"
+      className="container rounded-lg mx-auto mt-20 py-20 px-5 md:px-16 border-[4px] border-white font-lexend"
       style={{
         background: "linear-gradient(0deg, #E8F3FF 15.92%, #92A8FF 100%)",
         boxShadow: "0px 4px 24px 0px rgba(0, 69, 197, 0.64)",
       }}
     >
-      <h1 className="text-center text-3xl md:text-5xl mb-16 font-medium">
+      <h1 className="text-center text-2xl md:text-4xl mb-16 font-normal">
         <span className="text-white">{headingWhite}</span> {headingBlack}
       </h1>
       <div className="flex items-center justify-center mb-4 overflow-hidden">
@@ -67,17 +67,22 @@ const SliderComponent = ({ cards, headingWhite, headingBlack }) => {
           {cards?.map((card, index) => (
             <SwiperSlide key={index}>
               <div
-                className={`shrink-0 w-full py-16 px-3 md:px-6 shadow-lg ${index === activeIndex
-                    ? "bg-gradient-to-b from-white to-[#C2DEFF] border border-white"
-                    : "bg-white/50 scale-90 opacity-50"
+                className={`shrink-0 w-full py-16 px-3 md:px-6 rounded-md  border-4 border-white${index === activeIndex
+                  ? "bg-gradient-to-b from-white to-[#c7e1ff] shadow-lg my-3"
+                  : "bg-white/50 scale-90 opacity-40"
                   } transition-transform duration-300`}
+                style={{
+                  background: "linear-gradient(180deg, #E8F3FF 15.92%, #92A8FF 100%)",
+                 boxShadow: "0px 0px 20px rgba(146, 168, 255, 1)",
+                 }}
+
               >
                 {card.payment || card.appointment ? (
                   <div
-                    className={`flex gap-6 text-3xl items-center justify-center w-full ${card.alertType === "success"
-                        ? "text-[#17A900]"
-                        : "text-[#F93434]"
-                      } font-semibold mb-9`}
+                    className={`flex gap-6 text-2xl items-center justify-center w-full ${card.alertType === "success"
+                      ? "text-[#17A900]"
+                      : "text-[#F93434]"
+                      } font-semibold mb-5`}
                   >
                     {card.alertType === "danger" ? (
                       <svg
@@ -96,7 +101,7 @@ const SliderComponent = ({ cards, headingWhite, headingBlack }) => {
                         />
                       </svg>
                     ) : null}
-                    <h1 className="text-[18px] md:text-[28px]">{card.alert}</h1>
+                    <h1 className="text-[16px] md:text-[25px]">{card.alert}</h1>
                   </div>
                 ) : null}
                 {/* ---- Card ---- */}
@@ -105,22 +110,17 @@ const SliderComponent = ({ cards, headingWhite, headingBlack }) => {
                     } justify-between w-full`}
                 >
                   <div >
-                    <h1 className="text-base md:text-2xl font-bold">
+                    <h1 className="text-base md:text-xl font-semibold">
                       {card.title}
                     </h1>
                     {card.propertyId ? (
-                      <p className="text-[12px] md:text-base font-medium bg-[#D1BCFF] rounded-full px-5 py-2 mt-3">
+                      <p className="text-sm font-medium bg-[#D1BCFF] rounded-full px-5 py-2 mt-3">
                         Property ID:{" "}
                         <span className="font-bold">{card.propertyId}</span>
                       </p>
                     ) : null}
                   </div>
-                  {/* <Link
-                    href="/"
-                    className="text-black text-base md:text-lg underline font-medium"
-                  >
-                    More Info
-                  </Link> */}
+
                   {card.showMoreInfo && (
                     <Link
                       href="/"
@@ -132,12 +132,12 @@ const SliderComponent = ({ cards, headingWhite, headingBlack }) => {
 
                 </div>
                 {card.payment ? (
-                  <p className="font-bold text-2xl md:text-3xl text-center my-6 md:my-12">
+                  <p className="font-bold text-2xl md:text-2xl text-center my-3 md:my-6">
                     AED {card.amount}
                   </p>
                 ) : null}
                 {card.appointment ? (
-                  <p className="font-bold text-2xl md:text-3xl text-center my-12">
+                  <p className="font-bold text-xl md:text-x2l text-center my-3 md:my-6">
                     {card.date}
                   </p>
                 ) : null}
@@ -160,11 +160,12 @@ const SliderComponent = ({ cards, headingWhite, headingBlack }) => {
                   </p>
                 ) : null}
 
-                <button className="mx-auto animated-button flex items-center justify-center space-x-2 mt-4 px-3 py-2 bg-black text-white font-medium rounded-full hover:bg-gray-800 ">
-                  <span className="relative left-0 pl-6 pr-4 text-base md:text-2xl animated-text transition-all ease-linear duration-[400ms]">
+
+                <button className="mx-auto animated-button flex items-center justify-center gap-7 px-5 py-2 bg-black text-white font-normal rounded-full hover:bg-gray-800">
+                  <span className="relative  text-base left-0 md:text-xl animated-text transition-all ease-linear duration-[400ms] font-lexend">
                     {card.btnText}
                   </span>
-                  <FaRegCircleRight className="relative right-0 transition-all ease-linear duration-[400ms] text-base md:text-3xl animated-icon" />
+                  <FaRegCircleRight className="relative right-0 transition-all ease-linear duration-[400ms] text-base md:text-xl animated-icon" />
                 </button>
 
               </div>

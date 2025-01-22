@@ -1,0 +1,9 @@
+1) hero & menu section on same viewport
+2) fonts
+3) same icons
+4) update logo svg format
+5) menu button bg
+6) panel bg
+7) width & height of tabs
+8) border radius of boxes
+9) border stroke

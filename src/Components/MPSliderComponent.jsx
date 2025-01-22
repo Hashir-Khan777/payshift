@@ -12,7 +12,7 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 
-const ReferSliderComponent = ({ cards, headingWhite, headingBlack }) => {
+const MakePaymentSliderComponent = ({ cards, headingWhite, headingBlack }) => {
     const [activeIndex, setActiveIndex] = useState(1);
 
     const prevRef = useRef(null);
@@ -31,35 +31,34 @@ const ReferSliderComponent = ({ cards, headingWhite, headingBlack }) => {
 
     return (
         <div
-            className="container mx-auto mt-20 py-20 px-5 md:px-16"
-            style={{
-                background: "linear-gradient(0deg, #E8F3FF 15.92%, #92A8FF 100%)",
-                boxShadow: "0px 4px 24px 0px rgba(0, 69, 197, 0.64)",
-            }}
+             className="container rounded-lg mx-auto mt-20 py-20 px-5 md:px-16 border-[4px] border-white font-lexend"
+      style={{
+        background: "linear-gradient(0deg, #E8F3FF 15.92%, #92A8FF 100%)",
+        boxShadow: "0px 4px 24px 0px rgba(0, 69, 197, 0.64)",
+      }}
         >
-            <h1 className="text-center text-3xl md:text-5xl mb-16 font-medium">
+            <h1 className="text-center text-2xl md:text-4xl mb-16 font-normal">
                 <span className="text-white">{headingWhite}</span> {headingBlack}
             </h1>
 
-
-{/* =========== Payment Due =========== */}
-            <div className=" flex flex-row gap-3 items-center justify-center bg-black w-[300px] h-[40px] mx-auto text-white rounded-full mb-14">
-            <svg
-                                                    viewBox="0 0 27 25"
-                                                    fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    className="w-[25px] h-[25px] md:w-[27px] md:h-[22px]"
-                                                >
-                                                    <path
-                                                        d="M11.0809 1.92012C12.1561 0.026628 14.844 0.0266264 15.9192 1.92012L26.3216 20.2396C27.3968 22.1331 26.0528 24.5 23.9025 24.5H3.09763C0.94726 24.5 -0.396723 22.1331 0.678463 20.2396L11.0809 1.92012Z"
-                                                        fill="#F93434"
-                                                    />
-                                                    <path
-                                                        d="M15.0296 16.7564H11.9702C11.9702 15.088 11.5447 10.5915 11.5447 9.02483V7.60059H15.4551V9.02483C15.4551 10.5915 15.0296 15.1084 15.0296 16.7564ZM15.2323 21.2326H11.7675V17.9162H15.2323V21.2326Z"
-                                                        fill="white"
-                                                    />
-                                                </svg>
-            <p>Total of <span className="font-bold">AED 250</span> urgently due.</p>
+            {/* =========== Payment Due =========== */}
+            <div className=" flex flex-row gap-3 items-center justify-center bg-black mx-auto text-white md:text-base text-sm rounded-full md:mb-14 mb-5 px-3 py-2 md:w-[300px] w-[280px]">
+                <svg
+                    viewBox="0 0 27 25"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-[25px] h-[25px] md:w-[27px] md:h-[22px]"
+                >
+                    <path
+                        d="M11.0809 1.92012C12.1561 0.026628 14.844 0.0266264 15.9192 1.92012L26.3216 20.2396C27.3968 22.1331 26.0528 24.5 23.9025 24.5H3.09763C0.94726 24.5 -0.396723 22.1331 0.678463 20.2396L11.0809 1.92012Z"
+                        fill="#F93434"
+                    />
+                    <path
+                        d="M15.0296 16.7564H11.9702C11.9702 15.088 11.5447 10.5915 11.5447 9.02483V7.60059H15.4551V9.02483C15.4551 10.5915 15.0296 15.1084 15.0296 16.7564ZM15.2323 21.2326H11.7675V17.9162H15.2323V21.2326Z"
+                        fill="white"
+                    />
+                </svg>
+                <p>Total of <span className="font-bold">AED 250</span> urgently due.</p>
             </div>
             {/* =========== Payment Due End =========== */}
 
@@ -90,10 +89,15 @@ const ReferSliderComponent = ({ cards, headingWhite, headingBlack }) => {
                     {cards?.map((card, index) => (
                         <SwiperSlide key={index}>
                             <div
-                                className={`flex flex-col gap-3 shrink-0 w-full py-16 px-3 md:px-6 shadow-lg rounded-md border-[2px] border-white ${index === activeIndex
-                                    ? "bg-gradient-to-b from-white to-[#C2DEFF] border border-white"
-                                    : "bg-white/50 scale-90 opacity-50"
+                                className={`shrink-0 w-full py-16 px-3 md:px-6 rounded-md  border-4 border-white${index === activeIndex
+                                    ? "bg-gradient-to-b from-white to-[#c7e1ff] shadow-lg my-3"
+                                    : "bg-white/50 scale-90 opacity-40"
                                     } transition-transform duration-300`}
+                                style={{
+                                    background: "linear-gradient(180deg, #E8F3FF 15.92%, #92A8FF 100%)",
+                                    boxShadow: "0px 0px 20px rgba(146, 168, 255, 1)",
+
+                                }}
                             >
 
                                 {/* Propert Id and heading start */}
@@ -108,7 +112,8 @@ const ReferSliderComponent = ({ cards, headingWhite, headingBlack }) => {
 
                                         </p>
                                     ) : null}
-                                    <h1 className="text-base md:text-xl font-bold">
+
+                                    <h1 className="text-base md:text-xl font-semibold">
                                         {card.title}
                                     </h1>
                                 </div>
@@ -116,7 +121,7 @@ const ReferSliderComponent = ({ cards, headingWhite, headingBlack }) => {
                                 {/* Propert Id and heading end */}
 
 
-                                <div className="flex flex-col gap-2 my-0">
+                                <div className="flex flex-col gap-2 mt-2">
 
                                     {card.payment ? (
                                         <p className="font-bold text-xl md:text-3xl text-center">
@@ -160,11 +165,11 @@ const ReferSliderComponent = ({ cards, headingWhite, headingBlack }) => {
                                 </p>
 
 
-                                <button className="mx-auto animated-button flex items-center justify-center space-x-2 mt-4 px-5 py-2 bg-black text-white font-medium rounded-full hover:bg-gray-800">
-                                    <span className="relative left-0 pl-6 pr-4 text-base md:text-xl animated-text transition-all ease-linear duration-[400ms]">
+                                <button className="my-5 mx-auto animated-button flex items-center justify-center gap-7 px-5 py-2 bg-black text-white font-normal rounded-full hover:bg-gray-800">
+                                    <span className="relative  text-base left-0 md:text-xl animated-text transition-all ease-linear duration-[400ms] font-lexend">
                                         {card.btnText}
                                     </span>
-                                    <FaRegCircleRight className="relative right-0 transition-all ease-linear duration-[400ms] text-base md:text-3xl animated-icon" />
+                                    <FaRegCircleRight className="relative right-0 transition-all ease-linear duration-[400ms] text-base md:text-xl animated-icon" />
                                 </button>
 
                             </div>
@@ -184,4 +189,4 @@ const ReferSliderComponent = ({ cards, headingWhite, headingBlack }) => {
     );
 };
 
-export default ReferSliderComponent;
+export default MakePaymentSliderComponent;
