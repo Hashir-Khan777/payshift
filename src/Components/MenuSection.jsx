@@ -48,7 +48,7 @@ const MenuSection = () => {
           "linear-gradient(90deg, rgba(125, 184, 255, 0.64) 0%, #FFF 100%)",
       }}
     >
-      <div className="pt-8 pb-6">
+      <div className="mx-2 pt-8 pb-6">
         <div className="container mx-auto">
           {/* MenuTabs Start */}
           <div
@@ -96,7 +96,7 @@ const MenuSection = () => {
       </div>
 
       {/* Render Tab Content */}
-      <div className="mb-20">
+      <div className="mx-1 mb-20">
         {activeTab === "Home" && <HomeTab />}
         {activeTab === "Services" && <ServicesTab />}
         {activeTab === "My Properties" && <Properties />}

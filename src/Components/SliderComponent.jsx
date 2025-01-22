@@ -31,7 +31,7 @@ const SliderComponent = ({ cards, headingWhite, headingBlack }) => {
 
   return (
     <div
-      className="container rounded-lg mx-auto mt-20 py-20 px-5 md:px-16 border-[4px] border-white font-lexend"
+      className="container rounded-lg mx-auto mt-20 py-20 px-1 md:px-16 border-[2px] border-white font-lexend"
       style={{
         background: "linear-gradient(0deg, #E8F3FF 15.92%, #92A8FF 100%)",
         boxShadow: "0px 4px 24px 0px rgba(0, 69, 197, 0.64)",
@@ -163,10 +163,13 @@ const SliderComponent = ({ cards, headingWhite, headingBlack }) => {
                 ) : null}
 
                 <button className="mx-auto animated-button flex items-center justify-center gap-7 px-5 py-2 bg-black text-white font-normal rounded-full hover:bg-gray-800">
-                  <span className="relative  text-base left-0 md:text-xl animated-text transition-all ease-linear duration-[400ms] font-lexend">
+                  <span className="relative text-base left-0 md:text-xl animated-text transition-all ease-linear duration-[400ms] font-lexend">
                     {card.btnText}
                   </span>
-                  <FaRegCircleRight className="relative right-0 transition-all ease-linear duration-[400ms] text-base md:text-xl animated-icon" />
+                  <img
+                    src="/svgIcons/slidercomponenticon.svg"
+                    className="relative right-0 transition-all ease-linear duration-[400ms] animated-icon w-[22px] h-[22px] md:w-[32px] md:h-[32px]"
+                  />
                 </button>
               </div>
             </SwiperSlide>
@@ -176,12 +179,15 @@ const SliderComponent = ({ cards, headingWhite, headingBlack }) => {
       <div className="flex justify-end items-end gap-4 container">
         <button className="text-3xl" aria-label="Scroll Left" ref={prevRef}>
           <img
-            className="w-[48px] h-[48px]"
+            className="w-[34px] h-[34px] md:w-[48px] md:h-[48px]"
             src="/svgIcons/slidericonleft.svg"
           />
         </button>
         <button className="text-3xl" aria-label="Scroll Right" ref={nextRef}>
-          <img className="w-[48px] h-[48px]" src="/svgIcons/slidericon.svg" />
+          <img
+            className="w-[34px] h-[34px] md:w-[48px] md:h-[48px]"
+            src="/svgIcons/slidericon.svg"
+          />
         </button>
       </div>
     </div>
