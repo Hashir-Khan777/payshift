@@ -8,18 +8,18 @@ module.exports = {
   ],
   theme: {
     extend: {
-      fontFamily:{
-        lexend: ["Lexend", "serif"],
-        // classVariable:["var(--clashVariable)"]
+      fontFamily: {
+        lexend: ["Lexend", "sans-serif"],
+        clashdisplay: ["--clashVariable", "sans-serif"],
       },
       boxShadow: {
-        'custom': '20px 20px 15px 10px red', // Custom shadow value
+        custom: "20px 20px 15px 10px red", // Custom shadow value
       },
       backgroundImage: {
-        'custom-gradient': 'linear-gradient(45deg, rgba(125, 184, 255, 0.14) 20%, #FFFFFF 100%)',
+        "custom-gradient":
+          "linear-gradient(45deg, rgba(125, 184, 255, 0.14) 20%, #FFFFFF 100%)",
       },
     },
   },
   plugins: [],
-}
-
+};

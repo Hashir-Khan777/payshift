@@ -1,6 +1,11 @@
 import React from "react";
-import { FaRegCircleRight } from "react-icons/fa6";
 import CardSection from "./CardSection";
+import localFont from "next/font/local";
+
+const cahdisplay = localFont({
+  src: "../fonts/ClashDisplay-Variable.ttf",
+  variable: "--clashvariable",
+});
 
 const Hero = () => {
   return (
@@ -27,7 +32,9 @@ const Hero = () => {
             }}
           >
             <div className="relative flex flex-col items-center justify-center gap-5 text-center h-full rounded-md z-20 ">
-              <h1 className="text-white text-[30px] md:text-[45px] -tracking-normal font-normal heading_font">
+              <h1
+                className={`text-white text-[30px] md:text-[45px] -tracking-normal font-medium font-cashdisplay`}
+              >
                 Pay <span className="text-black">Now</span>
                 <br />
                 <span className="text-black">With</span> PayShift

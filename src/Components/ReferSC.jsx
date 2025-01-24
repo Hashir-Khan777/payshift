@@ -1,15 +1,9 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import {
-  FaRegArrowAltCircleLeft,
-  FaRegArrowAltCircleRight,
-} from "react-icons/fa";
-import { FaRegCircleRight } from "react-icons/fa6";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import { ClientPageRoot } from "next/dist/client/components/client-page";
 
 const ReferSliderComponent = ({ cards, headingWhite, headingBlack }) => {
   const [activeIndex, setActiveIndex] = useState(1);
@@ -30,13 +24,13 @@ const ReferSliderComponent = ({ cards, headingWhite, headingBlack }) => {
 
   return (
     <div
-      className="container rounded-lg mx-auto mt-20 py-20 px-5 md:px-16 border-[4px] border-white font-lexend"
+      className="container rounded-lg mx-auto mt-20 py-20 px-5 md:px-16 border-[4px] border-white"
       style={{
         background: "linear-gradient(0deg, #E8F3FF 15.92%, #92A8FF 100%)",
         boxShadow: "0px 4px 24px 0px rgba(0, 69, 197, 0.64)",
       }}
     >
-      <h1 className="text-center text-2xl md:text-4xl mb-16 font-normal">
+      <h1 className="text-center text-2xl md:text-4xl mb-16 font-medium font-cashdisplay">
         <span className="text-white">{headingWhite}</span> {headingBlack}
       </h1>
 
@@ -67,7 +61,7 @@ const ReferSliderComponent = ({ cards, headingWhite, headingBlack }) => {
           {cards?.map((card, index) => (
             <SwiperSlide key={index}>
               <div
-                className={`shrink-0 w-full py-16 px-3 md:px-6 rounded-md  border-4 border-white${
+                className={`font-lexend shrink-0 w-full py-16 px-3 md:px-6 rounded-md  border-4 border-white${
                   index === activeIndex
                     ? "bg-gradient-to-b from-white to-[#c7e1ff] shadow-lg my-3"
                     : "bg-white/50 scale-90 opacity-40"
@@ -107,7 +101,10 @@ const ReferSliderComponent = ({ cards, headingWhite, headingBlack }) => {
                   <span className="relative  text-base left-0 md:text-xl animated-text transition-all ease-linear duration-[400ms] font-lexend">
                     {card.btnText}
                   </span>
-                  <FaRegCircleRight className="relative right-0 transition-all ease-linear duration-[400ms] text-base md:text-xl animated-icon" />
+                  <img
+                    src="/svgIcons/slidercomponenticon.svg"
+                    className="relative right-0 transition-all ease-linear duration-[400ms] animated-icon w-[22px] h-[22px] md:w-[32px] md:h-[32px]"
+                  />
                 </button>
               </div>
             </SwiperSlide>
@@ -116,11 +113,17 @@ const ReferSliderComponent = ({ cards, headingWhite, headingBlack }) => {
       </div>
 
       <div className="flex justify-end items-end gap-4 container">
-        <button className="text-3xl " aria-label="Scroll Left" ref={prevRef}>
-          <FaRegArrowAltCircleLeft />
+        <button className="text-3xl" aria-label="Scroll Left" ref={prevRef}>
+          <img
+            className="w-[34px] h-[34px] md:w-[48px] md:h-[48px]"
+            src="/svgIcons/slidericonleft.svg"
+          />
         </button>
         <button className="text-3xl" aria-label="Scroll Right" ref={nextRef}>
-          <FaRegArrowAltCircleRight />
+          <img
+            className="w-[34px] h-[34px] md:w-[48px] md:h-[48px]"
+            src="/svgIcons/slidericon.svg"
+          />
         </button>
       </div>
     </div>
