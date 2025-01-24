@@ -8,16 +8,17 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 const MakePaymentSliderComponent = ({ cards, headingWhite, headingBlack }) => {
+  // const router = useRouter();
   const [activeIndex, setActiveIndex] = useState(1);
 
   const prevRef = useRef(null);
   const nextRef = useRef(null);
 
-  const router = useRouter();
-  const handleButtonClick=()=>{
-    console.log("Button clicked");
-      router.push('./my-request')
-  }
+  
+  // const handleButtonClick=()=>{
+  //   console.log("Button clicked");
+  //     router.push('./my-request')
+  // }
 
   useEffect(() => {
     if (window) {
@@ -164,7 +165,7 @@ const MakePaymentSliderComponent = ({ cards, headingWhite, headingBlack }) => {
 
                 <p className="text-base my-0">{card.info}</p>
 
-                <button  onClick={handleButtonClick} className="my-5 mx-auto animated-button flex items-center justify-center gap-7 px-5 py-2 bg-black text-white font-normal rounded-full hover:bg-gray-800">
+                <button className="my-5 mx-auto animated-button flex items-center justify-center gap-7 px-5 py-2 bg-black text-white font-normal rounded-full hover:bg-gray-800">
                   <span className="relative  text-base left-0 md:text-xl animated-text transition-all ease-linear duration-[400ms] font-lexend">
                     {card.btnText}
                   </span>
