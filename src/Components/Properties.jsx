@@ -8,12 +8,14 @@ const Properties = () => {
             title: "Request No: 1234",
             info: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis quia.",
             btnText: "Check",
+            link:"./my-request",
             active: false,
         },
         {
             title: "Request Closed",
             info: "Your request is closed for Owner and Tenant Registration is closed.",
             btnText: "Check",
+            link:"./my-request",
             active: true,
         }
         ,
@@ -21,6 +23,7 @@ const Properties = () => {
             title: "Request Closed",
             info: "Your request is closed for Owner and Tenant Registration is closed.",
             btnText: "Check",
+            link:"./my-request",
             active: false,
         }
         ,
