@@ -27,8 +27,8 @@ const MyRequestSliderComponent = ({ cards, headingWhite, headingBlack, tablehead
   );
 
   return (
-    <div className="w-[100%] flex flex-col justify-center gap-10 items-center mx-auto py-32 overflow-hidden">
-      <h1 className="text-center text-[28px] md:text-[48px] mb-16 font-medium font-cashdisplay">
+    <div className="w-[100%] flex flex-col justify-center gap-10 items-center mx-auto md:pt-32 pt-14 pb-32 overflow-hidden">
+      <h1 className="text-center text-[28px] md:text-[48px] md:mb-16 mb:8 font-medium font-cashdisplay">
         <span className="text-white">{headingWhite}</span> {headingBlack}
       </h1>
 
@@ -59,7 +59,7 @@ const MyRequestSliderComponent = ({ cards, headingWhite, headingBlack, tablehead
           <FaArrowDown className="md:text-[24px] text-[18px]" />
         </div>
 
-        <div className="h-[40px] md:py-8 py-6 bg-black text-white lg:w-[80%] sm:w-[50%] md:w-[50%] mx-auto rounded-full hover:bg-gray-800 md:px-10 px-5 flex items-center lg:my-0 my-8">
+        <div className="h-[40px] md:py-8 py-6 bg-black text-white lg:w-[80%] sm:w-[50%] md:w-[50%] mx-auto rounded-full hover:bg-gray-800 md:px-10 px-5 flex items-center lg:my-0 md:my-8 mt-5">
                 <button className="animated-button flex items-center justify-center gap-7 py-0 my-0 w-full font-normal  md:px-0 px-10">
                   <span className="relative text-base left-0 pl-3 md:pl-6 pr-2 md:pr-4 md:text-[32px] text-[16px] animated-text transition-all ease-linear duration-[400ms] font-lexend">
                     Search
@@ -73,7 +73,7 @@ const MyRequestSliderComponent = ({ cards, headingWhite, headingBlack, tablehead
       </div>
 
       {/* Table */}
-      <div className="w-[100%] overflow-x-auto mt-10 mx-0 shadow-lg">
+      <div className="w-[100%] overflow-x-auto md:mt-10 mt-5 mx-0 shadow-lg">
         <table className="table-auto w-full text-left">
           <thead>
             <tr className="">
