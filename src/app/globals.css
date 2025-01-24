@@ -1,8 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap");
-@font-face {
-  font-family: cashdisplay;
-  src: url("../fonts/ClashDisplay-Variable.ttf");
-}
 
 @tailwind base;
 @tailwind components;
@@ -10,10 +6,6 @@
 
 .scroll::-webkit-scrollbar {
   display: none;
-}
-
-.heading_font {
-  font-family: cashdisplay !important;
 }
 
 .animated-button:hover > .animated-icon {

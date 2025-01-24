@@ -31,13 +31,13 @@ const SliderComponent = ({ cards, headingWhite, headingBlack }) => {
 
   return (
     <div
-      className="container rounded-lg mx-auto mt-20 py-20 px-1 md:px-16 border-[2px] border-white font-lexend"
+      className="container rounded-lg mx-auto mt-20 py-20 px-1 md:px-16 border-[2px] border-white"
       style={{
         background: "linear-gradient(0deg, #E8F3FF 15.92%, #92A8FF 100%)",
         boxShadow: "0px 4px 24px 0px rgba(0, 69, 197, 0.64)",
       }}
     >
-      <h1 className="text-center text-2xl md:text-4xl mb-16 font-normal">
+      <h1 className="text-center text-2xl md:text-4xl mb-16 font-medium font-cashdisplay">
         <span className="text-white">{headingWhite}</span> {headingBlack}
       </h1>
       <div className="flex items-center justify-center mb-4 overflow-hidden">
@@ -67,7 +67,7 @@ const SliderComponent = ({ cards, headingWhite, headingBlack }) => {
           {cards?.map((card, index) => (
             <SwiperSlide key={index}>
               <div
-                className={`shrink-0 w-full py-16 px-3 md:px-6 rounded-md  border-4 border-white${
+                className={`font-lexend shrink-0 w-full py-16 px-3 md:px-6 rounded-md  border-4 border-white${
                   index === activeIndex
                     ? "bg-gradient-to-b from-white to-[#c7e1ff] shadow-lg my-3"
                     : "bg-white/50 scale-90 opacity-40"

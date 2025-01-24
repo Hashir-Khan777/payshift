@@ -13,7 +13,7 @@ const Footer = () => {
         Thanks For Using PayShift
       </p>
       <div className="flex flex-wrap gap-10 justify-center items-center mb-20">
-        <div className="w-full md:w-[400px] bg-white/10 rounded-[4px] py-[36px] px-[24px] shadow-md shrink-0">
+        <div className="w-full md:w-[438px] bg-white/10 rounded-[4px] py-[36px] px-[24px] shadow-md shrink-0 border-white/20 border-[4px]">
           <p className="text-2xl font-medium text-white mb-16">
             Lets Do This Together
           </p>
@@ -21,10 +21,13 @@ const Footer = () => {
             <p className="uppercase text-white text-[24px] md:text-[40px] font-semibold">
               Contact Us
             </p>
-            <FaRegCircleRight className="text-[40px] text-white" />
+            <img
+              src="/svgIcons/footericon.svg"
+              className="text-[40px] text-white"
+            />
           </div>
         </div>
-        <div className="w-full md:w-[400px] bg-white/10 rounded-[4px] py-[36px] px-[24px] shadow-md shrink-0">
+        <div className="w-full md:w-[438px] bg-white/10 rounded-[4px] py-[36px] px-[24px] shadow-md shrink-0 border-white/20 border-[4px]">
           <p className="text-2xl font-medium text-white mb-16">
             Check Latest Insights
           </p>
@@ -32,7 +35,10 @@ const Footer = () => {
             <p className="uppercase text-white text-[24px] md:text-[40px] font-semibold">
               Media Centre
             </p>
-            <FaRegCircleRight className="text-[40px] text-white" />
+            <img
+              src="/svgIcons/footericon.svg"
+              className="text-[40px] text-white"
+            />
           </div>
         </div>
       </div>
