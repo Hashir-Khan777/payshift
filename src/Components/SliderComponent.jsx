@@ -162,15 +162,17 @@ const SliderComponent = ({ cards, headingWhite, headingBlack }) => {
                   </p>
                 ) : null}
 
-                <button className="mx-auto animated-button flex items-center justify-center gap-7 px-5 py-2 bg-black text-white font-normal rounded-full hover:bg-gray-800">
-                  <span className="relative text-base left-0 md:text-xl animated-text transition-all ease-linear duration-[400ms] font-lexend">
-                    {card.btnText}
-                  </span>
-                  <img
-                    src="/svgIcons/slidercomponenticon.svg"
-                    className="relative right-0 transition-all ease-linear duration-[400ms] animated-icon w-[22px] h-[22px] md:w-[32px] md:h-[32px]"
-                  />
-                </button>
+                <Link href={card.link || "#"}>
+                  <button className="mx-auto animated-button flex items-center justify-center gap-7 px-5 py-2 bg-black text-white font-normal rounded-full hover:bg-gray-800">
+                    <span className="relative text-base left-0 md:text-xl animated-text transition-all ease-linear duration-[400ms] font-lexend">
+                      {card.btnText}
+                    </span>
+                    <img
+                      src="/svgIcons/slidercomponenticon.svg"
+                      className="relative right-0 transition-all ease-linear duration-[400ms] animated-icon w-[22px] h-[22px] md:w-[32px] md:h-[32px]"
+                    />
+                  </button>
+                </Link>
               </div>
             </SwiperSlide>
           ))}

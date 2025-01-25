@@ -215,7 +215,7 @@ export default function Home() {
                 background: "linear-gradient(90deg, #aed2ff 30%, #ffffff)",
             }} >
                 <Navbar />
-                <MyReportSliderComponent cards={myRequest} headingWhite="My" headingBlack="Requests" tablehead={tableHead} />
+                <MyReportSliderComponent cards={myRequest} headingWhite="My" headingBlack="Reports" tablehead={tableHead} />
                 <Footer />
             </section>
 
