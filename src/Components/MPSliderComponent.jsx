@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/router";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
+import Link from "next/link";
 import "swiper/css";
 import "swiper/css/navigation";
 
@@ -14,7 +15,7 @@ const MakePaymentSliderComponent = ({ cards, headingWhite, headingBlack }) => {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
 
-  
+
   // const handleButtonClick=()=>{
   //   console.log("Button clicked");
   //     router.push('./my-request')
@@ -93,11 +94,10 @@ const MakePaymentSliderComponent = ({ cards, headingWhite, headingBlack }) => {
           {cards?.map((card, index) => (
             <SwiperSlide key={index}>
               <div
-                className={`font-lexend shrink-0 w-full py-16 px-3 md:px-6 rounded-md  border-4 border-white${
-                  index === activeIndex
+                className={`font-lexend shrink-0 w-full py-16 px-3 md:px-6 rounded-md  border-4 border-white${index === activeIndex
                     ? "bg-gradient-to-b from-white to-[#c7e1ff] shadow-lg my-3"
                     : "bg-white/50 scale-90 opacity-40"
-                } transition-transform duration-300`}
+                  } transition-transform duration-300`}
                 style={{
                   background:
                     "linear-gradient(180deg, #E8F3FF 15.92%, #92A8FF 100%)",
@@ -132,11 +132,10 @@ const MakePaymentSliderComponent = ({ cards, headingWhite, headingBlack }) => {
 
                   {card.payment || card.appointment ? (
                     <div
-                      className={`flex gap-3 text-xl items-center justify-center w-full ${
-                        card.alertType === "success"
+                      className={`flex gap-3 text-xl items-center justify-center w-full ${card.alertType === "success"
                           ? "text-[#17A900]"
                           : "text-[#F93434]"
-                      } font-semibold mb-9`}
+                        } font-semibold mb-9`}
                     >
                       {card.alertType === "danger" ? (
                         <svg
@@ -165,15 +164,20 @@ const MakePaymentSliderComponent = ({ cards, headingWhite, headingBlack }) => {
 
                 <p className="text-base my-0">{card.info}</p>
 
-                <button className="my-5 mx-auto animated-button flex items-center justify-center gap-7 px-5 py-2 bg-black text-white font-normal rounded-full hover:bg-gray-800">
-                  <span className="relative  text-base left-0 md:text-xl animated-text transition-all ease-linear duration-[400ms] font-lexend">
-                    {card.btnText}
-                  </span>
-                  <img
-                    src="/svgIcons/slidercomponenticon.svg"
-                    className="relative right-0 transition-all ease-linear duration-[400ms] animated-icon w-[22px] h-[22px] md:w-[32px] md:h-[32px]"
-                  />
-                </button>
+
+                <Link href='/my-request'>
+                  <button className="my-5 mx-auto animated-button flex items-center justify-center gap-7 px-5 py-2 bg-black text-white font-normal rounded-full hover:bg-gray-800">
+                    <span className="relative  text-base left-0 md:text-xl animated-text transition-all ease-linear duration-[400ms] font-lexend">
+                      {card.btnText}
+                    </span>
+                    <img
+                      src="/svgIcons/slidercomponenticon.svg"
+                      className="relative right-0 transition-all ease-linear duration-[400ms] animated-icon w-[22px] h-[22px] md:w-[32px] md:h-[32px]"
+                    />
+                  </button>
+
+                </Link>
+
               </div>
             </SwiperSlide>
           ))}
