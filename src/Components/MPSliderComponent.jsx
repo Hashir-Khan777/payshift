@@ -1,16 +1,23 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/router";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 
 const MakePaymentSliderComponent = ({ cards, headingWhite, headingBlack }) => {
+  // const router = useRouter();
   const [activeIndex, setActiveIndex] = useState(1);
 
   const prevRef = useRef(null);
   const nextRef = useRef(null);
+
+  // const handleButtonClick=()=>{
+  //   console.log("Button clicked");
+  //     router.push('./my-request')
+  // }
 
   useEffect(() => {
     if (window) {
