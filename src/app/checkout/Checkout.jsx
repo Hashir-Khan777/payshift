@@ -150,7 +150,7 @@ const CheckOutComponent = ({
               <button
                 type="button"
                 onClick={() => setShowCvv((prev) => !prev)} // Toggle state
-                className="text-gray-500 px-2 transition-colors duration-200"
+                className="text-black px-2 transition-colors duration-200"
               >
                 {showCvv ? <BsEyeSlash size={20} /> : <BsEye size={20} />}
               </button>

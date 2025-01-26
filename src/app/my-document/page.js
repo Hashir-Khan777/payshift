@@ -211,7 +211,7 @@ const myRequest = [
   },
 ];
 
-export default function Home() {
+export default function MyDocument() {
   return (
     <>
       <div className="w-full bg-[#ffffff] mt-20 py-5 flex flex-row justify-start items-center gap-3 px-4 md:ps-16 ps-6 cursor-pointer">
