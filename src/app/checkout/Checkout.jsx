@@ -4,8 +4,7 @@ import { BsBank2 } from "react-icons/bs";
 import { FaCcApplePay } from "react-icons/fa";
 import { GrPaypal } from "react-icons/gr";
 import { AiOutlineEyeInvisible } from "react-icons/ai";
-import { BsEye, BsEyeSlash } from "react-icons/bs";
-import { useState } from "react";
+
 
 const CheckOutComponent = ({
   cards,
