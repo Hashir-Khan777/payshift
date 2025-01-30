@@ -4,8 +4,10 @@ import { BsBank2 } from "react-icons/bs";
 import { FaCcApplePay } from "react-icons/fa";
 import { GrPaypal } from "react-icons/gr";
 import { AiOutlineEyeInvisible } from "react-icons/ai";
-import { BsEye, BsEyeSlash } from "react-icons/bs";
 import { useState } from "react";
+import { BsEye } from 'react-icons/bs';
+
+
 
 const CheckOutComponent = ({
   cards,
@@ -141,7 +143,7 @@ const CheckOutComponent = ({
             <label className="text-[14px]/[17.5px] font-[400] text-[#000000] font-lexend">
               Valid Until
             </label>
-            <div className="flex flex-row justify-center items-center gap-1 items-center  px-5 py-2  border bg-white shadow-xl">
+            <div className="flex flex-row justify-center  gap-1 items-center  px-5 py-2  border bg-white shadow-xl">
               <input
                 type="text"
                 placeholder="MM/YY"
