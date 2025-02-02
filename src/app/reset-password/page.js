@@ -16,14 +16,14 @@ const Page = () => {
     const [back, setBack] = useState('')
 
     function changeComponent() {
-        if (replaceComponet >= 1 && replaceComponet <= 3) {
-            setReplaceComponent((prev)=>prev+1)
+        if (replaceComponet >= 1 && replaceComponet <= 2) {
+            setReplaceComponent((prev) => prev + 1)
         }
     }
 
     function goBack() {
 
-        if (replaceComponet > 1 && replaceComponet <= 2)
+        if (replaceComponet > 1 && replaceComponet <= 3)
             setBack(replaceComponet - 1)
     }
 
@@ -86,71 +86,71 @@ const Page = () => {
                 {/* ===== Form ===== */}
 
                 <div className='flex flex-col justify-center items-center my-5'>
-                {
-                    replaceComponet == 1 ? (
-                        <>
-                        <button onClick={changeComponent} className="animated-button flex items-center justify-center gap-7 px-5 py-2 bg-black text-white font-normal rounded-full hover:bg-gray-800 h-[37px] ">
-                        <span className="relative  text-base left-0 md:text-[20px]/[25px] animated-text transition-all ease-linear duration-[400ms] font-lexend">
-                            Continue
-                        </span>
-                        <img
-                            src="/svgIcons/slidercomponenticon.svg"
-                            className="relative right-0 transition-all ease-linear duration-[400ms] animated-icon w-[22px] h-[18px] md:w-[32px] md:h-[25px]"
-                        />
-                    </button>
+                    {
+                        replaceComponet == 1 ? (
+                            <>
+                                <button onClick={changeComponent} className="animated-button flex items-center justify-center gap-7 px-8 py-6 bg-black text-white font-normal rounded-full hover:bg-gray-800 h-[37px] ">
+                                    <span className="relative  text-base left-0 md:text-[20px]/[25px] animated-text transition-all ease-linear duration-[400ms] font-lexend">
+                                        Continue
+                                    </span>
+                                    <img
+                                        src="/svgIcons/slidercomponenticon.svg"
+                                        className="relative right-0 transition-all ease-linear duration-[400ms] animated-icon w-[22px] h-[18px] md:w-[32px] md:h-[25px]"
+                                    />
+                                </button>
 
-                    <p className="text-center text-gray-600 font-lexend text-[14px]/[17.5px] font-[300] tracking-[4%] flex flex-row gap-2 justify-center items-center py-5">
-                        <span>Don't have an account?</span>
+                                <p className="text-center text-gray-600 font-lexend text-[14px]/[17.5px] font-[300] tracking-[4%] flex flex-row gap-2 justify-center items-center py-5">
+                                    <span>Don't have an account?</span>
 
-                        <Link href="/sign-in" className="text-black font-medium text-[17px] underline">
-                            Sign Up
-                        </Link>
-                    </p>
+                                    <Link href="/sign-in" className="text-black font-medium text-[17px] underline">
+                                        Sign Up
+                                    </Link>
+                                </p>
 
-                        </>
-                    ):null
-                }
-                {
-                    replaceComponet == 2 ? (
-                        <>
-                        <button onClick={changeComponent} className="animated-button flex items-center justify-center gap-7 px-5 py-2 bg-black text-white font-normal rounded-full hover:bg-gray-800 h-[37px] ">
-                        <span className="relative  text-base left-0 md:text-[20px]/[25px] animated-text transition-all ease-linear duration-[400ms] font-lexend">
-                        Verify & Proceed
-                        </span>
-                        <img
-                            src="/svgIcons/slidercomponenticon.svg"
-                            className="relative right-0 transition-all ease-linear duration-[400ms] animated-icon w-[22px] h-[18px] md:w-[32px] md:h-[25px]"
-                        />
-                    </button>
+                            </>
+                        ) : null
+                    }
+                    {
+                        replaceComponet == 2 ? (
+                            <>
+                                <button onClick={changeComponent} className="animated-button flex items-center justify-center gap-7 px-8 py-6 bg-black text-white font-normal rounded-full hover:bg-gray-800 h-[37px] ">
+                                    <span className="relative  text-base left-0 md:text-[20px]/[25px] animated-text transition-all ease-linear duration-[400ms] font-lexend">
+                                        Verify & Proceed
+                                    </span>
+                                    <img
+                                        src="/svgIcons/slidercomponenticon.svg"
+                                        className="relative right-0 transition-all ease-linear duration-[400ms] animated-icon w-[22px] h-[18px] md:w-[32px] md:h-[25px]"
+                                    />
+                                </button>
 
-                        </>
-                    ):null
-                }
+                            </>
+                        ) : null
+                    }
 
-                {
-                    replaceComponet == 3 ? (
-                        <>
-                        <button onClick={changeComponent} className="animated-button flex items-center justify-center gap-7 px-5 py-2 bg-black text-white font-normal rounded-full hover:bg-gray-800 h-[37px] ">
-                        <span className="relative  text-base left-0 md:text-[20px]/[25px] animated-text transition-all ease-linear duration-[400ms] font-lexend">
-                        Reset Password
-                        </span>
-                        <img
-                            src="/svgIcons/slidercomponenticon.svg"
-                            className="relative right-0 transition-all ease-linear duration-[400ms] animated-icon w-[22px] h-[18px] md:w-[32px] md:h-[25px]"
-                        />
-                    </button>
+                    {
+                        replaceComponet == 3 ? (
+                            <>
+                                <button onClick={changeComponent} className="animated-button flex items-center justify-center gap-7 px-8 py-6 bg-black text-white font-normal rounded-full hover:bg-gray-800 h-[37px] ">
+                                    <span className="relative  text-base left-0 md:text-[20px]/[25px] animated-text transition-all ease-linear duration-[400ms] font-lexend">
+                                        Reset Password
+                                    </span>
+                                    <img
+                                        src="/svgIcons/slidercomponenticon.svg"
+                                        className="relative right-0 transition-all ease-linear duration-[400ms] animated-icon w-[22px] h-[18px] md:w-[32px] md:h-[25px]"
+                                    />
+                                </button>
 
-                    <p className="text-center text-gray-600 font-lexend md:text-[14px]/[17.5px] text-[12px]/[12..5px] font-[300] tracking-[4%] flex flex-row gap-2 justify-center items-center py-5">
-                        <span>Password was last changed on</span>
-                        <span className='text-black font-medium md:text-[16px] text-[14px]'>7/7/24 11:24AM</span>
-                    </p>
+                                <p className="text-center text-gray-600 font-lexend md:text-[14px]/[17.5px] text-[12px]/[12..5px] font-[300] tracking-[4%] flex flex-row gap-2 justify-center items-center py-5">
+                                    <span>Password was last changed on</span>
+                                    <span className='text-black font-medium md:text-[16px] text-[14px]'>7/7/24 11:24AM</span>
+                                </p>
 
-                        </>
-                    ):null
-                }
-                    
+                            </>
+                        ) : null
+                    }
 
-                    
+
+
 
                 </div>
 
