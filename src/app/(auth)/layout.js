@@ -1,6 +1,6 @@
 "use client";
 import React from 'react';
-import SignComponent2 from '@/components/SignComponent2';
+import SignComponent2 from '../../Components/SignComponent2';
 
 export default function AuthLayout({ children }) {
   return (
