@@ -58,11 +58,11 @@ const SignUp = () => {
 
                 </div>
 
-                <div>
-                    <input type="checkbox" id="rememberMe" />
-                    <label htmlFor="rememberMe" className='font-lexend text-[14px]/[17.5px] font-[300] tracking-[4%]'>
-                        <span className='ps-2'>I agree to the</span>
-                        <Link href='/terms-and-conditions' className='text-black font-medium text-[15px] ps-2 underline font-lexend'>Terms & Conditions</Link>
+                <div className='flex flex-row gap-2 justify-start items-center'>
+                    <input type="checkbox" id="agreeTrems" className='w-[17px] h-[17px]' />
+                    <label htmlFor="agreeTrems" className='font-lexend text-[14px]/[17.5px] tracking-[4%] flex flex-row gap-2 justify-start items-center'>
+                        <span className='font-[300]'>I agree to the</span>
+                        <Link href='/terms-and-conditions' className='font-[500] underline'>Terms & Conditions</Link>
                     </label>
 
                 </div>
@@ -70,6 +70,29 @@ const SignUp = () => {
 
             </div>
             {/* ======= FORM ======== */}
+
+            {/* ========= Buttons ========= */}
+            <button className="animated-button flex items-center justify-center gap-7 px-7 py-6 bg-black text-white font-normal rounded-full hover:bg-gray-800 h-[37px] ">
+                <span className="relative  text-base left-0 md:text-[20px]/[25px] animated-text transition-all ease-linear duration-[400ms] font-lexend">
+                    Sign Up
+                </span>
+                <img
+                    src="/svgIcons/slidercomponenticon.svg"
+                    className="relative right-0 transition-all ease-linear duration-[400ms] animated-icon w-[22px] h-[18px] md:w-[32px] md:h-[25px]"
+                />
+            </button>
+
+            <div className="text-center text-gray-600 font-lexend text-[14px]/[17.5px] font-[300] tracking-[4%]">
+
+                <div className='flex flex-row items-center gap-2'>
+                    <span className="text-black font-[300] text-[14px]/[17.5px] underline font-lexend">Already have an account? </span>
+                    <Link href="/sign-in" className="text-black font-[500] text-[14px]/[17.5px] underline font-lexend">
+                        Sign In
+                    </Link>
+                </div>
+
+            </div>
+            {/* ========= Buttons ========= */}
         </>
     )
 }

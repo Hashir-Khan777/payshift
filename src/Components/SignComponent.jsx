@@ -6,6 +6,7 @@ import { useState } from 'react'
 import { BsEye, BsEyeSlash } from "react-icons/bs";
 import SignUp from './SignUp'
 import SignIn from './SignIn'
+import SignHeader from './SignHeader'
 
 const SignComponent = () => {
 
@@ -14,8 +15,8 @@ const SignComponent = () => {
 
     return (
         <section className='w-full overflow-x-hidden'>
-            {/* ============== Header =============== */}
-            <div className='w-full relative'>
+            {/* ============== Header =============== */ }
+             <div className='w-full relative'>
                 {/* Video Background */}
                 <div className='absolute top-0 left-0 w-full md:h-[316px] h-[140px] overflow-hidden z-0 opacity-[0.4]'>
                     <video
@@ -33,6 +34,7 @@ const SignComponent = () => {
                     <img src="./svgIcons/payshiftLogo.svg" alt="PayShift Logo" className='md:w-[300px] md:h-[99.4px] w-[147.25px] h-[46.5px]' />
                 </div>
             </div>
+
 
             {/* ============== Header =============== */}
 
@@ -73,6 +75,7 @@ const SignComponent = () => {
                         </div>
                     </div>
                 </div>
+                
                 {/* ------ Sign UP/IN  with FB or Google ------*/}
 
                 <div className="w-full flex items-center justify-center gap-5 my-10">
@@ -93,7 +96,7 @@ const SignComponent = () => {
 
                 {/* ===== Form ===== */}
 
-                <button className="animated-button flex items-center justify-center gap-7 px-5 py-2 bg-black text-white font-normal rounded-full hover:bg-gray-800 h-[37px] ">
+                <button className="animated-button flex items-center justify-center gap-7 px-7 py-6 bg-black text-white font-normal rounded-full hover:bg-gray-800 h-[37px] ">
                     <span className="relative  text-base left-0 md:text-[20px]/[25px] animated-text transition-all ease-linear duration-[400ms] font-lexend">
                         {pathname == '/sign-up' ? 'Sign Up' : 'Sign In'}
                     </span>
@@ -103,23 +106,27 @@ const SignComponent = () => {
                     />
                 </button>
 
-                <p className="text-center text-gray-600 font-lexend text-[14px]/[17.5px] font-[300] tracking-[4%]">
+                <div className="text-center text-gray-600 font-lexend text-[14px]/[17.5px] font-[300] tracking-[4%]">
                     {pathname === '/sign-in' ? (
                         <>
-                            <span>Don’t have an account? </span>
-                            <Link href="/sign-up" className="text-black font-medium text-[17px] underline">
+                        <div className='flex flex-row items-center gap-2'>
+                            <span  className="text-black font-[300] text-[14px]/[17.5px] underline font-lexend">Don’t have an account? </span>
+                            <Link href="/sign-up" className="text-black font-[500] text-[14px]/[17.5px] underline font-lexend">
                                 Sign Up
                             </Link>
+                            </div>
                         </>
                     ) : pathname === '/sign-up' ? (
                         <>
-                            <span>Already have an account? </span>
-                            <Link href="/sign-in" className="text-black font-medium text-[17px] underline">
+                        <div className='flex flex-row items-center gap-2'>
+                            <span  className="text-black font-[300] text-[14px]/[17.5px] underline font-lexend">Already have an account? </span>
+                            <Link href="/sign-in" className="text-black font-[500] text-[14px]/[17.5px] underline font-lexend">
                                 Sign In
                             </Link>
+                            </div>
                         </>
                     ) : null}
-                </p>
+                </div>
 
 
 

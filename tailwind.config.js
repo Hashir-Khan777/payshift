@@ -8,6 +8,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        'sm2': '600px', // Custom screen at 600px
+      },
       fontFamily: {
         lexend: ["Lexend", "sans-serif"],
         clashdisplay: ["--clashVariable", "sans-serif"],
