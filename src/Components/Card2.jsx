@@ -7,15 +7,15 @@ import { GrPaypal } from "react-icons/gr";
 
 const paymentMethods = [
   { id: 1, name: "Card", icon: "/svgIcons/card.svg", isImg: true },
-  { id: 2, name: "Bank", icon: BsBank2, isImg: false },
-  { id: 3, name: "ApplePay", icon: FaCcApplePay, isImg: false },
-  { id: 4, name: "PayPal", icon: GrPaypal, isImg: false },
+  { id: 2, name: "Bank", icon:"/svgIcons/bank2.svg", isImg: true },
+  { id: 3, name: "ApplePay", icon:"/svgIcons/applePay.svg", isImg: true },
+  { id: 4, name: "PayPal", icon: "/svgIcons/payPal.svg", isImg: true },
 ];
 
 function Card2({ headingBlack, headingWhite }) {
   return (
     <div
-      className="w-[90%] bg-blue-300 mx-auto flex flex-col my-10 md:py-10 py-5 md:gap-14 gap-5 justify-between md:items-center items-start px-5 border-2 border-white rounded-md"
+      className="w-[90%] bg-blue-300 mx-auto flex flex-col md:py-10 py-5 md:gap-14 gap-5 justify-between md:items-center items-start px-5 border-2 border-white rounded-md"
       style={{
         background: "linear-gradient(0deg, #FFFFFF33 20%, #FFFFFF)",
         boxShadow: "2px 2px 5px 5px rgba(0,0,0,0.1)",
@@ -32,8 +32,8 @@ function Card2({ headingBlack, headingWhite }) {
   {paymentMethods.map((method) => (
     <div
       key={method.id}
-      className="rounded-lg shadow-lg w-[60px] h-[60px] sm:w-[90px] sm:h-[90px] md:w-[200px] md:h-[200px] flex flex-col justify-center items-center gap-1 p-2"
-      style={{ background: "linear-gradient(0deg, #aed2ff 10%, #ffffff 90%)" }}
+      className="rounded-lg shadow-lg w-[60px] h-[60px] sm:w-[90px] sm:h-[90px] md:w-[200px] md:h-[200px] flex flex-col justify-center items-center md:gap-[20px] gap-[8px] p-2"
+      style={{ background: "linear-gradient(180deg,#ffffff 70%, #aed2ff )" }}
     >
       {method.isImg ? (
         <img className="w-6 md:w-[81px] md:h-[83px] sm:w-[24px] sm:h-[24px]" src={method.icon} alt={method.name} />

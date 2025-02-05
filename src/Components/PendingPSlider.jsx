@@ -29,7 +29,7 @@ const PendingPSliderComponent = ({ cards, headingWhite, headingBlack }) => {
 
     return (
         <div
-            className="container my-10 rounded-lg mx-auto  py-20 px-5 md:px-16 border-[2px] border-white"
+            className="container my-10 rounded-sm mx-auto  py-20 px-5 md:px-16 border-[2px] border-white"
             style={{
                 background: "linear-gradient(0deg, #E8F3FF 15.92%, #92A8FF 100%)",
                 boxShadow: "0px 4px 24px 0px rgba(0, 69, 197, 0.64)",
@@ -64,79 +64,75 @@ const PendingPSliderComponent = ({ cards, headingWhite, headingBlack }) => {
                     {cards?.map((card, index) => (
                         <SwiperSlide key={index}>
                             <div
-                                className={`font-lexend shrink-0 w-full py-16 px-3 md:px-6 rounded-md  border-4 border-white${index === activeIndex
-                                        ? "bg-gradient-to-b from-white to-[#c7e1ff] shadow-lg my-3"
-                                        : "bg-white/50 scale-90 opacity-40"
+                                className={`font-lexend shrink-0 w-full md:py-[64px] py-[36px] md:px-[24px] px-[20px] flex flex-col md:gap-[48px] gap-[24px] rounded-md  border-4 border-white${index === activeIndex
+                                    ? "bg-gradient-to-b from-white to-[#c7e1ff] shadow-lg my-3"
+                                    : "bg-white/50 scale-90 opacity-40"
                                     } transition-transform duration-300`}
                                 style={{
                                     background:
-                                        "linear-gradient(180deg, #E8F3FF 15.92%, #92A8FF 100%)",
+                                        "linear-gradient(180deg, #E8F3FF  60%, #C2DEFF)",
                                     boxShadow: "0px 0px 20px rgba(146, 168, 255, 1)",
                                 }}
                             >
-                                {/* Propert Id and heading start */}
-                                <div className="flex flex-col gap-3">
-                                    {card.propertyId ? (
-                                        <div className="flex items-center gap-2 text-[10px] md:text-sm font-bold bg-[#D1BCFF] rounded-full px-5 py-2 mt-3 w-[60%]">
-                                            <div className="w-[12px] h-[12px] bg-[#A786F0] rounded-full"></div>
-                                            <div>
-                                                <span>Property ID:</span>
-                                                <span className="font-bold">{card.propertyId}</span>
+
+                                {/* ========= Content  ============ */}
+                                <div className="flex flex-col md:gap-[24px] gap-[10px]">
+
+                                    {/* Propert Id and heading start */}
+                                    <div className="flex flex-col gap-[10px]">
+                                        {card.propertyId ? (
+                                            <div className="flex items-center gap-2 text-[10px] md:text-sm font-bold bg-[#D1BCFF] rounded-full px-5 py-2 mt-3 w-[60%]">
+                                                <div className="w-[12px] h-[12px] bg-[#A786F0] rounded-full"></div>
+                                                <div>
+                                                    <span>Property ID:</span>
+                                                    <span className="font-bold">{card.propertyId}</span>
+                                                </div>
                                             </div>
-                                        </div>
-                                    ) : null}
+                                        ) : null}
 
-                                    <h1 className="text-base md:text-xl font-semibold">
-                                        {card.title}
-                                    </h1>
-                                </div>
+                                        <h1 className="text-base md:text-xl font-semibold">
+                                            {card.title}
+                                        </h1>
+                                    </div>
 
-                                {/* Propert Id and heading end */}
+                                    {/* Propert Id and heading end */}
 
-                                <div className="flex flex-col gap-2 mt-2">
-                                    {card.payment ? (
-                                        <p className="font-bold text-xl md:text-3xl text-center">
-                                            AED {card.amount}
-                                        </p>
-                                    ) : null}
+                                    <div className="flex flex-col md:gap-[16px]">
+                                    
+                                        {card.payment ? (
+                                            <p className="font-bold text-xl md:text-3xl text-center">
+                                                AED {card.amount}
+                                            </p>
+                                        ) : null}
 
-                                    {card.payment || card.appointment ? (
-                                        <div
-                                            className={`flex gap-3 text-xl items-center justify-center w-full 
+                                        {card.payment || card.appointment ? (
+                                            <div
+                                                className={`flex flex-row md:gap-[12px]  gap-[8px] text-xl items-center justify-center w-full 
                                             ${card.alertType === "success" ? "text-[#17A900]" : ""} 
                                             ${card.alertType === "danger" ? "text-[#F93434]" : ""}  
                                             ${card.alertType === "safe" ? "text-gray-500" : ""}  
-                                                font-semibold mb-9`}
-                                        >
-                                            {card.alertType === "danger" ? (
-                                                <svg
-                                                    viewBox="0 0 27 25"
-                                                    fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    className="w-[25px] h-[25px] md:w-[27px] md:h-[22px]"
-                                                >
-                                                    <path
-                                                        d="M11.0809 1.92012C12.1561 0.026628 14.844 0.0266264 15.9192 1.92012L26.3216 20.2396C27.3968 22.1331 26.0528 24.5 23.9025 24.5H3.09763C0.94726 24.5 -0.396723 22.1331 0.678463 20.2396L11.0809 1.92012Z"
-                                                        fill="#F93434"
-                                                    />
-                                                    <path
-                                                        d="M15.0296 16.7564H11.9702C11.9702 15.088 11.5447 10.5915 11.5447 9.02483V7.60059H15.4551V9.02483C15.4551 10.5915 15.0296 15.1084 15.0296 16.7564ZM15.2323 21.2326H11.7675V17.9162H15.2323V21.2326Z"
-                                                        fill="white"
-                                                    />
-                                                </svg>
-                                            ) : null}
+                                                font-semibold`}
+                                            >
+                                                {card.alertType === "danger" ? (
+                                                    <img src="/svgIcons/err.svg" alt="" className="md:w-[24px] md:h-[24px] w-[11px] h-[10px]" />
+                                                ) : null}
 
-                                            <h1 className="text-[18px] md:text-[22px] font-bold">
-                                                {card.alert}
-                                            </h1>
-                                        </div>
-                                    ) : null}
+                                                <h1 className="md:text-[22px] text-[12px]/[15px] font-bold">
+                                                    {card.alert}
+                                                </h1>
+                                            </div>
+                                        ) : null}
+                                    </div>
+                                    
+
+                                    <p className="font-lexend md:text-[20px]/[25px] font-[300] text-[12px]/[15px] my-0 py-0">{card.info}</p>
+
                                 </div>
 
-                                <div className="text-base my-0">{card.info}</div>
+                                {/* ========= Content  ============ */}
 
-                                <button className="my-5 mx-auto animated-button flex items-center justify-center gap-7 px-5 py-2 bg-black text-white font-normal rounded-full hover:bg-gray-800">
-                                    <span className="relative  text-base left-0 md:text-xl animated-text transition-all ease-linear duration-[400ms] font-lexend">
+                                <button className="mx-auto animated-button flex items-center justify-center gap-7 px-5 py-2 bg-black text-white font-normal rounded-full hover:bg-gray-800">
+                                    <span className="relative text-base left-0 md:text-xl animated-text transition-all ease-linear duration-[400ms] font-lexend">
                                         {card.btnText}
                                     </span>
                                     <img

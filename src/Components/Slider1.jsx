@@ -14,7 +14,7 @@ const Slider1 = ({ cards, headingWhite, headingBlack, categories }) => {
 
   return (
     <div
-      className="w-[90%] container rounded-lg mx-auto mt-20 md:py-20 py-5 px-1 md:px-16 border-[2px] border-white "
+      className="w-[90%] container rounded-lg mx-auto md:py-20 py-5 px-1 md:px-16 border-[2px] border-white "
       style={{
         background:   "linear-gradient(180deg, #E8F3FF 15.92%, #bddcff 100%)",
         boxShadow: "0px 4px 24px 0px rgba(0, 69, 197, 0.64)",
