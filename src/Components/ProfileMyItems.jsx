@@ -31,7 +31,7 @@ const ProfileMyItems = ({ cards, headingWhite, headingBlack }) => {
 
     return (
         <div
-            className="w-[90%] container rounded-lg mx-auto mt-20 py-20  px-16 border-[2px] border-white"
+            className="w-[90%] rounded-lg mx-auto py-20 px-16 border-[2px] border-white"
             style={{
                 background: "linear-gradient(0deg, #E8F3FF 15.92%, #92A8FF 100%)",
                 boxShadow: "0px 4px 24px 0px rgba(0, 69, 197, 0.64)",
@@ -80,20 +80,21 @@ const ProfileMyItems = ({ cards, headingWhite, headingBlack }) => {
                             >
                                 {/* ---- Card Content---- */}
                                 <div className="w-full flex flex-row justify-between items-center gap-10">
-                                    <p className="font-lexend font-[600] text-[20px]/[25px] tracking-[4%] text-[#000000]">{card.category}</p>
-                                    <p className="font-lexend font-[600] text-[20px]/[25px] tracking-[4%] text-[#5EB43B]">{card.tag}</p>
+                                    <p className="font-lexend font-[600] lg:text-[20px]/[25px] text-[17px]/[20px] whitespace-nowrap tracking-[4%] text-[#000000]">{card.category}</p>
+                                    <p className="font-lexend font-[600] lg:text-[20px]/[25px] text-[17px]/[20px] whitespace-nowrap tracking-[4%] text-[#5EB43B]">{card.tag}</p>
                                 </div>
 
                                 <h1  className="font-lexend font-[600] text-[32px]/[40px] tracking-[4%] text-[#000000]">{card.projectName}</h1>
 
-                                <div className="flex flex-row justify-center items-center gap-10">
-                                    <p className="flex flex-row gap-2 justify-center items-center">
+                                <div className="flex flex-row w-full justify-between gap-5 items-center ">
+                                    <p className="w-[30%] flex flex-row gap-2 justify-start items-center">
                                         <img src="./svgIcons/location.svg" alt="Location Icon" className="w-[16px] h-[16px]" />
-                                        <span className="md:text-[20px]/[25px] text-[12px]/[15px] font-[300] font-lexend tracking-[4%]">Dubai</span>
+                                        <span className="lg:text-[18px]/[20px] md:text-[17px]/[15px] text-[18px]/[20px]  font-[300] font-lexend tracking-[4%]">Dubai</span>
                                     </p>
-                                    <ul className="flex flex-row justify-center items-center gap-10">
-                                        <li className="relative before:content-['•'] before:absolute before:-left-3 before:text-gray-500 md:text-[20px]/[25px] text-[12px]/[15px] font-[300] font-lexend tracking-[4%]">1400 SQFT</li>
-                                        <li className="relative before:content-['•'] before:absolute before:-left-3 before:text-gray-500 md:text-[20px]/[25px] text-[12px]/[15px] font-[300] font-lexend tracking-[4%]">2BHK, 2BR</li>
+
+                                    <ul className="lg:w-[70%] w-[60%] flex flex-row justify-between items-center gap-3">
+                                        <li className="relative before:content-['•'] before:absolute before:-left-3 before:text-gray-500 lg:text-[18px]/[20px] md:text-[17px]/[15px] text-[18px]/[20px]  font-[300] font-lexend tracking-[4%] whitespace-nowrap">1400 SQFT</li>
+                                        <li className="relative before:content-['•'] before:absolute before:-left-3 before:text-gray-500 lg:text-[18px]/[20px] md:text-[17px]/[15px] text-[18px]/[20px] font-[300] font-lexend tracking-[4%] whitespace-nowrap">2BHK, 2BR</li>
                                     </ul>
                                 </div>
 
