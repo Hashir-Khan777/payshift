@@ -5,18 +5,18 @@ function Card1({ cards, headingBlack, headingWhite }) { // Destructuring 'cards'
 
 
     return (
-        <div className="w-[90%] mx-auto flex flex-col my-10 md:py-10 py-5 md:gap-14 gap-5 justify-between md:items-center items-start px-5 border-2 border-white rounded-md"
+        <div className="w-[90%] mx-auto flex flex-col md:py-[80px] pt-[16px] pb-[24px] md:px-[64px] px-[16px] md:gap-14 gap-5 justify-between md:items-center items-start  border-2 border-white rounded-md"
             style={{
                 background: "linear-gradient(0deg, #FFFFFF33 20%, #FFFFFF)",
                 boxShadow: "2px 2px 5px 5px rgba(0,0,0,0.1)"
             }}
         >
 
-            <h1 className="text-center text-[14px]/[17.5px] md:text-4xl font-medium font-lexend  md:font-cashdisplay">
+            <h1 className="text-center text-[14px]/[17.5px] md:text-4xl font-medium font-cashdisplay">
                 <span className="text-white">{headingWhite}</span> {headingBlack}
             </h1>
 
-            <div className=" w-full flex flex-col justify-between items-center gap-4">
+            <div className=" w-full flex flex-col justify-between items-center md:gap-[40px] gap-[10px]">
                 {cards.map((card, index) => ( // Mapping over the array
                     <div key={index} className="md:h-[136px] h-[71px] md:px-10 px-5 w-full flex justify-between items-center gap-4 border-2 border-white rounded-md"
                         style={{
@@ -38,14 +38,14 @@ function Card1({ cards, headingBlack, headingWhite }) { // Destructuring 'cards'
                             ) : null}
                             {/* ---- Image ---- */}
 
-                            <p className="flex flex-col justify-start items-start gap-2">
+                            <p className="flex flex-col justify-start items-start md:gap-[20px] gap-[8px]">
                                 <span className="font-lexend font-[600] md:text-[32px]/[40px] text-[12px]/[15px] text-center tracking-[4%]">{card.name}</span>
 
                                 <span className="font-lexend font-[300] md:text-[16px]/[20px] text-[12px]/[15px] text-center tracking-[4%]">{card.info}</span>
                             </p>
                         </div>
 
-                        <FaArrowRight className="md:w-[27px] w-[15.28px] md:h-[26px] h-[15.22px]" />
+                        <img src="/svgIcons/arrowRight.svg" alt="Arrao" className="md:w-[31px] md:h-[31px] w-[16px] h-[16px]" />
                     </div>
 
                 ))}

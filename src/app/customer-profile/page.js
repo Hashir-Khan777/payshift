@@ -8,6 +8,7 @@ import Card1 from "@/Components/Card1";
 import LogOut from "@/Components/LogOut";
 import Card2 from "@/Components/Card2";
 import Card3 from "@/Components/Card3";
+import Footer from "@/Components/Footer";
 
 
 const url = "https://buffer.com/library/content/images/size/w1200/2023/10/free-images.jpg"
@@ -153,7 +154,7 @@ function Page() {
       {/* ===== Main Content container ====== */}
 
       <div
-        className="w-full h-auto md:py-20 py-10"
+        className="w-full h-auto md:py-[100px] py-[50px] flex flex-col md:gap-[80px] gap-[24px]"
         style={{
           background: "linear-gradient(45deg, #8ABEFF 20%, #ffffff)",
         }}
@@ -173,6 +174,7 @@ function Page() {
         {/* --------- My Items ------- */}
 
         <Card2 headingBlack="Payment Methods" />
+
         <Card3 headingBlack="Payment Management" />
 
         {/* ----Settings & Preferences ----*/}
@@ -190,6 +192,8 @@ function Page() {
 
 
       {/* ===== Main Content container ====== */}
+
+      <Footer />
     </section>
   );
 }
