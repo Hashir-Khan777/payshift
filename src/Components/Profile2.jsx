@@ -54,18 +54,18 @@ function Profile2() {
             </p>
           </div>
 
-          <div className="flex flex-row justify-between items-center w-full">
+          <div className="flex flex-row justify-between items-center w-full flex-wrap">
             <p className="font-lexend md:text-[20px]/[25px] text-[12px]/[15px] font-[600] tracking-[4%]">
               steverogers@shield.mcu.com
             </p>
 
-            <button className="animated-button flex items-center justify-center gap-3 md:gap-7 px-4 md:px-5 py-2 bg-black text-white font-normal rounded-full hover:bg-gray-800 h-[30px] md:h-[37px] w-[100px] md:w-auto">
+            <button className="animated-button flex items-center gap-3 md:gap-7 px-3 md:ps-10 md:pe-3 bg-black text-white font-normal rounded-full hover:bg-gray-800 h-[30px] md:h-[48px] w-fit md:w-[193px] mt-2 md:mt-0">
               <span className="relative left-0 text-[10px]/[12px] md:text-[20px]/[25px] animated-text transition-all ease-linear duration-[400ms] font-lexend whitespace-nowrap overflow-hidden">
                 Verify
               </span>
               <img
                 src="/svgIcons/slidercomponenticon.svg"
-                className="relative right-0 transition-all ease-linear duration-[400ms] animated-icon w-[16px] h-[16px] md:w-[22px] md:h-[22px]"
+                className="relative right-0 transition-all ease-linear duration-[400ms] animated-icon w-[16px] h-[16px] md:w-[32px] md:h-[32px]"
               />
             </button>
           </div>

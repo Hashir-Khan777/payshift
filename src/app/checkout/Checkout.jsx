@@ -1,13 +1,11 @@
 "use client";
 
-import { BsBank2 } from "react-icons/bs";
+import { BsBank2, BsEyeSlash } from "react-icons/bs";
 import { FaCcApplePay } from "react-icons/fa";
 import { GrPaypal } from "react-icons/gr";
 import { AiOutlineEyeInvisible } from "react-icons/ai";
 import { useState } from "react";
-import { BsEye } from 'react-icons/bs';
-
-
+import { BsEye } from "react-icons/bs";
 
 const CheckOutComponent = ({
   cards,
