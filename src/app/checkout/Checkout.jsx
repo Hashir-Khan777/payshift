@@ -1,13 +1,12 @@
 "use client";
 
-import { BsBank2 } from "react-icons/bs";
+import { BsBank2, BsEyeSlash } from "react-icons/bs";
 import { FaCcApplePay } from "react-icons/fa";
 import { GrPaypal } from "react-icons/gr";
 import { AiOutlineEyeInvisible } from "react-icons/ai";
 import { useState } from "react";
-import { BsEye } from 'react-icons/bs';
-
-
+import { BsEye } from "react-icons/bs";
+import CustomButton from "@/Components/Button";
 
 const CheckOutComponent = ({
   cards,
@@ -192,15 +191,9 @@ const CheckOutComponent = ({
 
       {/* Pagination */}
 
-      <button className="animated-button flex items-center justify-center gap-7 px-5 py-2 bg-black text-white font-normal rounded-full hover:bg-gray-800 h-[37px]">
-        <span className="relative  text-base left-0 md:text-[20px]/[25px] animated-text transition-all ease-linear duration-[400ms] font-lexend">
-          {btnText} {cards.amount}
-        </span>
-        <img
-          src="/svgIcons/slidercomponenticon.svg"
-          className="relative right-0 transition-all ease-linear duration-[400ms] animated-icon w-[22px] h-[18px] md:w-[32px] md:h-[25px]"
-        />
-      </button>
+      <CustomButton>
+        {btnText} {cards.amount}
+      </CustomButton>
 
       <p className="text-[12px]/[15px] font-[300] text-center font-lexend tracking-[4%] px-5">
         Our checkout is totally secure. Your personal information is securely

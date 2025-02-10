@@ -99,13 +99,6 @@ const ReferHistorySliderComponent = ({ cards, headingWhite, headingBlack }) => {
                 </div>
 
                 {/* ============= Card Content ============ */}
-
-                {/* <button className="mx-auto animated-button flex items-center justify-center space-x-2 mt-4 px-5 py-2 bg-black text-white font-medium rounded-full hover:bg-gray-800">
-                                    <span className="relative left-0 pl-6 pr-4 text-base md:text-lg leading-relaxed animated-text transition-all ease-linear duration-[400ms]">
-                                        {card.btnText}
-                                    </span>
-                                    <FaRegCircleRight className="relative right-0 transition-all ease-linear duration-[400ms] text-base md:text-3xl animated-icon" />
-                                </button> */}
               </div>
             </SwiperSlide>
           ))}
