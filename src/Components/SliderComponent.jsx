@@ -68,7 +68,7 @@ const SliderComponent = ({ cards, headingWhite, headingBlack }) => {
           {cards?.map((card, index) => (
             <SwiperSlide key={index}>
               <div
-                className={`font-lexend shrink-0 w-full py-16 px-3 md:px-6 rounded-md  border-4 border-white${
+                className={`font-lexend shrink-0 w-full py-16 px-3 md:px-6 rounded-md  border-4 border-white ${
                   index === activeIndex
                     ? "bg-gradient-to-b from-white to-[#c7e1ff] shadow-lg my-3"
                     : "bg-white/50 scale-90 opacity-40"
@@ -83,7 +83,7 @@ const SliderComponent = ({ cards, headingWhite, headingBlack }) => {
                   <div
                     className={`flex gap-6 text-2xl items-center justify-center w-full ${
                       card.alertType === "success"
-                        ? "text-[#17A900]"
+                        ? "text-[#0F7400]"
                         : "text-[#F93434]"
                     } font-semibold mb-5`}
                   >
@@ -145,7 +145,7 @@ const SliderComponent = ({ cards, headingWhite, headingBlack }) => {
                   </p>
                 ) : null}
                 {!card.payment && !card.appointment ? (
-                  <p className="py-4 md:py-9 text-[12px] md:text-xl">
+                  <p className="py-4 md:py-9 text-[12px] md:text-xl font-light">
                     {card.info}{" "}
                     {card.offer ? (
                       <span className="text-[16px] md:text-3xl font-semibold">
@@ -155,7 +155,7 @@ const SliderComponent = ({ cards, headingWhite, headingBlack }) => {
                   </p>
                 ) : null}
                 {card.ref_no && !card.offer ? (
-                  <p className="text-[12px] md:text-xl font-medium mb-12">
+                  <p className="text-[12px] md:text-xl font-light mb-12">
                     Refrence Number:{" "}
                     <span className="text-[16px] md:text-3xl font-semibold">
                       {card.ref_no}

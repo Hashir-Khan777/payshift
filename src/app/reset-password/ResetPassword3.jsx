@@ -16,13 +16,13 @@ const ResetPassword3 = () => {
         include:
       </p>
 
-      <ul className="w-[90%] font-lexend md:text-[20px]/[25px] font-[600]">
+      <ul className="w-[90%] font-lexend md:text-[20px]/[25px] font-[600] list-disc ml-7">
         <li>Min 8 Characters</li>
-        <li>Min 1 Upper Case & 1 Lowercase</li>
+        <li className="my-3">Min 1 Upper Case & 1 Lowercase</li>
         <li>Min 1 Number</li>
       </ul>
 
-      <div className="flex flex-col gap-3 w-[90%]">
+      <div className="flex flex-col gap-5 w-[90%]">
         <label
           htmlFor="password"
           className="font-lexend md:text-[20px]/[25px] text-[14px]/[17.5px] font-[400] tracking-[4%]"
@@ -30,7 +30,7 @@ const ResetPassword3 = () => {
           Enter New Password
         </label>
 
-        <div className="w-full flex flex-row justify-center items-center  md:h-[60px] h-[40px] rounded-sm bg-white shadow-lg">
+        <div className="w-full flex flex-row justify-center items-center md:h-[60px] h-[40px] rounded-sm bg-white shadow-lg">
           <input
             type={showPassword ? "text" : "password"}
             className="md:w-[95%] w-[85%] h-full px-10  outline-none font-lexend"

@@ -80,7 +80,7 @@ const page = () => {
         </p>
       </div>
 
-      <CustomButton>I Agree</CustomButton>
+      <CustomButton>I Accept</CustomButton>
     </div>
   );
 };

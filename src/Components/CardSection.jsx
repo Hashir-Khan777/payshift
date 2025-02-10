@@ -74,7 +74,7 @@ const CardSection = () => {
 
   return (
     <div
-      className="md:h-[232px] relative bg-cover bg-center flex flex-row justify-center items-center"
+      className="h-[320px] lg:h-[232px] relative bg-cover bg-center flex flex-row justify-center items-center"
       style={{
         backgroundImage: `url(/Images/sectionbg.png)`,
         objectFit: "cover",
@@ -83,7 +83,7 @@ const CardSection = () => {
     >
       {/* <div className="absolute inset-0"></div> */}
 
-      <div className="z-10 container grid grid-cols-3 md:grid-cols-6 py-5 px-2 md:w-[80vw] w-[90vw] sm:w-full md:gap-5 gap-2 overflow-hidden">
+      <div className="z-10 container grid grid-cols-3 lg:grid-cols-6 py-5 px-2 md:w-[80vw] w-[90vw] sm:w-full md:gap-5 gap-2 overflow-hidden">
         {cards.map((card, index) => (
           <div
             key={index}

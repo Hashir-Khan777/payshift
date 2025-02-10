@@ -137,7 +137,7 @@ const MyReportSliderComponent = ({
 
         <div className="flex justify-end items-end gap-4 container">
           <button
-            className="text-3xl"
+            className="text-3xl disabled:opacity-50"
             aria-label="Scroll Left"
             onClick={handlePrevious}
             disabled={currentPage === 1}
@@ -148,7 +148,7 @@ const MyReportSliderComponent = ({
             />
           </button>
           <button
-            className="text-3xl"
+            className="text-3xl disabled:opacity-50"
             onClick={handleNext}
             disabled={currentPage === totalPages}
           >

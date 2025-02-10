@@ -61,14 +61,13 @@ const Page = () => {
       </div>
 
       {/* ===== Go Back ====== */}
-      <div
-        onClick={goBack}
-        className="w-full md:h-[100px] py-9 bg-[#ffffff] flex flex-row justify-start items-center gap-5 px-4 md:ps-24 ps-7 cursor-pointer"
-      >
-        <img src="/svgIcons/leftArrow.svg" />
-        <p className="text-black/50 md:text-[20px]/[25px] text-[14px]/[17.5px] tracking-[4%] font-lexend font-[500]">
-          Go Back
-        </p>
+      <div className="w-full bg-white">
+        <div className="container flex flex-row justify-start items-center gap-5 py-6 px-5 md:px-0 cursor-pointer -z-10 mx-auto">
+          <img src="/svgIcons/leftArrow.svg" />
+          <p className="text-black/50 md:text-[20px]/[25px] text-[14px]/[17.5px] tracking-[4%] font-lexend font-[500]">
+            Go Back
+          </p>
+        </div>
       </div>
       {/* ===== Go Back ====== */}
 

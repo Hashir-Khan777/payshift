@@ -64,7 +64,7 @@ const MyRequestSliderComponent = ({
           <FaArrowDown className="md:text-[24px] text-[18px]" />
         </div>
 
-        <CustomButton>Search</CustomButton>
+        <CustomButton btnClass="md:w-[310px] mx-auto">Search</CustomButton>
       </div>
 
       {/* Table */}
@@ -133,7 +133,7 @@ const MyRequestSliderComponent = ({
 
         <div className="flex justify-end items-end gap-4 container">
           <button
-            className="text-3xl"
+            className="text-3xl disabled:opacity-50"
             aria-label="Scroll Left"
             onClick={handlePrevious}
             disabled={currentPage === 1}
@@ -144,7 +144,7 @@ const MyRequestSliderComponent = ({
             />
           </button>
           <button
-            className="text-3xl"
+            className="text-3xl disabled:opacity-50"
             onClick={handleNext}
             disabled={currentPage === totalPages}
           >

@@ -21,3 +21,12 @@
 .swiper-wrapper {
   align-items: center;
 }
+
+.tabs-container .swiper-slide {
+  width: max-content !important;
+}
+
+.swiper-button-disabled {
+  display: block !important;
+  opacity: 0.5 !important;
+}

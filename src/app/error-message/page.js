@@ -6,20 +6,21 @@ import Link from "next/link";
 export default function ErrorMessage() {
   return (
     <>
-      <div className="w-full bg-[#ffffff] mt-20 py-9 flex flex-row justify-start items-center gap-5 px-4 md:ps-16 ps-6 cursor-pointer">
-        <img src="/svgIcons/leftArrow.svg" />
-        <p className="text-black/50 md:text-[20px]/[25px] text-[14px]/[17.5px] tracking-[4%] font-lexend font-[500]">
-          Go Back
-        </p>
-      </div>
-      <Navbar />
-
       <section
-        className="my-0 w-full h-[90vh] flex flex-col justify-start items-center py-10"
+        className="my-0  w-[100%]"
         style={{
-          background: "linear-gradient(0deg, #aed2ff 30%, #ffffff)",
+          background: "linear-gradient(90deg, #aed2ff 30%, #ffffff)",
         }}
       >
+        <Navbar />
+        <div className="w-full bg-white">
+          <div className="container flex flex-row justify-start items-center gap-5 py-6 px-5 md:px-0 cursor-pointer -z-10 mx-auto">
+            <img src="/svgIcons/leftArrow.svg" />
+            <p className="text-black/50 md:text-[20px]/[25px] text-[14px]/[17.5px] tracking-[4%] font-lexend font-[500]">
+              Go Back
+            </p>
+          </div>
+        </div>
         <div className="w-full flex flex-col justify-center items-center gap-8  mt-10 text-center">
           <img
             src="./svgIcons/error.svg"
