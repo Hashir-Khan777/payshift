@@ -1,6 +1,7 @@
 import React from "react";
 import CardSection from "./CardSection";
 import localFont from "next/font/local";
+import CustomButton from "./Button";
 
 const cahdisplay = localFont({
   src: "../fonts/ClashDisplay-Variable.ttf",
@@ -40,15 +41,7 @@ const Hero = () => {
                 <span className="text-black">With</span> PayShift
               </h1>
               <div>
-                <button className="animated-button flex items-center justify-center gap-7 px-5 py-2 bg-black text-white font-normal rounded-full hover:bg-gray-800">
-                  <span className="relative text-base left-0 pl-3 md:pl-6 pr-2 md:pr-4 md:text-3xl animated-text transition-all ease-linear duration-[400ms] font-lexend">
-                    Pay
-                  </span>
-                  <img
-                    src="svgIcons/payicon.svg"
-                    className="relative right-0 transition-all ease-linear duration-[400ms] w-[22px] h-[22px] md:w-[42px] md:h-[42px] animated-icon"
-                  />
-                </button>
+                <CustomButton>Pay</CustomButton>
               </div>
             </div>
           </div>

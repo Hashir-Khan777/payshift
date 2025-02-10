@@ -2,6 +2,7 @@ import React from "react";
 import { BsEye, BsEyeSlash } from "react-icons/bs";
 import { useState } from "react";
 import Link from "next/link";
+import CustomButton from "./Button";
 
 const SignIn = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -82,15 +83,8 @@ const SignIn = () => {
       {/* ======= FORM ======== */}
 
       {/* ==== Buttons ===== */}
-      <button className="animated-button flex items-center justify-center gap-7 md:px-0 px-7 bg-black text-white font-normal rounded-full hover:bg-gray-800 h-[37px] md:h-[67px] md:py-[13px] md:ps-[56px] md:pe-[16px]">
-        <span className="relative text-2xl left-0 md:text-[20px]/[25px] animated-text transition-all ease-linear duration-[400ms] font-lexend md:me-80px">
-          Sign In
-        </span>
-        <img
-          src="/svgIcons/slidercomponenticon.svg"
-          className="relative right-0 transition-all ease-linear duration-[400ms] animated-icon w-[22px] h-[18px] md:w-[43px] md:h-[43px]"
-        />
-      </button>
+
+      <CustomButton>Sign In</CustomButton>
 
       <div className="text-center text-gray-600 font-lexend text-[14px]/[17.5px] font-[300] tracking-[4%]">
         <div className="flex flex-row items-center gap-2">

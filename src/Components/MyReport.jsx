@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import { FaArrowDown } from "react-icons/fa6";
+import CustomButton from "./Button";
 
 const MyReportSliderComponent = ({
   cards,
@@ -66,15 +67,7 @@ const MyReportSliderComponent = ({
         </div>
 
         <div>
-          <button className="animated-button flex items-center justify-center gap-7 px-5 py-2 bg-black text-white font-normal rounded-full hover:bg-gray-800 h-[37px]">
-            <span className="relative  text-base left-0 md:text-[20px]/[25px] animated-text transition-all ease-linear duration-[400ms] font-lexend">
-              Search
-            </span>
-            <img
-              src="/svgIcons/slidercomponenticon.svg"
-              className="relative right-0 transition-all ease-linear duration-[400ms] animated-icon w-[22px] h-[18px] md:w-[32px] md:h-[25px]"
-            />
-          </button>
+          <CustomButton>Search</CustomButton>
         </div>
       </div>
 
@@ -169,36 +162,11 @@ const MyReportSliderComponent = ({
 
       <div className="flex flex-row justify-between md:mt-20 mt-10 w-[100vw] md:px-20 px-5">
         <div className="flex flex-row justify-center items-center gap-5">
-          <button className="mx-auto animated-button flex items-center justify-center gap-7 px-5 py-2 bg-black text-white font-normal rounded-full hover:bg-gray-800 h-[37px]">
-            <span className="relative  text-base left-0 md:text-[20px]/[25px] animated-text transition-all ease-linear duration-[400ms] font-lexend">
-              Print
-            </span>
-            <img
-              src="/svgIcons/slidercomponenticon.svg"
-              className="relative right-0 transition-all ease-linear duration-[400ms] animated-icon w-[22px] h-[18px] md:w-[32px] md:h-[25px]"
-            />
-          </button>
-
-          <button className="mx-auto hidden md:flex animated-button  items-center justify-center gap-7 px-5 py-2 bg-black text-white font-normal rounded-full hover:bg-gray-800 h-[37px]">
-            <span className="relative  text-base left-0 md:text-[20px]/[25px] animated-text transition-all ease-linear duration-[400ms] font-lexend">
-              Download pdf
-            </span>
-            <img
-              src="/svgIcons/slidercomponenticon.svg"
-              className="relative right-0 transition-all ease-linear duration-[400ms] animated-icon w-[22px] h-[18px] md:w-[32px] md:h-[25px]"
-            />
-          </button>
+          <CustomButton>Print</CustomButton>
+          <CustomButton>Download pdf</CustomButton>
         </div>
 
-        <button className="animated-button flex items-center justify-center gap-7 px-5 py-2 bg-black text-white font-normal rounded-full hover:bg-gray-800 h-[37px]">
-          <span className="relative  text-base left-0 md:text-[20px]/[25px] animated-text transition-all ease-linear duration-[400ms] font-lexend">
-            Export
-          </span>
-          <img
-            src="/svgIcons/slidercomponenticon.svg"
-            className="relative right-0 transition-all ease-linear duration-[400ms] animated-icon w-[22px] h-[18px] md:w-[32px] md:h-[25px]"
-          />
-        </button>
+        <CustomButton>Export</CustomButton>
       </div>
     </div>
   );

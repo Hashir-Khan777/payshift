@@ -8,6 +8,7 @@ import { FaArrowLeft } from "react-icons/fa6";
 import ResetPassword1 from "./ResetPassword1";
 import ResetPassword2 from "./ResetPassword2";
 import ResetPassword3 from "./ResetPassword3";
+import CustomButton from "@/Components/Button";
 
 const Page = () => {
   const pathname = usePathname();
@@ -87,18 +88,7 @@ const Page = () => {
         <div className="flex flex-col justify-center items-center my-5">
           {replaceComponet == 1 ? (
             <>
-              <button
-                onClick={changeComponent}
-                className="animated-button flex items-center justify-center gap-7 px-8 md:px-0 py-6 md:pe-[16px] bg-black text-white font-normal rounded-full hover:bg-gray-800 h-[37px] "
-              >
-                <span className="relative  text-base left-0 md:text-[20px]/[25px] md:ps-[56px] animated-text transition-all ease-linear duration-[400ms] font-lexend">
-                  Continue
-                </span>
-                <img
-                  src="/svgIcons/slidercomponenticon.svg"
-                  className="relative right-0 transition-all ease-linear duration-[400ms] animated-icon w-[22px] h-[18px] md:w-[32px] md:h-[25px]"
-                />
-              </button>
+              <CustomButton onClick={changeComponent}>Continue</CustomButton>
 
               <p className="text-center text-gray-600 font-lexend text-[14px]/[17.5px] font-[300] tracking-[4%] flex flex-row gap-2 justify-center items-center py-5">
                 <span>Don't have an account?</span>
@@ -114,36 +104,17 @@ const Page = () => {
           ) : null}
           {replaceComponet == 2 ? (
             <>
-              <button
-                onClick={changeComponent}
-                className="animated-button flex items-center justify-center gap-7 px-8 md:px-0 py-6 md:pe-[16px] bg-black text-white font-normal rounded-full hover:bg-gray-800 h-[37px] "
-              >
-                <span className="relative  text-base left-0 md:text-[20px]/[25px] md:ps-[56px] animated-text transition-all ease-linear duration-[400ms] font-lexend">
-                  Verify & Proceed
-                </span>
-                <img
-                  src="/svgIcons/slidercomponenticon.svg"
-                  className="relative right-0 transition-all ease-linear duration-[400ms] animated-icon w-[22px] h-[18px] md:w-[32px] md:h-[25px]"
-                />
-              </button>
+              <CustomButton onClick={changeComponent}>
+                Verify & Proceed
+              </CustomButton>
             </>
           ) : null}
 
           {replaceComponet == 3 ? (
             <>
-              <button
-                onClick={changeComponent}
-                className="animated-button flex items-center justify-center gap-7 px-8 md:px-0 py-6 md:pe-[16px] bg-black text-white font-normal rounded-full hover:bg-gray-800 h-[37px] "
-              >
-                <span className="relative  text-base left-0 md:text-[20px]/[25px] md:ps-[56px] animated-text transition-all ease-linear duration-[400ms] font-lexend">
-                  Reset Password
-                </span>
-                <img
-                  src="/svgIcons/slidercomponenticon.svg"
-                  className="relative right-0 transition-all ease-linear duration-[400ms] animated-icon w-[22px] h-[18px] md:w-[32px] md:h-[25px]"
-                />
-              </button>
-
+              <CustomButton onClick={changeComponent}>
+                Reset Password
+              </CustomButton>
               <p className="text-center text-gray-600 font-lexend md:text-[14px]/[17.5px] text-[12px]/[12..5px] font-[300] tracking-[4%] flex flex-row gap-2 justify-center items-center py-5">
                 <span>Password was last changed on</span>
                 <span className="text-black font-medium md:text-[16px] text-[14px]">

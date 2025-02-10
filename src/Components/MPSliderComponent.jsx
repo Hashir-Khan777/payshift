@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import CustomButton from "./Button";
 
 const MakePaymentSliderComponent = ({ cards, headingWhite, headingBlack }) => {
   // const router = useRouter();
@@ -164,15 +165,13 @@ const MakePaymentSliderComponent = ({ cards, headingWhite, headingBlack }) => {
 
                 <p className="text-base my-0">{card.info}</p>
 
-                <button className="my-5 mx-auto animated-button flex items-center justify-center gap-7 px-5 py-2 bg-black text-white font-normal rounded-full hover:bg-gray-800">
-                  <span className="relative  text-base left-0 md:text-xl animated-text transition-all ease-linear duration-[400ms] font-lexend">
-                    {card.btnText}
-                  </span>
-                  <img
-                    src="/svgIcons/slidercomponenticon.svg"
-                    className="relative right-0 transition-all ease-linear duration-[400ms] animated-icon w-[22px] h-[22px] md:w-[32px] md:h-[32px]"
-                  />
-                </button>
+                <CustomButton
+                  textClass="md:text-xl"
+                  btnClass="mx-auto my-5"
+                  iconClass="md:w-[32px] md:h-[32px]"
+                >
+                  {card.btnText}
+                </CustomButton>
               </div>
             </SwiperSlide>
           ))}
