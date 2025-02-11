@@ -5,6 +5,7 @@ import { MdClose } from "react-icons/md";
 import { GrFormNext } from "react-icons/gr";
 import BackBtn from "@/Components/BackBtn";
 import DarkNavbar from "@/Components/DarkNavbar";
+import Navbar from "@/Components/Navbar";
 
 const PendingPayCard = [
   {
@@ -58,9 +59,14 @@ const menuTags = ["Property ID #1234", "Maintenance Fee", "DEWA"];
 function page() {
   return (
     <section className="flex flex-col gap-0">
-      <DarkNavbar />
-      <div className="w-[full] mt-20">
-        <BackBtn />
+      <Navbar />
+      <div className="w-full bg-white">
+        <div className="container flex flex-row justify-start items-center gap-5 py-6 px-5 md:px-0 cursor-pointer -z-10 mx-auto">
+          <img src="/svgIcons/leftArrow.svg" />
+          <p className="text-black/50 md:text-[20px]/[25px] text-[14px]/[17.5px] tracking-[4%] font-lexend font-[500]">
+            Go Back
+          </p>
+        </div>
       </div>
 
       <div
