@@ -1,5 +1,6 @@
 import React from "react";
 import { FaArrowLeft } from "react-icons/fa6";
+import CustomButton from "./Button";
 
 const imageUrl =
   "https://s3-alpha-sig.figma.com/img/6349/acbd/1a0a65f8f11b31f35a3437c0ba96638b?Expires=1739145600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=YUWIESKH1ZxEfAcTv6v7b7uzvxxtUjHVmjEAPtQn5qRJmAtte2u-Um0NV~SxUUE~~xZDoF7mI6im~SVtm5yBQsQ5hsrKCJlRDdROLO6H9soAqAJ2IIvkhWeny1JFYvOI8RL3ASkcRjf0i18KcRKDYchVBc~TMFw~r3-Vexrvv~BGANDxjGJpcxeIqAa3dZKkfwAaEktae-IUd~O30ikFZmZjBEzTDJLxL7M9MPYhx3iChMVJFHaCA4F9GRtuRDtUqgp0iy9stBTOtIW~oqSbVSTMzjzyW2U20E~P7yi0tmYdSuTkZqw99gC1JGJ2I7nnEeQR4QqDUovCi6VfWwA1Rw__";
@@ -54,20 +55,17 @@ function Profile2() {
             </p>
           </div>
 
-          <div className="flex flex-row justify-between items-center w-full">
+          <div className="flex flex-row justify-between items-center w-full flex-wrap">
             <p className="font-lexend md:text-[20px]/[25px] text-[12px]/[15px] font-[600] tracking-[4%]">
               steverogers@shield.mcu.com
             </p>
 
-            <button className="animated-button flex items-center justify-center gap-3 md:gap-7 px-4 md:px-5 py-2 bg-black text-white font-normal rounded-full hover:bg-gray-800 h-[30px] md:h-[37px] w-[100px] md:w-auto">
-              <span className="relative left-0 text-[10px]/[12px] md:text-[20px]/[25px] animated-text transition-all ease-linear duration-[400ms] font-lexend whitespace-nowrap overflow-hidden">
-                Verify
-              </span>
-              <img
-                src="/svgIcons/slidercomponenticon.svg"
-                className="relative right-0 transition-all ease-linear duration-[400ms] animated-icon w-[16px] h-[16px] md:w-[22px] md:h-[22px]"
-              />
-            </button>
+            <CustomButton
+              textClass="md:text-xl"
+              iconClass="md:w-[32px] md:h-[32px]"
+            >
+              Verify
+            </CustomButton>
           </div>
         </div>
         {/* ====== Profile Details ======= */}
