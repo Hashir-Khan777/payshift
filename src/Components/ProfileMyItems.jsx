@@ -97,7 +97,7 @@ const ProfileMyItems = ({ cards, headingWhite, headingBlack }) => {
                 <div className="flex flex-row w-full justify-between gap-5 items-center ">
                   <p className="w-[30%] flex flex-row gap-2 justify-start items-center">
                     <img
-                      src="./svgIcons/location.svg"
+                      src="/svgIcons/location.svg"
                       alt="Location Icon"
                       className="w-[16px] h-[16px]"
                     />

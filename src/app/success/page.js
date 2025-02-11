@@ -30,7 +30,7 @@ export default function ErrorMessage() {
         </div>
         <div className="w-full flex flex-col justify-center items-center gap-8  mt-5 text-center">
           <img
-            src="./svgIcons/success.svg"
+            src="/svgIcons/success.svg"
             className="md:w-[220px] md:h-[216px] w-[150px] h-[150px]"
             alt="error"
           />

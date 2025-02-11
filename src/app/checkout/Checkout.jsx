@@ -15,11 +15,10 @@ const CheckOutComponent = ({
   btnText = "Pay AED",
 }) => {
   const [showCvv, setShowCvv] = useState(false); // State to toggle CVV visibility
- const [checkMark,setCheckMark] = useState(false)
+  const [checkMark, setCheckMark] = useState(false);
 
   return (
     <div className="w-[100%] flex flex-col justify-center gap-[40px] items-center  overflow-hidden md:px-[64px] md:py-[64px] px-[20px] pb-[80px]">
-
       <h1 className="text-center text-[28px] md:text-[48px] px-[20px] py-[10px] md:mt-0 mt-[40px] font-medium font-cashdisplay">
         <span className="text-white">{headingWhite}</span> {headingBlack[0]}
       </h1>
@@ -32,9 +31,7 @@ const CheckOutComponent = ({
           boxShadow: "2px 2px 35px 2px rgba(0, 0, 0, 0.2)", // Adjust as needed
         }}
       >
-
         <div className="flex flex-col gap-2 justify-start md:items-center items-start md:col-span-2">
-
           <p className="md:text-[20px]/[25px] text-[14px]/[17.5px] font-[300] font-lexend text-[#000000]">
             To Pay
           </p>
@@ -70,9 +67,8 @@ const CheckOutComponent = ({
       </h1>
 
       <div className="flex flex-row md:gap-[24px] gap-[8px] w-full">
-
         <div
-          className="rounded-[4px] shadow-lg lg:h-[135px] lg:w-[310px] w-[25%] md:px-0 md:py-0 px-5 py-4 flex flex-col justify-center items-center gap-[8px]"
+          className="rounded-[4px] shadow-lg lg:h-[135px] flex-1 md:px-0 md:py-0 px-5 py-4 flex flex-col justify-center items-center gap-[8px]"
           style={{
             background: "linear-gradient(0deg, #aed2ff 10%, #ffffff 90%)",
           }}
@@ -86,8 +82,8 @@ const CheckOutComponent = ({
           </span>
         </div>
 
-        <div className="rounded-[4px] shadow-lg lg:h-[135px] lg:w-[310px] w-[25%] md:px-0 md:py-0 px-5 py-4 flex flex-col justify-center items-center gap-[8px]">
-        <img
+        <div className="rounded-[4px] shadow-lg lg:h-[135px] flex-1 md:px-0 md:py-0 px-5 py-4 flex flex-col justify-center items-center gap-[8px]">
+          <img
             className="md:w-[64px] w-[24px] md:h-[64px] h-[24px] opacity-[40%]"
             src="/svgIcons/bank.svg"
           />
@@ -96,8 +92,8 @@ const CheckOutComponent = ({
           </span>
         </div>
 
-        <div className="rounded-[4px] shadow-lg lg:h-[135px] lg:w-[310px] w-[25%] md:px-0 md:py-0 px-5 py-4 flex flex-col justify-center items-center gap-[8px]">
-        <img
+        <div className="rounded-[4px] shadow-lg lg:h-[135px] flex-1 md:px-0 md:py-0 px-5 py-4 flex flex-col justify-center items-center gap-[8px]">
+          <img
             className="md:w-[64px] w-[24px] md:h-[64px] h-[24px] opacity-[40%]"
             src="/svgIcons/applePay.svg"
           />
@@ -106,8 +102,8 @@ const CheckOutComponent = ({
           </span>
         </div>
 
-        <div className="rounded-[4px] shadow-lg lg:h-[135px] lg:w-[310px] w-[25%] md:px-0 md:py-0 px-5 py-4 flex flex-col justify-center items-center gap-[8px]">
-        <img
+        <div className="rounded-[4px] shadow-lg lg:h-[135px] flex-1 md:px-0 md:py-0 px-5 py-4 flex flex-col justify-center items-center gap-[8px]">
+          <img
             className="md:w-[64px] w-[24px] md:h-[64px] h-[24px] opacity-[40%]"
             src="/svgIcons/payPal.svg"
           />
@@ -122,7 +118,6 @@ const CheckOutComponent = ({
       {/* ======= Payment Details ======== */}
 
       <div className="w-full grid md:grid-cols-2 grid-cols-1 md:gap-[35px] gap-[16px]">
-
         {/* Card Number */}
         <div className="w-full flex flex-col gap-[10px]">
           <label className="md:text-[24px]/[30px] text-[14px]/[17.5px] font-lexend font-[400]">
@@ -188,28 +183,27 @@ const CheckOutComponent = ({
               {showCvv ? <BsEyeSlash size={20} /> : <BsEye size={20} />}
             </button>
           </div>
-
-          
-
         </div>
 
-         {/* Save Card Details */}
-      <div className="flex flex-row items-center w-full gap-[8px]">
-      <div onClick={()=> setCheckMark(!checkMark)}>
-        {
-          checkMark? <img src="/svgIcons/unCheck.svg" />:<img src="/svgIcons/check.svg" />
-        }
-      </div>
-        
-        <label htmlFor="save-card" className="text-gray-700 text-[12px]/[15px] font-lexend">
-          Save card details for future payments
-        </label>
+        {/* Save Card Details */}
+        <div className="flex flex-row items-center w-full gap-[8px]">
+          <div onClick={() => setCheckMark(!checkMark)}>
+            {checkMark ? (
+              <img src="/svgIcons/unCheck.svg" />
+            ) : (
+              <img src="/svgIcons/check.svg" />
+            )}
+          </div>
+
+          <label
+            htmlFor="save-card"
+            className="text-gray-700 text-[12px]/[15px] font-lexend"
+          >
+            Save card details for future payments
+          </label>
+        </div>
       </div>
 
-      </div>
-
-
-     
       {/* ======= Payment Details ======== */}
 
       {/* Pagination */}
@@ -223,7 +217,6 @@ const CheckOutComponent = ({
           transmitted via 128-bit encryption.
         </p>
       </div>
-
     </div>
   );
 };
