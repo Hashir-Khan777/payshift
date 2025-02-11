@@ -142,7 +142,13 @@ const PendingPSliderComponent = ({ cards, headingWhite, headingBlack }) => {
 
                 {/* ========= Content  ============ */}
 
-                <CustomButton>{card.btnText}</CustomButton>
+                <CustomButton
+                  textClass="md:text-xl"
+                  btnClass="mx-auto"
+                  iconClass="md:w-[32px] md:h-[32px]"
+                >
+                  {card.btnText}
+                </CustomButton>
               </div>
             </SwiperSlide>
           ))}

@@ -5,17 +5,16 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import Link from "next/link";
 
 const RISliderComponent = ({
   cards,
   headingWhite,
   headingBlack,
   categories,
+  link,
 }) => {
   const [activeCategory, setActiveCategory] = useState("All");
-
-  const prevRef = useRef(null);
-  const nextRef = useRef(null);
 
   // Load active category from localStorage when the component mounts
   useEffect(() => {
@@ -80,85 +79,65 @@ const RISliderComponent = ({
 
       {/* ========= Slider ============ */}
       <div className="flex items-center justify-center mb-4 overflow-hidden w-full md:px-2 ">
-        <Swiper
-          slidesPerView={1}
-          navigation={{
-            prevEl: prevRef.current,
-            nextEl: nextRef.current,
-          }}
-          modules={[Navigation]}
-        >
-          {Array.from({
-            length: Math.ceil(filteredCards.length / 4),
-          }).map((_, slideIndex) => (
-            <SwiperSlide key={slideIndex}>
-              <div className="w-full my-4 grid grid-cols-1 md:grid-cols-2 md:gap-10 gap-5 md:p-5 p-1">
-                {filteredCards
-                  .slice(slideIndex * 4, slideIndex * 4 + 4)
-                  .map((card, index) => (
-                    <div
-                      key={index}
-                      className="w-full shadow-lg border-2 border-white rounded-md flex md:flex-col flex-row items-center md:items-start"
-                      style={{
-                        background:
-                          "linear-gradient(0deg,#C2DEFF 20%,#FFFFFF 100%)",
-                        boxShadow: "2px 2px 10px rgba(0, 0, 0, 0.2)", // Lighter shadow
-                      }}
-                    >
-                      <div className="w-[50%] md:w-[93%] rounded-sm md:mx-auto md:my-5 md:h-[270px] m-2">
-                        <img
-                          src={card.image}
-                          alt="Property Image"
-                          className="object-cover w-full h-full rounded-xl"
-                        />
-                      </div>
-
-                      <div className="flex flex-col gap-1 my-3 md:ms-8 w-[50%]">
-                        <h1 className="font-semibold font-cashdisplay md:text-[20px] text-[18px]">
-                          {card.name}
-                        </h1>
-                        <p className="flex flex-row items-center gap-2">
-                          <img
-                            src="svgIcons/star.svg"
-                            alt="Rating"
-                            className=""
-                          />
-                          <span className="md:text-[16px] text-[12px]">
-                            {card.rating}
-                          </span>
-                        </p>
-                        <p className="font-lexend font-bold md:text-[16px] text-[12px]">
-                          {card.price}
-                        </p>
-                        <p className="font-lexend font-normal flex flex-row justify-start items-center gap-1 md:text-base md:text-[16px] text-[12px]">
-                          <img
-                            src="svgIcons/location.svg"
-                            className="w-[20px] h-[20px]"
-                          />
-                          <span>{card.loc}</span>
-                        </p>
-                      </div>
-                    </div>
-                  ))}
+        {/* <Swiper slidesPerView={1} modules={[Navigation]}> */}
+        {/* {Array.from({
+          length: Math.ceil(filteredCards.length / 4),
+        }).map((_, slideIndex) => ( */}
+        {/* <SwiperSlide key={slideIndex}> */}
+        <div className="w-full my-4 grid grid-cols-1 md:grid-cols-3 md:gap-10 gap-5 md:p-5 p-1">
+          {filteredCards.map((card, index) => (
+            <div
+              key={index}
+              className="w-full shadow-lg border-2 border-white rounded-md flex md:flex-col flex-row items-center md:items-start"
+              style={{
+                background: "linear-gradient(0deg,#C2DEFF 20%,#FFFFFF 100%)",
+                boxShadow: "2px 2px 10px rgba(0, 0, 0, 0.2)", // Lighter shadow
+              }}
+            >
+              <div className="w-[50%] md:w-[93%] rounded-sm md:mx-auto md:my-5 md:h-[270px] m-2">
+                <img
+                  src={card.image}
+                  alt="Property Image"
+                  className="object-cover w-full h-full rounded-xl"
+                />
               </div>
-            </SwiperSlide>
+
+              <div className="flex flex-col gap-1 my-3 md:ms-8 w-[50%]">
+                <h1 className="font-semibold font-cashdisplay md:text-[20px] text-[18px]">
+                  {card.name}
+                </h1>
+                <p className="flex flex-row items-center gap-2">
+                  <img src="svgIcons/star.svg" alt="Rating" className="" />
+                  <span className="md:text-[16px] text-[12px]">
+                    {card.rating}
+                  </span>
+                </p>
+                <p className="font-lexend font-bold md:text-[16px] text-[12px]">
+                  {card.price}
+                </p>
+                <p className="font-lexend font-normal flex flex-row justify-start items-center gap-1 md:text-base md:text-[16px] text-[12px]">
+                  <img
+                    src="svgIcons/location.svg"
+                    className="w-[20px] h-[20px]"
+                  />
+                  <span>{card.loc}</span>
+                </p>
+              </div>
+            </div>
           ))}
-        </Swiper>
+        </div>
+        {/* </SwiperSlide> */}
+        {/* ))} */}
+        {/* </Swiper> */}
       </div>
 
-      <div className="flex justify-end items-end gap-4 container">
-        <button className="text-3xl" aria-label="Scroll Left" ref={prevRef}>
-          <img
-            className="w-[34px] h-[34px] md:w-[48px] md:h-[48px]"
-            src="/svgIcons/slidericonleft.svg"
-          />
-        </button>
-        <button className="text-3xl" aria-label="Scroll Right" ref={nextRef}>
-          <img
-            className="w-[34px] h-[34px] md:w-[48px] md:h-[48px]"
-            src="/svgIcons/slidericon.svg"
-          />
-        </button>
+      <div className="text-center mt-[60px] font-lexend">
+        <Link
+          href="/"
+          className="text-black text-sm md:text-base underline font-medium"
+        >
+          {link}
+        </Link>
       </div>
     </div>
   );
