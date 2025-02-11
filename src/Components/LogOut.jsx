@@ -3,7 +3,7 @@ import React from 'react'
 
 function LogOut({text}) {
     return (
-        <div className="w-[90%] mx-auto md:h-[136px] h-[71px] md:py-[20px] md:px-[64px] p-[16px] flex justify-between items-center gap-4 border-2 border-white rounded-md"
+        <div className="w-full mx-auto md:h-[136px] h-[71px] md:py-[20px] md:px-[64px] p-[16px] flex justify-between items-center gap-4 border-2 border-white rounded-[4px]"
             style={{
                 background: "linear-gradient(0deg, #FFFFFF33, #FFFFFF )",
                 boxShadow: "1px 1px 10px 2px rgba(0,0,0,0.25)"

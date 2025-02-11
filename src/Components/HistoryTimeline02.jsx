@@ -31,7 +31,7 @@ const HistoryTimeLine02 = ({ cards, headingWhite, headingBlack }) => {
 
     return (
         <div
-            className="w-full py-[100px] flex flex-col md:gap-[80px] gap-[48px] mx-auto overflow-auto"
+            className="w-full min-h-[100vh] py-[100px] flex flex-col md:gap-[80px] gap-[48px] mx-auto overflow-auto"
             style={{
                 background: "linear-gradient(90deg,#C2DEFF 50%, #FFFFFF)"
             }}
@@ -40,7 +40,7 @@ const HistoryTimeLine02 = ({ cards, headingWhite, headingBlack }) => {
                 <span className="text-white">{headingWhite}</span> {headingBlack}
             </h1>
 
-            <div className="max-w-[1440px] w-full flex justify-center items-center mx-auto">
+            <div className="max-w-[1440px] min-h-[80vh] w-full flex justify-center items-center mx-auto">
                 <Swiper
                     autoplay
                     breakpoints={{
@@ -69,15 +69,15 @@ const HistoryTimeLine02 = ({ cards, headingWhite, headingBlack }) => {
                             <div className="w-full px-[80px] flex flex-col gap-[80px] relative mx-auto">
 
                                 {/* <!-- Top Border --> */}
-                                <div className="absolute top-20 left-14 w-[92%] h-[4px] bg-white px-[20px]"></div>
+                                <div className="absolute top-20 left-20 w-[86%] h-[4px] bg-white px-[20px]"></div>
 
                                 {/* <!-- Icon at the Top --> */}
-                                <div className="absolute md:top-4 top-9 left-10 bg-[#d8e9fe] md:w-[120px] md:h-[120px] w-[90px] h-[90px] rounded-full border-[4px] border-white shadow-md flex justify-center items-center ">
+                                <div className="absolute md:top-8 top-9 left-16 bg-[#d8e9fe] md:w-[90px] md:h-[90px] w-[90px] h-[90px] rounded-full border-[4px] border-white shadow-md flex justify-center items-center ">
                                     <img src={card.icon} className="md:w-[64px] w-[40px] md:h-[64px] h-[40px]" />
                                 </div>
 
                                 {/* <!-- Content --> */}
-                                <div className="w-full flex md:flex-row flex-col  mt-[200px] items-center overflow-hidden gap-[48px]">
+                                <div className="w-full flex md:flex-row flex-col  mt-[150px] items-center overflow-hidden gap-[48px]">
 
                                     <div className="flex flex-col basis-[40%] gap-[48px] overflow-hidden">
                                         <div className="flex flex-col gap-[20px]">

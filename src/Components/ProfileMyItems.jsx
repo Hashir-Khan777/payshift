@@ -32,7 +32,7 @@ const ProfileMyItems = ({ cards, headingWhite, headingBlack }) => {
 
   return (
     <div
-      className="w-[90%] rounded-lg mx-auto py-20 px-16 border-[2px] border-white"
+      className="w-full rounded-[4px] mx-auto py-20 px-16 border-[2px] border-white"
       style={{
         background: "linear-gradient(0deg, #E8F3FF 15.92%, #92A8FF 100%)",
         boxShadow: "0px 4px 24px 0px rgba(0, 69, 197, 0.64)",

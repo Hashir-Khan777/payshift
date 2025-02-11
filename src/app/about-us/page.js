@@ -50,13 +50,13 @@ function Page() {
             </div>
 
             {/* ------ Payshift Video Section ------ */}
-            <div className="relative w-full flex justify-center items-center overflow-hidden border-0">
+            <div className="relative w-full h-[100vh] flex justify-center items-center overflow-hidden border-0">
                 <video
                     src="/Images/payshiftVideo.mp4"
                     autoPlay
                     loop
                     muted
-                    className="w-full object-cover"
+                    className="w-full h-full object-cover"
                 ></video>
             </div>
 
@@ -67,13 +67,14 @@ function Page() {
 
                 {/* ===== container 1 ===== */}
                 {/* ------  Behind The Brand ------ */}
-                <div className='w-full md:py-[100px] py-[64px] md:px-[80px] px-[24px] flex flex-col md:gap-[80px] gap-[40px]'>
+                <div className='w-full  md:py-[100px] py-[64px] md:px-[80px] px-[24px] flex flex-col md:gap-[80px] gap-[40px]'>
 
                     <h1 className="text-center text-[28px]/[34.44px] md:text-4xl font-medium font-cashdisplay">
                         <span className="text-white">Behind</span> The Brand
                     </h1>
 
-                    <div className='w-full mx-auto lg:h-[600px] border-[1px] border-white md::py-[100px] py-[36px] md:px-[64px] px-[20px] flex md:flex-row flex-col justify-center items-center md:gap-[60px] gap-[10px] rounded-md'
+{/*Removed   h-[600px] */}
+                    <div className='w-full mx-auto min-h-[80vh] border-[1px] border-white md::py-[100px] py-[36px] md:px-[64px] px-[20px] flex md:flex-row flex-col justify-center items-center md:gap-[60px] gap-[10px] rounded-md'
                         style={{
                             background: "linear-gradient(180deg,#92A8FF,#E8F3FF)",
                             boxShadow: "0px 4px 24px 0px rgba(0, 69, 197, 0.64)",
@@ -101,7 +102,7 @@ function Page() {
                     {/* ===== container 1 ===== */}
 
                     {/* ===== container 2 ===== */}
-                    <div className='w-full grid grid-cols-2 gap-[24px]'>
+                    <div className='w-full  grid grid-cols-2 gap-[24px] justify-center items-center'>
 
                         <div className=' md:h-[268px] h-[185px] flex flex-col justify-center items-center rounded-sm md:gap-[40px] gap-[10px] border-[1.53px] border-white py-[10px] px-[20px]'
                             style={{
