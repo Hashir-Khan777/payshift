@@ -45,7 +45,7 @@ const timelineData = [
 function Page() {
     return (
         <>
-            <div className='h-auto mb-[73px]'>
+            <div className='h-auto '>
                 <Navbar />
             </div>
 
