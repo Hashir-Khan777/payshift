@@ -118,10 +118,10 @@ const ProfileMyItems = ({ cards, headingWhite, headingBlack }) => {
 
                 {/* ---- Card Content---- */}
 
-                <div className="w-full flex flex-col gap-8 justify-between">
+                <div className="w-full flex flex-col gap-8 justify-center items-center">
                   {/* ===== Buttons ==== */}
                   <Link href={card.link || "#"}>
-                    <CustomButton>{card.btnText}</CustomButton>
+                    <CustomButton>Download</CustomButton>
                   </Link>
 
                   <Link
