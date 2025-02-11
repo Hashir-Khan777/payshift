@@ -98,7 +98,7 @@ const MenuSection = () => {
           </Swiper>
           {/* MenuTabs End */}
 
-          <div className="flex justify-end items-end gap-4 container">
+          <div className="slider-btn hidden justify-end items-end gap-4 container mt-10">
             <button ref={prevRef} className="text-3xl" aria-label="Scroll Left">
               <img
                 className="w-[48px] h-[48px]"

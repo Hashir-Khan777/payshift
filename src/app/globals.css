@@ -30,3 +30,9 @@
   display: block !important;
   opacity: 0.5 !important;
 }
+
+@media screen and (max-width: 1535px) {
+  .slider-btn {
+    display: flex;
+  }
+}

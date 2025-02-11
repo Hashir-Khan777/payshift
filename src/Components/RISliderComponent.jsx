@@ -84,37 +84,39 @@ const RISliderComponent = ({
           length: Math.ceil(filteredCards.length / 4),
         }).map((_, slideIndex) => ( */}
         {/* <SwiperSlide key={slideIndex}> */}
-        <div className="w-full my-4 grid grid-cols-1 md:grid-cols-3 md:gap-10 gap-5 md:p-5 p-1">
+        <div className="w-full my-4 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 md:gap-10 gap-5 md:p-5 p-1">
           {filteredCards.map((card, index) => (
             <div
               key={index}
-              className="w-full shadow-lg border-2 border-white rounded-md flex md:flex-col flex-row items-center md:items-start"
+              className="w-full shadow-lg p-[16px] gap-[16px] border-2 border-white rounded-md flex md:flex-col items-center flex-row md:items-start"
               style={{
                 background: "linear-gradient(0deg,#C2DEFF 20%,#FFFFFF 100%)",
                 boxShadow: "2px 2px 10px rgba(0, 0, 0, 0.2)", // Lighter shadow
               }}
             >
-              <div className="w-[50%] md:w-[93%] rounded-sm md:mx-auto md:my-5 md:h-[270px] m-2">
+              <div className="w-[50%] md:w-[93%] rounded-[10px] md:mx-auto md:my-5 h-[108px] md:h-[253px]">
                 <img
                   src={card.image}
                   alt="Property Image"
-                  className="object-cover w-full h-full rounded-xl"
+                  className="object-cover w-full h-full rounded-[10px]"
                 />
               </div>
 
-              <div className="flex flex-col gap-1 my-3 md:ms-8 w-[50%]">
+              <div>
                 <h1 className="font-semibold font-cashdisplay md:text-[20px] text-[18px]">
                   {card.name}
                 </h1>
-                <p className="flex flex-row items-center gap-2">
-                  <img src="svgIcons/star.svg" alt="Rating" className="" />
-                  <span className="md:text-[16px] text-[12px]">
-                    {card.rating}
-                  </span>
-                </p>
-                <p className="font-lexend font-bold md:text-[16px] text-[12px]">
-                  {card.price}
-                </p>
+                <div className="my-[18.5px]">
+                  <p className="flex flex-row items-center gap-2">
+                    <img src="svgIcons/star.svg" alt="Rating" className="" />
+                    <span className="md:text-[16px] text-[12px]">
+                      {card.rating}
+                    </span>
+                  </p>
+                  <p className="font-lexend font-bold md:text-[16px] text-[12px]">
+                    {card.price}
+                  </p>
+                </div>
                 <p className="font-lexend font-normal flex flex-row justify-start items-center gap-1 md:text-base md:text-[16px] text-[12px]">
                   <img
                     src="svgIcons/location.svg"
