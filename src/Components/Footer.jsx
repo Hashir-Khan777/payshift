@@ -29,7 +29,7 @@ const Footer = () => {
               Contact Us
             </p>
             <img
-              src="/svgIcons/footericon.svg"
+              src="/svgIcons/footericon2.svg"
               className="w-[48px] text-white"
             />
           </div>
@@ -49,7 +49,7 @@ const Footer = () => {
               Media Centre
             </p>
             <img
-              src="/svgIcons/footericon.svg"
+              src="/svgIcons/footericon2.svg"
               className="w-[48px] text-white"
             />
           </div>

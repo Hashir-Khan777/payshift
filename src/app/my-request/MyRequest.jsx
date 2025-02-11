@@ -156,9 +156,13 @@ const MyRequestSliderComponent = ({
         </div>
       </div>
 
-      <div className="flex flex-row gap-[24px] justify-center items-center md:mt-20 mt-10">
-        <CustomButton>Print</CustomButton>
+      <div className="flex flex-row justify-between md:mt-20 mt-10 w-[100vw] md:px-20 px-5">
+        <div className="flex flex-row justify-center items-center gap-5">
+          <CustomButton>Print</CustomButton>
         <CustomButton>Export</CustomButton>
+        </div>
+
+          <CustomButton>Download pdf</CustomButton>
       </div>
     </div>
   );

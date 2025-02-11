@@ -2,6 +2,7 @@ import Navbar from "@/Components/Navbar";
 import Footer from "@/Components/Footer";
 import MyRequestSliderComponent from "./MyRequest";
 import { FaArrowLeft } from "react-icons/fa6";
+import MyReportSliderComponent from "@/Components/MyReport";
 
 const tableHead = [
   "#",
@@ -229,7 +230,7 @@ export default function MyRequest() {
             </p>
           </div>
         </div>
-        <MyRequestSliderComponent
+        <MyReportSliderComponent
           cards={myRequest}
           headingWhite="My"
           headingBlack="Requests"

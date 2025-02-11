@@ -25,7 +25,7 @@ const CustomButton = ({
         {children}
       </span>
       <img
-        src="svgIcons/payicon.svg"
+        src="/svgIcons/payicon.svg"
         className={twMerge(
           `relative right-0 transition-all ease-linear duration-[400ms] w-[22px] h-[22px] md:w-[42px] md:h-[42px] animated-icon`,
           iconClass ?? ""

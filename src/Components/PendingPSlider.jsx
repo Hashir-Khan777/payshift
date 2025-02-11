@@ -45,6 +45,7 @@ const PendingPSliderComponent = ({ cards, headingWhite, headingBlack }) => {
               slidesPerView: 1,
             },
           }}
+          style={{ padding: "15px 0" }}
           navigation={{
             prevEl: prevRef.current,
             nextEl: nextRef.current,
@@ -57,27 +58,29 @@ const PendingPSliderComponent = ({ cards, headingWhite, headingBlack }) => {
               setActiveIndex(e.activeIndex);
             }
           }}
-          style={{ padding: "15px 8px" }}
         >
           {cards?.map((card, index) => (
             <SwiperSlide key={index}>
               <div
-                className={`font-lexend shrink-0 w-full md:py-[64px] py-[36px] md:px-[24px] px-[20px] flex flex-col md:gap-[48px] gap-[24px] rounded-md  border-4 border-white ${
+                className={`font-lexend shrink-0 w-full py-16 px-3 md:px-6 rounded-md  border-4 border-white
+                ${
                   index === activeIndex
-                    ? "bg-gradient-to-b from-white to-[#c7e1ff] shadow-lg my-3"
+                    ? "bg-gradient-to-b from-white to-[#C2DEFF] shadow-lg my-3"
                     : "bg-white/50 scale-90 opacity-40"
-                } transition-transform duration-300`}
+                }
+              transition-transform duration-300`}
                 style={{
-                  background: "linear-gradient(180deg, #E8F3FF  60%, #C2DEFF)",
-                  boxShadow: "0px 0px 20px rgba(146, 168, 255, 1)",
+                  background:
+                    "linear-gradient(180deg, #FFFFFF 16%, #C2DEFF 100%)",
+                  boxShadow: "0px 4px 24px 0px rgba(0, 69, 197, 0.48)",
                 }}
               >
                 {/* ========= Content  ============ */}
-                <div className="flex flex-col md:gap-[24px] gap-[10px]">
+                <div>
                   {/* Propert Id and heading start */}
-                  <div className="flex flex-col gap-[10px]">
+                  <div className="flex flex-col gap-[12px]">
                     {card.propertyId ? (
-                      <div className="mb-3 flex items-center gap-2 text-[10px] md:text-sm font-bold bg-[#D1BCFF] rounded-full px-5 py-2 mt-3 sm:w-full md:w-[60%]">
+                      <div className="mb-3 flex items-center gap-2 text-[10px] md:text-base font-bold bg-[#D1BCFF] rounded-full px-5 py-2 mt-3 sm:w-full md:w-[60%]">
                         <div className="w-[12px] h-[12px] bg-[#A786F0] rounded-full"></div>
                         <div>
                           <span>Property ID:</span>
@@ -86,16 +89,16 @@ const PendingPSliderComponent = ({ cards, headingWhite, headingBlack }) => {
                       </div>
                     ) : null}
 
-                    <h1 className="text-base md:text-xl font-semibold mb-10">
+                    <h1 className="text-base md:text-2xl font-semibold">
                       {card.title}
                     </h1>
                   </div>
 
                   {/* Propert Id and heading end */}
 
-                  <div className="flex flex-col md:gap-[16px]">
+                  <div>
                     {card.payment ? (
-                      <p className="font-bold text-xl md:text-3xl text-center mb-3">
+                      <p className="font-bold text-xl md:text-[32px] text-center mb-5 mt-9">
                         AED {card.amount}
                       </p>
                     ) : null}
@@ -128,14 +131,22 @@ const PendingPSliderComponent = ({ cards, headingWhite, headingBlack }) => {
                           />
                         ) : null}
 
-                        <h1 className="md:text-[22px] text-[12px]/[15px] font-bold">
+                        <h1
+                          className={`${
+                            index === activeIndex
+                              ? "md:text-[22px]"
+                              : "md:text-[14px]"
+                          } text-[12px]/[15px] ${
+                            index === activeIndex ? "font-bold" : "font-light"
+                          }`}
+                        >
                           {card.alert}
                         </h1>
                       </div>
                     ) : null}
                   </div>
 
-                  <p className="font-lexend font-light md:text-[20px]/[25px] text-[12px]/[15px] my-0 py-0 mt-9 mb-12">
+                  <p className="font-lexend font-light md:text-[20px] text-[12px] my-0 py-0 mt-[40px] mb-[52px]">
                     {card.info}
                   </p>
                 </div>

@@ -71,7 +71,7 @@ const MenuSection = () => {
               nextEl: nextRef.current,
             }}
             modules={[Navigation]}
-            style={{ marginTop: "4rem" }}
+            style={{ marginTop: "4rem", padding: "15px 0" }}
           >
             {cards.map((card) => (
               <SwiperSlide className="w-max" style={{ width: "max-content" }}>
