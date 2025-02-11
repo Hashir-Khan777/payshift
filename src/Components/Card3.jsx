@@ -13,7 +13,7 @@ const paymentMethods = [
 function Card3({ headingBlack, headingWhite }) {
   return (
     <div
-      className="w-[90%] bg-blue-300 mx-auto flex flex-col md:py-10 py-5 md:gap-14 gap-5 justify-between md:items-center items-start px-5 border-2 border-white rounded-md"
+      className="w-full bg-blue-300 mx-auto flex flex-col md:py-10 py-5 md:gap-14 gap-5 justify-between md:items-center items-start px-5 border-2 border-white rounded-[4px]"
       style={{
         background: "linear-gradient(0deg, #FFFFFF33 20%, #FFFFFF)",
         boxShadow: "2px 2px 5px 5px rgba(0,0,0,0.1)",
@@ -30,8 +30,8 @@ function Card3({ headingBlack, headingWhite }) {
   {paymentMethods.map((method) => (
     <div
       key={method.id}
-      className="rounded-lg shadow-lg w-[60px] h-[60px] sm:w-[90px] sm:h-[90px] md:w-[200px] md:h-[200px] flex flex-col justify-center items-center md:gap-[20px] gap-[8px] p-2"
-      style={{ background: "linear-gradient(180deg,#ffffff 70%, #aed2ff )" }}
+      className="rounded-lg shadow-lg w-[60px] h-[60px] sm:w-[90px] sm:h-[90px] md:w-[200px] md:h-[200px] flex flex-col justify-center items-center md:gap-[20px] gap-[8px] md:p-[24px]"
+      style={{ background: "linear-gradient(180deg,#ffffff 70%, #aed2ff )", boxShadow: "0px 4px 15px 0px rgba(0, 0, 0, 0.2)", }}
     >
       {method.isImg ? (
         <img className="w-6 md:w-[81px] md:h-[83px] sm:w-[24px] sm:h-[24px]" src={method.icon} alt={method.name} />

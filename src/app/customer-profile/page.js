@@ -154,16 +154,16 @@ function Page() {
       {/* ===== Main Content container ====== */}
 
       <div
-        className="w-full h-auto md:py-[100px] py-[50px] flex flex-col md:gap-[80px] gap-[24px]"
+        className="w-full h-auto md:py-[100px] md:px-[80px] py-[50px] px-[20px] pb-[80px] flex flex-col  md:gap-[80px] gap-[10px]"
         style={{
-          background: "linear-gradient(45deg, #8ABEFF 20%, #ffffff)",
+          background: "linear-gradient(90deg, #8ABEFF 20%, #ffffff)",
         }}
       >
         <Profile1Card1 cards={profileDetails} />
 
         {/* ----------- My Items ------------ */}
 
-        <div className="sm2:block hidden">
+        <div className="sm2:block hidden w-full">
           <ProfileMyItems headingBlack="My Items" cards={MyItemsCardsContent} />
         </div>
 

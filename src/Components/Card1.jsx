@@ -5,7 +5,7 @@ function Card1({ cards, headingBlack, headingWhite }) { // Destructuring 'cards'
 
 
     return (
-        <div className="w-[90%] mx-auto flex flex-col md:py-[80px] pt-[16px] pb-[24px] md:px-[64px] px-[16px] md:gap-14 gap-5 justify-between md:items-center items-start  border-2 border-white rounded-md"
+        <div className="w-full mx-auto flex flex-col md:py-[80px] pt-[16px] pb-[24px] md:px-[64px] px-[16px] md:gap-14 gap-5 justify-between md:items-center items-start  border-2 border-white rounded-[4px]"
             style={{
                 background: "linear-gradient(0deg, #FFFFFF33 20%, #FFFFFF)",
                 boxShadow: "2px 2px 5px 5px rgba(0,0,0,0.1)"

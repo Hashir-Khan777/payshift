@@ -14,7 +14,7 @@ const Slider1 = ({ cards, headingWhite, headingBlack, categories }) => {
 
   return (
     <div
-      className="w-[90%] container rounded-lg mx-auto md:py-20 py-5 px-1 md:px-16 border-[2px] border-white "
+      className="w-full container rounded-[4px] mx-auto md:py-20 pt-[16px] pb-[24px] px-[16px] md:px-16 border-[2px] border-white "
       style={{
         background:   "linear-gradient(180deg, #E8F3FF 15.92%, #bddcff 100%)",
         boxShadow: "0px 4px 24px 0px rgba(0, 69, 197, 0.64)",
@@ -121,7 +121,7 @@ const Slider1 = ({ cards, headingWhite, headingBlack, categories }) => {
       </div>
 
       {/* Navigation buttons */}
-      <div className="flex justify-end items-end gap-4 container px-10 pt-10">
+      <div className="flex justify-end items-end gap-4 container px-10 pt-2 pb-4">
         <button className="text-3xl" aria-label="Scroll Left" ref={prevRef}>
           <img
             className="w-[34px] h-[34px] md:w-[48px] md:h-[48px]"

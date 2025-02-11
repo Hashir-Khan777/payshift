@@ -5,7 +5,7 @@ function Profile1Card1({ cards }) { // Destructuring 'cards' prop properly
   
   
   return (
-    <div className="w-[90%] md:h-[136px] bg-blue-300 mx-auto flex flex-row justify-between items-center px-10 py-3 border-2 border-white rounded-md my-0 mb-0"
+    <div className="w-full md:h-[136px] bg-blue-300 mx-auto flex flex-row justify-between items-center px-10 py-3 border-2 border-white rounded-[4px] my-0 mb-0"
      style={{
           background: "linear-gradient(0deg, #FFFFFF33 20%, #FFFFFF)",
           boxShadow:"2px 2px 5px 5px rgba(0,0,0,0.1)"

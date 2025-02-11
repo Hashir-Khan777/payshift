@@ -67,8 +67,8 @@ export default function HistoryTimeline({ headingWhite, headingBlack }) {
 
             {/*Image */}
            
-              <div className="w-[280px] h-[200px] overflow-hidden flex items-center justify-center">
-                <img src={item.image} alt="timeline" className="w-full object-cover object-center" 
+              <div className="w-[250px] h-[180px] overflow-hidden flex items-center justify-center">
+                <img src={item.image} alt="timeline" className="w-full h-full object-cover object-center" 
                   style={{ boxShadow: "0px 2px 10px 0px rgba(0, 69, 197, 0.64)",}}
                 />
               </div>
