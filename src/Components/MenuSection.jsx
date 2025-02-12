@@ -57,15 +57,7 @@ const MenuSection = () => {
         <div className="container mx-auto">
           {/* MenuTabs Start */}
           <Swiper
-            breakpoints={{
-              1024: {
-                slidesPerView: 6,
-              },
-              320: {
-                slidesPerView: 1,
-              },
-            }}
-            spaceBetween={24}
+            slidesPerView={"auto"}
             navigation={{
               prevEl: prevRef.current,
               nextEl: nextRef.current,
@@ -74,12 +66,12 @@ const MenuSection = () => {
             style={{ marginTop: "4rem", padding: "15px 0" }}
           >
             {cards.map((card) => (
-              <SwiperSlide className="w-max" style={{ width: "max-content" }}>
+              <SwiperSlide>
                 <div
                   key={card.id}
                   onClick={() => handleTabClick(card.title)}
                   style={{ boxShadow: "0px 4.8px 12px 0px #0045C566" }}
-                  className={`w-max shrink-0 px-10 h-20 flex items-center justify-center cursor-pointer rounded-[4px] ${
+                  className={`w-max shrink-0 ml-6 px-10 h-20 flex items-center justify-center cursor-pointer rounded-[4px] ${
                     activeTab === card.title
                       ? "mx-3 my-2 h-24 bg-gradient-to-b from-white to-[#96a7e8] border-white border-[2px] cursor-pointer transform scale-110 transition-transform duration-300"
                       : "bg-custom-gradient mx-2"
