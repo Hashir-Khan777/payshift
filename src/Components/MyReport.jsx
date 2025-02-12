@@ -159,12 +159,12 @@ const MyReportSliderComponent = ({
       </div>
 
       <div className="flex flex-wrap flex-row justify-between md:mt-20 mt-10 w-[100vw] md:px-20 px-5">
-        <div className="flex flex-row justify-between md:justify-center items-center gap-5 flex-1 xl:flex-[0.5]">
-          <CustomButton>Print</CustomButton>
-          <CustomButton>Export</CustomButton>
+        <div className="flex flex-row gap-5 flex-1">
+          <CustomButton btnClass="w-full lg:w-auto">Print</CustomButton>
+          <CustomButton btnClass="w-full lg:w-auto">Export</CustomButton>
         </div>
 
-        <CustomButton btnClass="w-full md:w-auto mt-3 xl:mt-0">
+        <CustomButton btnClass="w-full lg:w-auto mt-3 lg:mt-0">
           Download pdf
         </CustomButton>
       </div>
