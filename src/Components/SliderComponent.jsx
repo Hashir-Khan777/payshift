@@ -38,7 +38,7 @@ const SliderComponent = ({ cards, headingWhite, headingBlack }) => {
         boxShadow: "0px 4px 24px 0px rgba(0, 69, 197, 0.64)",
       }}
     >
-      <h1 className="text-center text-2xl md:text-5xl mb-16 font-medium font-cashdisplay">
+      <h1 className="text-center text-[28px] md:text-5xl mb-6 md:mb-16 font-medium font-cashdisplay">
         <span className="text-white">{headingWhite}</span> {headingBlack}
       </h1>
       {/* <div className="mb-4 overflow-hidden"> */}
@@ -70,7 +70,7 @@ const SliderComponent = ({ cards, headingWhite, headingBlack }) => {
         {cards?.map((card, index) => (
           <SwiperSlide key={index}>
             <div
-              className={`font-lexend shrink-0 w-full py-16 px-3 md:px-6 rounded-md  border-4 border-white
+              className={`font-lexend shrink-0 mx-auto w-[310px] md:w-full py-16 px-3 md:px-6 rounded-md  border-4 border-white
                 ${
                   index === activeIndex
                     ? "bg-gradient-to-b from-white to-[#C2DEFF] shadow-lg my-3"
@@ -96,7 +96,7 @@ const SliderComponent = ({ cards, headingWhite, headingBlack }) => {
                       viewBox="0 0 27 25"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
-                      className="w-[25px] h-[25px] md:w-[27px] md:h-[25px]"
+                      className="w-[18px] h-[18px] md:w-[27px] md:h-[25px]"
                     >
                       <path
                         d="M11.0809 1.92012C12.1561 0.026628 14.844 0.0266264 15.9192 1.92012L26.3216 20.2396C27.3968 22.1331 26.0528 24.5 23.9025 24.5H3.09763C0.94726 24.5 -0.396723 22.1331 0.678463 20.2396L11.0809 1.92012Z"
@@ -108,7 +108,9 @@ const SliderComponent = ({ cards, headingWhite, headingBlack }) => {
                       />
                     </svg>
                   ) : null}
-                  <h1 className="text-[16px] md:text-[28px]">{card.alert}</h1>
+                  <h1 className="text-[18px] font-semibold md:text-[28px]">
+                    {card.alert}
+                  </h1>
                 </div>
               ) : null}
               {/* ---- Card ---- */}
@@ -118,13 +120,17 @@ const SliderComponent = ({ cards, headingWhite, headingBlack }) => {
                 } justify-between w-full`}
               >
                 <div>
-                  <h1 className="text-base md:text-2xl font-semibold">
+                  <h1
+                    className={`${
+                      card.showMoreInfo ? "text-sm" : "text-lg"
+                    } md:text-2xl font-semibold`}
+                  >
                     {card.title}
                   </h1>
                   {card.propertyId ? (
-                    <p className="text-base font-medium bg-[#D1BCFF] rounded-full px-5 py-2 mt-3">
+                    <p className="text-xs md:text-base font-medium bg-[#D1BCFF] rounded-full px-5 py-2 mt-3">
                       Property ID:{" "}
-                      <span className="font-semibold text-base">
+                      <span className="font-semibold text-xs md:text-base">
                         {card.propertyId}
                       </span>
                     </p>
@@ -134,7 +140,7 @@ const SliderComponent = ({ cards, headingWhite, headingBlack }) => {
                 {card.showMoreInfo && (
                   <Link
                     href="/"
-                    className="text-black text-sm md:text-lg underline font-normal"
+                    className="text-black text-xs md:text-lg underline font-normal"
                   >
                     More Info
                   </Link>
@@ -163,7 +169,7 @@ const SliderComponent = ({ cards, headingWhite, headingBlack }) => {
               {card.ref_no && !card.offer ? (
                 <p className="text-[12px] md:text-xl font-light mb-12">
                   Refrence Number:{" "}
-                  <span className="text-[16px] md:text-2xl font-semibold">
+                  <span className="text-[12px] md:text-2xl font-semibold">
                     {card.ref_no}
                   </span>
                 </p>

@@ -42,13 +42,13 @@ const RISliderComponent = ({
 
   return (
     <div
-      className="container rounded-lg mx-auto mt-20 md:py-20 px-3 md:px-16 border-[2px] border-white"
+      className="container rounded-lg mx-auto mt-20 py-20 px-3 md:px-16 border-[2px] border-white"
       style={{
         background: "linear-gradient(0deg, #E8F3FF 15.92%, #92A8FF 100%)",
         boxShadow: "0px 4px 24px 0px rgba(0, 69, 197, 0.64)",
       }}
     >
-      <h1 className="text-center text-2xl md:text-5xl mb-16 font-medium font-cashdisplay">
+      <h1 className="text-center text-[28px] md:text-5xl mb-16 font-medium font-cashdisplay">
         <span className="text-white">{headingWhite}</span> {headingBlack}
       </h1>
 
@@ -68,10 +68,10 @@ const RISliderComponent = ({
       </nav>
 
       {/* ====== location ====== */}
-      <div className="flex flex-row gap-[20px] items-center justify-center mx-auto bg-black mt-8 max-w-max h-[48px] rounded-full px-[48px]">
+      <div className="flex flex-row gap-[20px] items-center justify-center mx-auto bg-black mt-8 max-w-max h-[48px] rounded-full py-[6px] px-[10px] md:px-[48px]">
         <div className="flex flex-row gap-[4px] items-center">
           <MdLocationPin className="text-white" />
-          <p className="flex items-center text-white font-normal text-base gap-2">
+          <p className="flex items-center text-white font-light md:font-normal text-xs md:text-base gap-2">
             <span className="font-medium">Dubai</span>
             <div
               className="w-[8px] h-[8px] rounded-full"
@@ -102,7 +102,7 @@ const RISliderComponent = ({
                 boxShadow: "0px 4px 24px 0px rgba(0, 69, 197, 0.48)",
               }}
             >
-              <div className="w-[50%] md:w-full rounded-[10px] h-[108px] md:h-[253px] md:mb-[36px]">
+              <div className="w-[135px] md:w-full rounded-[10px] h-[108px] md:h-[253px] md:mb-[36px]">
                 <img
                   src={card.image}
                   alt="Property Image"
@@ -110,9 +110,9 @@ const RISliderComponent = ({
                 />
               </div>
 
-              <div className="w-full">
-                <div className="w-full flex justify-between items-center md:mb-[30px]">
-                  <h1 className="font-semibold font-lexend md:text-[24px] text-[18px]">
+              <div className="w-[135px] md:w-full">
+                <div className="w-full flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center md:mb-[30px]">
+                  <h1 className="font-semibold font-lexend mb-[18.5px] md:mb-0 md:text-[24px] text-[18px]">
                     {card.name}
                   </h1>
                   <p className="flex flex-row items-center gap-2">
@@ -122,15 +122,15 @@ const RISliderComponent = ({
                     </span>
                   </p>
                 </div>
-                <p className="font-lexend font-semibold md:text-[16px] text-[12px] mb-[10px]">
+                <p className="font-lexend font-semibold md:text-[16px] text-[12px] md:mb-[10px] mb-[18.5px]">
                   {card.price}
                 </p>
                 <p className="font-lexend font-normal flex flex-row justify-start items-center gap-1 md:text-base md:text-[16px] text-[12px]">
                   <img
                     src="svgIcons/location.svg"
-                    className="w-[20px] h-[20px]"
+                    className="md:w-[20px] md:h-[20px] w-[7px] h-[9px]"
                   />
-                  <p className="flex items-center gap-[6.4px] font-lexend font-light text-base">
+                  <p className="flex items-center gap-[6.4px] font-lexend font-light text-xs">
                     <span>{card.loc}</span>
                     <div
                       className="w-[6.4px] h-[6.4px] rounded-full opacity-50"
@@ -148,7 +148,7 @@ const RISliderComponent = ({
         {/* </Swiper> */}
       </div>
 
-      <div className="text-center mt-[60px] font-lexend">
+      <div className="hidden md:block text-center mt-[60px] font-lexend">
         <Link
           href="/"
           className="text-black text-sm md:text-base underline font-medium"

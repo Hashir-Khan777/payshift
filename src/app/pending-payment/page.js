@@ -113,14 +113,14 @@ function page() {
             {menuTags.map((elem, index) => {
               return (
                 <div className="align-middle flex flex-row items-center gap-[14px] text-[10px] md:text-sm font-bold bg-[#D1BCFF] rounded-full px-[16px] py-[6px] whitespace-nowrap">
-                  <div className="w-[18.5px] h-[18.5px] bg-[#A786F0] rounded-full"></div>
+                  <div className="md:w-[18.5px] w-[22px] h-[12px] md:h-[18.5px] bg-[#A786F0] rounded-full"></div>
                   <div>
-                    <p className="md:text-[20px]/[22.5px] font-lexend font-[600]">
+                    <p className="md:text-[20px]/[22.5px] font-lexend text-xs font-[600]">
                       {elem}
                     </p>
                     {/* <span className="md:tet-[18px]/[22.5px] font-lexend font-600">12345</span> */}
                   </div>
-                  <img src="/svgIcons/close.svg" alt="" />
+                  <img src="/svgIcons/close.svg" className="w-[10px]" alt="" />
                 </div>
               );
             })}

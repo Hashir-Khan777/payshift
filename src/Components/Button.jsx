@@ -18,7 +18,7 @@ const CustomButton = ({
     >
       <span
         className={twMerge(
-          `relative flex-1 text-base left-0 pl-3 md:pl-6 pr-2 md:pr-4 md:text-3xl animated-text transition-all ease-linear duration-[400ms] font-lexend`,
+          `relative flex-1 font-medium text-base left-0 pl-3 md:pl-6 pr-2 md:pr-4 md:text-3xl animated-text transition-all ease-linear duration-[400ms] font-lexend`,
           textClass ?? ""
         )}
       >

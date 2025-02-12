@@ -31,7 +31,7 @@ const ReferSliderComponent = ({ cards, headingWhite, headingBlack }) => {
         boxShadow: "0px 4px 24px 0px rgba(0, 69, 197, 0.64)",
       }}
     >
-      <h1 className="text-center text-2xl md:text-5xl mb-16 font-medium font-cashdisplay">
+      <h1 className="text-center text-[28px] md:text-5xl mb-6 md:mb-16 font-medium font-cashdisplay">
         <span className="text-white">{headingWhite}</span> {headingBlack}
       </h1>
 
@@ -63,7 +63,7 @@ const ReferSliderComponent = ({ cards, headingWhite, headingBlack }) => {
           {cards?.map((card, index) => (
             <SwiperSlide key={index}>
               <div
-                className={`font-lexend shrink-0 w-full py-16 px-3 md:px-6 rounded-md  border-4 border-white
+                className={`font-lexend shrink-0 mx-auto w-[280px] md:w-full py-16 px-3 md:px-6 rounded-md  border-4 border-white
                 ${
                   index === activeIndex
                     ? "bg-gradient-to-b from-white to-[#C2DEFF] shadow-lg my-3"
@@ -78,12 +78,12 @@ const ReferSliderComponent = ({ cards, headingWhite, headingBlack }) => {
               >
                 <div className="text-center">
                   {/* Title */}
-                  <h1 className="text-base md:text-2xl font-semibold">
+                  <h1 className="text-lg md:text-2xl font-semibold">
                     {card.title}
                   </h1>
 
                   {/* Heading */}
-                  <h1 className="text-lg md:text-[32px] font-semibold uppercase md:my-[36px]">
+                  <h1 className="text-2xl md:text-[32px] font-semibold uppercase my-[10px] md:my-[36px]">
                     {card.heading}
                   </h1>
 
@@ -93,7 +93,7 @@ const ReferSliderComponent = ({ cards, headingWhite, headingBlack }) => {
                       Refer a friend and get AED {card.discount_amount} off
                       using code
                       <span className="inline-flex gap-2 ms-2">
-                        <span className="text-2xl font-bold underline">
+                        <span className="text-base md:text-2xl font-bold underline">
                           {" "}
                           {card.discount_code}
                         </span>
@@ -106,7 +106,7 @@ const ReferSliderComponent = ({ cards, headingWhite, headingBlack }) => {
                 </div>
                 <CustomButton
                   textClass="md:text-xl"
-                  btnClass="mx-auto md:mt-[48px]"
+                  btnClass="mx-auto my-[24px] md:mt-[48px]"
                   iconClass="md:w-[32px] md:h-[32px]"
                 >
                   {card.btnText}

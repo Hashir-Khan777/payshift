@@ -33,7 +33,7 @@ const ServiceSliderComponent = ({ cards, headingWhite, headingBlack }) => {
         boxShadow: "0px 4px 24px 0px rgba(0, 69, 197, 0.64)",
       }}
     >
-      <h1 className="text-center text-2xl md:text-5xl mb-16 font-medium font-cashdisplay">
+      <h1 className="text-center text-[28px] md:text-5xl mb-6 md:mb-16 font-medium font-cashdisplay">
         <span className="text-white">{headingWhite}</span> {headingBlack}
       </h1>
       <div className="flex items-center justify-center mb-4 overflow-hidden">
@@ -65,7 +65,7 @@ const ServiceSliderComponent = ({ cards, headingWhite, headingBlack }) => {
           {cards?.map((card, index) => (
             <SwiperSlide key={index}>
               <div
-                className={`font-lexend shrink-0 w-full py-16 px-3 md:px-6 rounded-md  border-4 border-white
+                className={`font-lexend shrink-0 mx-auto w-[270px] md:w-full py-16 px-3 md:px-6 rounded-md  border-4 border-white
                 ${
                   index === activeIndex
                     ? "bg-gradient-to-b from-white to-[#C2DEFF] shadow-lg my-3"
@@ -81,20 +81,20 @@ const ServiceSliderComponent = ({ cards, headingWhite, headingBlack }) => {
                 {/* ---- Card Content---- */}
                 <div>
                   <div className="flex items-center">
-                    <h1 className="text-base md:text-2xl basis-[70%] font-semibold">
+                    <h1 className="text-lg md:text-2xl basis-[70%] font-semibold">
                       {card.title}
                     </h1>
                     {card.showMoreInfo && (
                       <Link
                         href="/"
-                        className="text-black text-sm md:text-lg underline font-normal"
+                        className="text-black text-xs md:text-lg underline font-normal"
                       >
                         More Info
                       </Link>
                     )}
                   </div>
 
-                  <p className="text-base md:text-xl font-light mt-[40px] mb-[52px]">
+                  <p className="text-xs md:text-xl font-light mt-[40px] mb-[52px]">
                     {card.info}
                   </p>
                 </div>

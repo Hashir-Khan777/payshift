@@ -98,7 +98,7 @@ const MenuSection = () => {
           </Swiper>
           {/* MenuTabs End */}
 
-          <div className="slider-btn hidden justify-end items-end gap-4 container mt-10">
+          <div className="slider-btn hidden justify-end items-end gap-4 container mt-3 md:mt-10 pr-2">
             <button ref={prevRef} className="text-3xl" aria-label="Scroll Left">
               <img
                 className="w-[48px] h-[48px]"
@@ -120,7 +120,7 @@ const MenuSection = () => {
       </div>
 
       {/* Render Tab Content */}
-      <div className="mx-1 pb-20">
+      <div className="mx-4 md:mx-1 pb-20">
         {activeTab === "Home" && <HomeTab />}
         {activeTab === "Services" && <ServicesTab />}
         {activeTab === "My Properties" && <Properties />}
