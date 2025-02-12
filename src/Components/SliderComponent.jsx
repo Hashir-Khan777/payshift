@@ -15,6 +15,7 @@ import CustomButton from "./Button";
 
 const SliderComponent = ({ cards, headingWhite, headingBlack }) => {
   const [activeIndex, setActiveIndex] = useState(1);
+  const [mounted, setMounted] = useState(false);
 
   const prevRef = useRef(null);
   const nextRef = useRef(null);
@@ -27,6 +28,13 @@ const SliderComponent = ({ cards, headingWhite, headingBlack }) => {
       } else {
         setActiveIndex(0);
       }
+    }
+  }, []);
+
+  useEffect(() => {
+    setMounted(true);
+    if (prevRef.current && nextRef.current) {
+      console.log("Refs initialized:", prevRef.current, nextRef.current);
     }
   }, []);
 

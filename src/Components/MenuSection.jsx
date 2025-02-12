@@ -26,6 +26,7 @@ const MenuSection = () => {
   ];
 
   const [activeTab, setActiveTab] = useState("Home");
+  const [mounted, setMounted] = useState(false);
 
   const prevRef = useRef(null);
   const nextRef = useRef(null);
@@ -36,6 +37,13 @@ const MenuSection = () => {
       if (storedTab) {
         setActiveTab(storedTab);
       }
+    }
+  }, []);
+
+  useEffect(() => {
+    setMounted(true);
+    if (prevRef.current && nextRef.current) {
+      console.log("Refs initialized:", prevRef.current, nextRef.current);
     }
   }, []);
 

@@ -9,8 +9,16 @@ import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa6";
 
 const Slider1 = ({ cards, headingWhite, headingBlack, categories }) => {
+  const [mounted, setMounted] = useState(false);
   const prevRef = useRef(null);
   const nextRef = useRef(null);
+
+  useEffect(() => {
+    setMounted(true);
+    if (prevRef.current && nextRef.current) {
+      console.log("Refs initialized:", prevRef.current, nextRef.current);
+    }
+  }, []);
 
   return (
     <div
