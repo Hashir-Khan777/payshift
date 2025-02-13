@@ -8,6 +8,8 @@ import SignIn from "./SignIn";
 const SignComponent = () => {
   const pathname = usePathname();
 
+  console.log(pathname, "pathname");
+
   return (
     <>
       {/* Navigation Links */}
@@ -15,7 +17,7 @@ const SignComponent = () => {
         <Link
           href="/sign-in"
           className={`md:w-[195px] font-cashdisplay md:text-[24px]/[30px] text-[20px]/[24.6px] font-[500] ${
-            pathname === "/sign-in" ? "text-white" : "text-gray-400"
+            pathname === "/sign-in/" ? "text-white" : "text-gray-400"
           }`}
         >
           Sign In
@@ -23,7 +25,7 @@ const SignComponent = () => {
         <Link
           href="/sign-up"
           className={`md:w-[195px] font-cashdisplay md:text-[24px]/[30px] text-[20px]/[24.6px] font-[500] ${
-            pathname === "/sign-up" ? "text-white" : "text-gray-400"
+            pathname === "/sign-up/" ? "text-white" : "text-gray-400"
           }`}
         >
           Sign Up
@@ -40,7 +42,7 @@ const SignComponent = () => {
           {/* --- Sign UP/IN  with FB or Google --------*/}
           <div className="w-[100%] flex flex-col justify-center items-center gap-5 py-5">
             <p className="font-lexend font-[400] text-[18px]/[22.5px]">
-              {pathname === "/sign-up" ? "Sign Up with" : "Sign In with"}
+              {pathname === "/sign-up/" ? "Sign Up with" : "Sign In with"}
             </p>
             <div className="w-full flex flex-row justify-center items-center gap-5">
               <div className="w-[50%] md:h-[70px] h-[50px] bg-white  shadow-sm flex justify-center items-center rounded-sm cursor-pointer">
@@ -70,7 +72,7 @@ const SignComponent = () => {
         </div>
 
         {/* Form Section */}
-        {pathname === "/sign-up" ? <SignUp /> : <SignIn />}
+        {pathname === "/sign-up/" ? <SignUp /> : <SignIn />}
       </div>
     </>
   );

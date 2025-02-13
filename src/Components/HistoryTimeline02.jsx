@@ -118,7 +118,7 @@ const HistoryTimeLine02 = ({ cards, headingWhite, headingBlack }) => {
             </SwiperSlide>
           ))}
         </Swiper>
-        <div className="pe-[80px] flex justify-end items-end gap-4">
+        <div className="pe-[80px] flex justify-end items-end gap-4 mt-16">
           <button className="text-3xl" aria-label="Scroll Left" ref={prevRef}>
             <img
               className="w-[34px] h-[34px] md:w-[48px] md:h-[48px] rotate-180"

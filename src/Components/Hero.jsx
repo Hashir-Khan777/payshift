@@ -24,15 +24,21 @@ const Hero = () => {
         {/* Centered Box */}
         <div
           className="absolute inset-0 flex items-center justify-center z-10"
-          style={{ top: "5%", transform: "translateY(5%)" }}
+          style={{
+            top: "5%",
+            transform: "translateY(5%)",
+          }}
         >
           <div
-            className="shadow-xl m-2 relative w-[300px] h-[280px] md:w-[460px] lg:h-[400px] bg-white/5 backdrop-blur-md rounded-sm  border-[3px] border-white/20"
+            className="m-2 relative w-[300px] h-[280px] md:w-[460px] lg:h-[400px] bg-white/5 backdrop-blur-md rounded-sm"
+            // className="m-2 relative w-[300px] h-[280px] md:w-[460px] lg:h-[400px] bg-white/5 backdrop-blur-md rounded-sm  border-[3px] border-white/20"
             style={{
-              clipPath: "polygon(20% 0%, 100% 0, 100% 100%, 0 100%, 0% 23%)",
+              background: "url('/Images/herobg.png')",
+              // clipPath: "polygon(20% 0%, 100% 0, 100% 100%, 0 100%, 0% 23%)",
+              filter: "drop-shadow(1px 1px 55px rgba(41, 0, 128, 0.4))",
             }}
           >
-            <div className="relative flex flex-col items-center justify-center gap-5 text-center h-full rounded-md z-20 ">
+            <div className="relative flex flex-col items-center justify-center gap-5 text-center h-full rounded-md z-20">
               <h1
                 className={`text-white text-[30px] md:text-[45px] -tracking-normal font-medium font-cashdisplay`}
               >
