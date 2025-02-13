@@ -141,8 +141,8 @@ const MyReportSliderComponent = ({
             disabled={currentPage === 1}
           >
             <img
-              className="w-[34px] h-[34px] md:w-[48px] md:h-[48px]"
-              src="/svgIcons/slidericonleft.svg"
+              className="w-[34px] h-[34px] md:w-[48px] md:h-[48px] rotate-180"
+              src="/svgIcons/slidericon.svg"
             />
           </button>
           <button

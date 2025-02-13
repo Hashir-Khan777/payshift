@@ -282,8 +282,8 @@ const PendingPSliderComponent = ({ cards, headingWhite, headingBlack }) => {
       <div className="hidden md:flex w-full justify-center items-center gap-4 container mt-16">
         <button className="text-3xl" aria-label="Scroll Left" ref={prevRef}>
           <img
-            className="w-[34px] h-[34px] md:w-[48px] md:h-[48px]"
-            src="/svgIcons/slidericonleft.svg"
+            className="w-[34px] h-[34px] md:w-[48px] md:h-[48px] rotate-180"
+            src="/svgIcons/slidericon.svg"
           />
         </button>
         <p className="md:text-[20px]/[25px] font-[500] font-lexend">
@@ -306,8 +306,8 @@ const PendingPSliderComponent = ({ cards, headingWhite, headingBlack }) => {
         <div className="flex gap-2 items-center">
           <button className="text-3xl" aria-label="Scroll Left" ref={prevRef}>
             <img
-              className="w-[34px] h-[34px] md:w-[48px] md:h-[48px]"
-              src="/svgIcons/slidericonleft.svg"
+              className="w-[34px] h-[34px] md:w-[48px] md:h-[48px] rotate-180"
+              src="/svgIcons/slidericon.svg"
             />
           </button>
           <button className="text-3xl" aria-label="Scroll Right" ref={nextRef}>

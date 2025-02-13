@@ -24,7 +24,7 @@ const Footer = () => {
           <p className="text-2xl font-lexend font-medium text-white mb-16 tracking-wide">
             Lets Do This Together
           </p>
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between" id="contact">
             <p className="uppercase text-white text-[24px] md:text-[32px] font-semibold">
               Contact Us
             </p>

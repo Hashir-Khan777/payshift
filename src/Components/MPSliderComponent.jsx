@@ -195,8 +195,8 @@ const MakePaymentSliderComponent = ({ cards, headingWhite, headingBlack }) => {
       <div className="pe-6 flex justify-end items-end gap-4 container">
         <button className="text-3xl" aria-label="Scroll Left" ref={prevRef}>
           <img
-            className="w-[34px] h-[34px] md:w-[48px] md:h-[48px]"
-            src="/svgIcons/slidericonleft.svg"
+            className="w-[34px] h-[34px] md:w-[48px] md:h-[48px] rotate-180"
+            src="/svgIcons/slidericon.svg"
           />
         </button>
         <button className="text-3xl" aria-label="Scroll Right" ref={nextRef}>

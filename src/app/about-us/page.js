@@ -3,6 +3,7 @@ import HistoryTimeline02 from "@/Components/HistoryTimeline02";
 import Navbar from "@/Components/Navbar";
 import Footer from "@/Components/Footer";
 import React from "react";
+import CustomButton from "@/Components/Button";
 
 const timelineData = [
   {
@@ -56,13 +57,16 @@ function Page() {
 
       {/* ------ Payshift Video Section ------ */}
       <div className="relative w-full h-[100vh] flex justify-center items-center overflow-hidden border-0">
-        <video
-          src="/Images/payshiftVideo.mp4"
+        <img
+          src="/Images/aboutbg.png"
           autoPlay
           loop
           muted
           className="w-full h-full object-cover"
-        ></video>
+        />
+        <CustomButton btnClass="absolute bottom-[30px]">
+          Contact Us
+        </CustomButton>
       </div>
 
       <section

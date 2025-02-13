@@ -13,9 +13,9 @@ const Hero = () => {
     <section className="flex-1">
       {/* Hero Section */}
       <div className="relative">
-        <video
+        <img
           className="w-full h-[calc(100vh-100px-320px)] lg:h-[calc(100vh-100px-232px)] object-cover object-center"
-          src="/Images/video.mp4"
+          src="/Images/dummybg.png"
           autoPlay
           loop
           muted

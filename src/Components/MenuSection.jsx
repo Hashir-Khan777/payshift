@@ -14,7 +14,7 @@ import RegisterInterestTab from "./RegisterInterestTab";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 
-const MenuSection = () => {
+const MenuSection = ({ activeTab, setActiveTab }) => {
   // For toggle between tabs
   const cards = [
     { id: 1, title: "Home" },
@@ -25,7 +25,6 @@ const MenuSection = () => {
     { id: 6, title: "Refer a Friend" },
   ];
 
-  const [activeTab, setActiveTab] = useState("Home");
   const [mounted, setMounted] = useState(false);
 
   const prevRef = useRef(null);
@@ -79,7 +78,7 @@ const MenuSection = () => {
                   key={card.id}
                   onClick={() => handleTabClick(card.title)}
                   style={{ boxShadow: "0px 4.8px 12px 0px #0045C566" }}
-                  className={`w-max shrink-0 ml-6 px-10 h-20 flex items-center justify-center cursor-pointer rounded-[4px] ${
+                  className={`w-max shrink-0 ml-8 px-10 h-20 flex items-center justify-center cursor-pointer rounded-[4px] ${
                     activeTab === card.title
                       ? "mx-3 my-2 h-24 bg-gradient-to-b from-white to-[#96a7e8] border-white border-[2px] cursor-pointer transform scale-110 transition-transform duration-300"
                       : "bg-custom-gradient mx-2"
@@ -101,8 +100,8 @@ const MenuSection = () => {
           <div className="slider-btn hidden justify-end items-end gap-4 container mt-3 md:mt-10 pr-2">
             <button ref={prevRef} className="text-3xl" aria-label="Scroll Left">
               <img
-                className="w-[48px] h-[48px]"
-                src="/svgIcons/slidericonleft.svg"
+                className="w-[48px] h-[48px] rotate-180"
+                src="/svgIcons/slidericon.svg"
               />
             </button>
             <button
