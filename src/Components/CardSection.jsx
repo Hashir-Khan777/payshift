@@ -63,6 +63,7 @@ const CardSection = ({ setActiveTab }) => {
     {
       title: "Appointments",
       func: () => {
+        setActiveTab("Home");
         localStorage.setItem("activeTab", "Home");
         router.push("#appointments");
       },
