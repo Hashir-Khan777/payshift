@@ -38,14 +38,14 @@ const Page = () => {
             muted
             loop
           >
-            <source src="./Images/video.mp4" type="video/mp4" />
+            <source src="/Images/video.mp4" type="video/mp4" />
           </video>
         </div>
 
         {/* Inner Content */}
         <div className="relative md:h-[316px] h-[140px] z-10 flex items-center justify-center shadow-lg">
           <img
-            src="./svgIcons/payshiftLogo.svg"
+            src="/svgIcons/payshiftLogo.svg"
             alt="PayShift Logo"
             className="md:w-[300px] md:h-[99.4px] w-[147.25px] h-[46.5px]"
           />

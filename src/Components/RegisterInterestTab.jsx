@@ -14,8 +14,7 @@ const allCategories = [
 const propertyCards = [
   {
     name: "Property 01",
-    image:
-      "https://s3-alpha-sig.figma.com/img/e55b/f5ff/4f733e3bdd4d4d82fb92d230d1d53669?Expires=1737936000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=EEKlWdJQTQzM3xHqRrr~cqJbSNSkgLaQXqMN70zlCbwIisGn8tY5rakAKrK3ao8utBgNLVvVm~BvbhVHyTRObbrvC8OyeOLyaLeTnXFEMwc8nbr8C2jru2hw78lQZHjaOVaFBOdalCeYnZaSgLklTP-YI87RZYHiFA-NQ6EmXvNXqRkTZyZYLHAhmLe0cqi5wCyiS7IIyvFTpg523z7LftUo6eboREF5gqXX8TBLdR6zIbPUyKVZxsB8T4hFwtYHXxKToEmCHl8GwFYurV7QdpgWekxTIcfUm6QQzPiY9OPs-7PQBTgWpJjeghmpn8u~cbri6omgCdWg1CSMxHxmRA__",
+    image: "/Images/Rectangle13.png",
     rating: 4.5,
     price: "AED 900k",
     loc: "Dubai",
@@ -23,8 +22,7 @@ const propertyCards = [
   },
   {
     name: "Property 02",
-    image:
-      "https://s3-alpha-sig.figma.com/img/e55b/f5ff/4f733e3bdd4d4d82fb92d230d1d53669?Expires=1737936000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=EEKlWdJQTQzM3xHqRrr~cqJbSNSkgLaQXqMN70zlCbwIisGn8tY5rakAKrK3ao8utBgNLVvVm~BvbhVHyTRObbrvC8OyeOLyaLeTnXFEMwc8nbr8C2jru2hw78lQZHjaOVaFBOdalCeYnZaSgLklTP-YI87RZYHiFA-NQ6EmXvNXqRkTZyZYLHAhmLe0cqi5wCyiS7IIyvFTpg523z7LftUo6eboREF5gqXX8TBLdR6zIbPUyKVZxsB8T4hFwtYHXxKToEmCHl8GwFYurV7QdpgWekxTIcfUm6QQzPiY9OPs-7PQBTgWpJjeghmpn8u~cbri6omgCdWg1CSMxHxmRA__",
+    image: "/Images/Rectangle13.png",
     rating: 4.5,
     price: "AED 900k",
     loc: "Dubai",
@@ -32,8 +30,7 @@ const propertyCards = [
   },
   {
     name: "Property 03",
-    image:
-      "https://s3-alpha-sig.figma.com/img/e55b/f5ff/4f733e3bdd4d4d82fb92d230d1d53669?Expires=1737936000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=EEKlWdJQTQzM3xHqRrr~cqJbSNSkgLaQXqMN70zlCbwIisGn8tY5rakAKrK3ao8utBgNLVvVm~BvbhVHyTRObbrvC8OyeOLyaLeTnXFEMwc8nbr8C2jru2hw78lQZHjaOVaFBOdalCeYnZaSgLklTP-YI87RZYHiFA-NQ6EmXvNXqRkTZyZYLHAhmLe0cqi5wCyiS7IIyvFTpg523z7LftUo6eboREF5gqXX8TBLdR6zIbPUyKVZxsB8T4hFwtYHXxKToEmCHl8GwFYurV7QdpgWekxTIcfUm6QQzPiY9OPs-7PQBTgWpJjeghmpn8u~cbri6omgCdWg1CSMxHxmRA__",
+    image: "/Images/Rectangle13.png",
     rating: 4.5,
     price: "AED 900k",
     loc: "Dubai",
@@ -41,8 +38,7 @@ const propertyCards = [
   },
   {
     name: "Property 04",
-    image:
-      "https://s3-alpha-sig.figma.com/img/e55b/f5ff/4f733e3bdd4d4d82fb92d230d1d53669?Expires=1737936000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=EEKlWdJQTQzM3xHqRrr~cqJbSNSkgLaQXqMN70zlCbwIisGn8tY5rakAKrK3ao8utBgNLVvVm~BvbhVHyTRObbrvC8OyeOLyaLeTnXFEMwc8nbr8C2jru2hw78lQZHjaOVaFBOdalCeYnZaSgLklTP-YI87RZYHiFA-NQ6EmXvNXqRkTZyZYLHAhmLe0cqi5wCyiS7IIyvFTpg523z7LftUo6eboREF5gqXX8TBLdR6zIbPUyKVZxsB8T4hFwtYHXxKToEmCHl8GwFYurV7QdpgWekxTIcfUm6QQzPiY9OPs-7PQBTgWpJjeghmpn8u~cbri6omgCdWg1CSMxHxmRA__",
+    image: "/Images/Rectangle13.png",
     rating: 4.5,
     price: "AED 900k",
     loc: "Dubai",
@@ -50,8 +46,7 @@ const propertyCards = [
   },
   {
     name: "Property 05",
-    image:
-      "https://s3-alpha-sig.figma.com/img/e55b/f5ff/4f733e3bdd4d4d82fb92d230d1d53669?Expires=1737936000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=EEKlWdJQTQzM3xHqRrr~cqJbSNSkgLaQXqMN70zlCbwIisGn8tY5rakAKrK3ao8utBgNLVvVm~BvbhVHyTRObbrvC8OyeOLyaLeTnXFEMwc8nbr8C2jru2hw78lQZHjaOVaFBOdalCeYnZaSgLklTP-YI87RZYHiFA-NQ6EmXvNXqRkTZyZYLHAhmLe0cqi5wCyiS7IIyvFTpg523z7LftUo6eboREF5gqXX8TBLdR6zIbPUyKVZxsB8T4hFwtYHXxKToEmCHl8GwFYurV7QdpgWekxTIcfUm6QQzPiY9OPs-7PQBTgWpJjeghmpn8u~cbri6omgCdWg1CSMxHxmRA__",
+    image: "/Images/Rectangle13.png",
     rating: 4.5,
     price: "AED 900k",
     loc: "Dubai",
@@ -59,8 +54,7 @@ const propertyCards = [
   },
   {
     name: "Property 06",
-    image:
-      "https://s3-alpha-sig.figma.com/img/e55b/f5ff/4f733e3bdd4d4d82fb92d230d1d53669?Expires=1737936000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=EEKlWdJQTQzM3xHqRrr~cqJbSNSkgLaQXqMN70zlCbwIisGn8tY5rakAKrK3ao8utBgNLVvVm~BvbhVHyTRObbrvC8OyeOLyaLeTnXFEMwc8nbr8C2jru2hw78lQZHjaOVaFBOdalCeYnZaSgLklTP-YI87RZYHiFA-NQ6EmXvNXqRkTZyZYLHAhmLe0cqi5wCyiS7IIyvFTpg523z7LftUo6eboREF5gqXX8TBLdR6zIbPUyKVZxsB8T4hFwtYHXxKToEmCHl8GwFYurV7QdpgWekxTIcfUm6QQzPiY9OPs-7PQBTgWpJjeghmpn8u~cbri6omgCdWg1CSMxHxmRA__",
+    image: "/Images/Rectangle13.png",
     rating: 4.5,
     price: "AED 900k",
     loc: "Dubai",

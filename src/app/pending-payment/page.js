@@ -82,7 +82,7 @@ function page() {
         {/* =========== Payment Due =========== */}
         <div className="font-lexend flex flex-row gap-[8px] items-center justify-center bg-black mx-auto text-white  rounded-full md:mb-14 mb-5 px-3 py-2 md:w-[320px] w-[290px]">
           <img
-            src="svgIcons/err.svg"
+            src="/svgIcons/err.svg"
             alt="Err"
             className="md:w-[19px] md:h-[16px] w-[11px] h-[10px]"
           />
@@ -103,7 +103,7 @@ function page() {
         >
           <div className="md:pr-5 pr-3 border-r-4 border-[#9FC3EC] shrink-0">
             <img
-              src="./svgIcons/menu.svg"
+              src="/svgIcons/menu.svg"
               alt="icon"
               className="md:w-[55px] w-[45px] md:h-[46px] h-[32px]"
             />
@@ -113,14 +113,14 @@ function page() {
             {menuTags.map((elem, index) => {
               return (
                 <div className="align-middle flex flex-row items-center gap-[14px] text-[10px] md:text-sm font-bold bg-[#D1BCFF] rounded-full px-[16px] py-[6px] whitespace-nowrap">
-                  <div className="w-[18.5px] h-[18.5px] bg-[#A786F0] rounded-full"></div>
+                  <div className="md:w-[18.5px] w-[22px] h-[12px] md:h-[18.5px] bg-[#A786F0] rounded-full"></div>
                   <div>
-                    <p className="md:text-[20px]/[22.5px] font-lexend font-[600]">
+                    <p className="md:text-[20px]/[22.5px] font-lexend text-xs font-[600]">
                       {elem}
                     </p>
                     {/* <span className="md:tet-[18px]/[22.5px] font-lexend font-600">12345</span> */}
                   </div>
-                  <img src="/svgIcons/close.svg" alt="" />
+                  <img src="/svgIcons/close.svg" className="w-[10px]" alt="" />
                 </div>
               );
             })}

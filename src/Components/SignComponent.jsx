@@ -24,14 +24,14 @@ const SignComponent = () => {
             muted
             loop
           >
-            <source src="./Images/video.mp4" type="video/mp4" />
+            <source src="/Images/video.mp4" type="video/mp4" />
           </video>
         </div>
 
         {/* Inner Content */}
         <div className="relative md:h-[316px] h-[140px] z-10 flex items-center justify-center shadow-lg">
           <img
-            src="./svgIcons/payshiftLogo.svg"
+            src="/svgIcons/payshiftLogo.svg"
             alt="PayShift Logo"
             className="md:w-[300px] md:h-[99.4px] w-[147.25px] h-[46.5px]"
           />
@@ -74,13 +74,13 @@ const SignComponent = () => {
           <div className="w-full flex flex-row justify-center items-center gap-5">
             <div className="w-[50%] md:h-[70px] h-[50px] bg-white  shadow-sm flex justify-center items-center rounded-sm cursor-pointer">
               <img
-                src="./svgIcons/google.svg"
+                src="/svgIcons/google.svg"
                 className="md:w-[48px] md:h-[48px] w-[26px] h-[26px]"
               />
             </div>
             <div className="w-[50%] md:h-[70px] h-[50px] bg-white  shadow-sm flex justify-center items-center rounded-sm cursor-pointer">
               <img
-                src="./svgIcons/fb.svg"
+                src="/svgIcons/fb.svg"
                 className="md:w-[48px] md:h-[48px] w-[26px] h-[26px]"
               />
             </div>

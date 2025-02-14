@@ -2,8 +2,7 @@ import React from "react";
 import { FaArrowLeft } from "react-icons/fa6";
 import CustomButton from "./Button";
 
-const imageUrl =
-  "https://s3-alpha-sig.figma.com/img/6349/acbd/1a0a65f8f11b31f35a3437c0ba96638b?Expires=1739145600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=YUWIESKH1ZxEfAcTv6v7b7uzvxxtUjHVmjEAPtQn5qRJmAtte2u-Um0NV~SxUUE~~xZDoF7mI6im~SVtm5yBQsQ5hsrKCJlRDdROLO6H9soAqAJ2IIvkhWeny1JFYvOI8RL3ASkcRjf0i18KcRKDYchVBc~TMFw~r3-Vexrvv~BGANDxjGJpcxeIqAa3dZKkfwAaEktae-IUd~O30ikFZmZjBEzTDJLxL7M9MPYhx3iChMVJFHaCA4F9GRtuRDtUqgp0iy9stBTOtIW~oqSbVSTMzjzyW2U20E~P7yi0tmYdSuTkZqw99gC1JGJ2I7nnEeQR4QqDUovCi6VfWwA1Rw__";
+const imageUrl = "/Images/profile2.png";
 
 function Profile2() {
   return (
@@ -19,7 +18,7 @@ function Profile2() {
           />
 
           <img
-            src="./svgIcons/camera.svg"
+            src="/svgIcons/camera.svg"
             alt="camera icon"
             className="absolute bottom-5 right-5"
           />
@@ -40,7 +39,7 @@ function Profile2() {
               Personal Details
             </h1>
             <img
-              src="./svgIcons/edit.svg"
+              src="/svgIcons/edit.svg"
               alt="Edit icon"
               className="md:w-[38px]  w-[24px] md:h-[38px] h-[24px]"
             />

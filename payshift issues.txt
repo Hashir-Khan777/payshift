@@ -1,9 +1,15 @@
-1) hero & menu section on same viewport
-2) fonts
-3) same icons
-4) update logo svg format
-5) menu button bg
-6) panel bg
-7) width & height of tabs
-8) border radius of boxes
-9) border stroke
+1) hero ki height 250px karni h agar screen ki min height ho 820px
+2) home/service slider width issue
+3) home/service slider shadow issue
+4) my request header applied to the my-document
+5) my request/my documents or my report k page me download pdf right me hoga or print or export left me hoga or height bhi choti hogi
+6) about me video viewport par lana h
+7) our history section on viewport
+8) about me buttons ko slider k saath end karna h
+9) profile page full
+10) checkout page full
+11) slider buttons not working on start
+12) set mobile view
+13) slider is not ending
+14) register intrest full page
+15) padding issues in mobile and web view (all over web)

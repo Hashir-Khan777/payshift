@@ -11,6 +11,7 @@ import CustomButton from "./Button";
 const MakePaymentSliderComponent = ({ cards, headingWhite, headingBlack }) => {
   // const router = useRouter();
   const [activeIndex, setActiveIndex] = useState(1);
+  const [mounted, setMounted] = useState(false);
 
   const prevRef = useRef(null);
   const nextRef = useRef(null);
@@ -31,6 +32,13 @@ const MakePaymentSliderComponent = ({ cards, headingWhite, headingBlack }) => {
     }
   }, []);
 
+  useEffect(() => {
+    setMounted(true);
+    if (prevRef.current && nextRef.current) {
+      console.log("Refs initialized:", prevRef.current, nextRef.current);
+    }
+  }, []);
+
   return (
     <div
       className="container rounded-lg mx-auto mt-20 py-20 px-5 md:px-16 border-[4px] border-white"
@@ -39,17 +47,17 @@ const MakePaymentSliderComponent = ({ cards, headingWhite, headingBlack }) => {
         boxShadow: "0px 4px 24px 0px rgba(0, 69, 197, 0.64)",
       }}
     >
-      <h1 className="text-center text-2xl md:text-4xl mb-16 font-medium font-cashdisplay">
+      <h1 className="text-center text-[28px] md:text-5xl mb-16 font-medium font-cashdisplay">
         <span className="text-white">{headingWhite}</span> {headingBlack}
       </h1>
 
       {/* =========== Payment Due =========== */}
-      <div className="font-lexend flex flex-row gap-3 items-center justify-center bg-black mx-auto text-white md:text-base text-sm rounded-full md:mb-14 mb-5 px-3 py-2 md:w-[300px] w-[280px]">
+      <div className="font-lexend flex flex-row gap-3 items-center justify-center bg-black mx-auto text-white md:text-base text-sm rounded-full md:mb-14 mb-5 px-3 py-2 md:w-[336px] w-[280px]">
         <svg
           viewBox="0 0 27 25"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="w-[25px] h-[25px] md:w-[27px] md:h-[22px]"
+          className="w-[11px] h-[11px] md:w-[27px] md:h-[22px]"
         >
           <path
             d="M11.0809 1.92012C12.1561 0.026628 14.844 0.0266264 15.9192 1.92012L26.3216 20.2396C27.3968 22.1331 26.0528 24.5 23.9025 24.5H3.09763C0.94726 24.5 -0.396723 22.1331 0.678463 20.2396L11.0809 1.92012Z"
@@ -60,8 +68,8 @@ const MakePaymentSliderComponent = ({ cards, headingWhite, headingBlack }) => {
             fill="white"
           />
         </svg>
-        <p>
-          Total of <span className="font-bold">AED 250</span> urgently due.
+        <p className="text-xs md:text-base font-light">
+          Total of <span className="font-bold">AED 250</span> urgently due {">"}
         </p>
       </div>
       {/* =========== Payment Due End =========== */}
@@ -81,6 +89,7 @@ const MakePaymentSliderComponent = ({ cards, headingWhite, headingBlack }) => {
             prevEl: prevRef.current,
             nextEl: nextRef.current,
           }}
+          style={{ padding: "15px 0" }}
           modules={[Navigation]}
           onSlideChange={(e) => {
             if (e.currentBreakpoint >= 1024) {
@@ -93,39 +102,43 @@ const MakePaymentSliderComponent = ({ cards, headingWhite, headingBlack }) => {
           {cards?.map((card, index) => (
             <SwiperSlide key={index}>
               <div
-                className={`font-lexend shrink-0 w-full py-16 px-3 md:px-6 rounded-md  border-4 border-white${
+                className={`font-lexend shrink-0 mx-auto md:w-full py-16 px-3 md:px-6 rounded-md  border-4 border-white
+                ${
                   index === activeIndex
-                    ? "bg-gradient-to-b from-white to-[#c7e1ff] shadow-lg my-3"
+                    ? "bg-gradient-to-b from-white to-[#C2DEFF] shadow-lg my-3"
                     : "bg-white/50 scale-90 opacity-40"
-                } transition-transform duration-300`}
+                }
+              transition-transform duration-300`}
                 style={{
                   background:
-                    "linear-gradient(180deg, #E8F3FF 15.92%, #92A8FF 100%)",
-                  boxShadow: "0px 0px 20px rgba(146, 168, 255, 1)",
+                    "linear-gradient(180deg, #FFFFFF 16%, #C2DEFF 100%)",
+                  boxShadow: "0px 4px 24px 0px rgba(0, 69, 197, 0.48)",
                 }}
               >
                 {/* Propert Id and heading start */}
                 <div className="flex flex-col gap-3">
                   {card.propertyId ? (
-                    <p className="flex items-center gap-2 text-[10px] md:text-sm font-bold bg-[#D1BCFF] rounded-full px-5 py-2 mt-3 w-[60%]">
+                    <p className="flex items-center gap-2 text-[10px] md:text-base font-bold bg-[#D1BCFF] rounded-full px-[10px] py-1 md:px-5 md:py-2 md:mt-3 md:w-[225px] w-[162px]">
                       <div className="w-[12px] h-[12px] bg-[#A786F0] rounded-full"></div>
-                      <div>
-                        <span>Property ID:</span>
-                        <span className="font-bold">{card.propertyId}</span>
-                      </div>
+                      <p className="text-xs md:text-base font-medium">
+                        Property ID:{" "}
+                        <span className="font-semibold text-xs md:text-base">
+                          {card.propertyId}
+                        </span>
+                      </p>
                     </p>
                   ) : null}
 
-                  <h1 className="text-base md:text-xl font-semibold">
+                  <h1 className="text-lg md:text-2xl font-semibold">
                     {card.title}
                   </h1>
                 </div>
 
                 {/* Propert Id and heading end */}
 
-                <div className="flex flex-col gap-2 mt-2">
+                <div className="flex flex-col gap-2 my-[10px] md:my-9">
                   {card.payment ? (
-                    <p className="font-bold text-xl md:text-3xl text-center">
+                    <p className="font-semibold md:font-bold text-2xl md:text-3xl text-center">
                       AED {card.amount}
                     </p>
                   ) : null}
@@ -136,14 +149,14 @@ const MakePaymentSliderComponent = ({ cards, headingWhite, headingBlack }) => {
                         card.alertType === "success"
                           ? "text-[#17A900]"
                           : "text-[#F93434]"
-                      } font-semibold mb-9`}
+                      } font-semibold`}
                     >
                       {card.alertType === "danger" ? (
                         <svg
                           viewBox="0 0 27 25"
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
-                          className="w-[25px] h-[25px] md:w-[27px] md:h-[22px]"
+                          className="w-[20px] h-[20px] md:w-[27px] md:h-[22px]"
                         >
                           <path
                             d="M11.0809 1.92012C12.1561 0.026628 14.844 0.0266264 15.9192 1.92012L26.3216 20.2396C27.3968 22.1331 26.0528 24.5 23.9025 24.5H3.09763C0.94726 24.5 -0.396723 22.1331 0.678463 20.2396L11.0809 1.92012Z"
@@ -163,11 +176,13 @@ const MakePaymentSliderComponent = ({ cards, headingWhite, headingBlack }) => {
                   ) : null}
                 </div>
 
-                <p className="text-base my-0">{card.info}</p>
+                <p className="md:text-xl text-xs font-light my-0 mb-6 md:mb-12">
+                  {card.info}
+                </p>
 
                 <CustomButton
                   textClass="md:text-xl"
-                  btnClass="mx-auto my-5"
+                  btnClass="mx-auto"
                   iconClass="md:w-[32px] md:h-[32px]"
                 >
                   {card.btnText}
@@ -177,11 +192,11 @@ const MakePaymentSliderComponent = ({ cards, headingWhite, headingBlack }) => {
           ))}
         </Swiper>
       </div>
-      <div className="flex justify-end items-end gap-4 container">
+      <div className="pe-6 flex justify-end items-end gap-4 container">
         <button className="text-3xl" aria-label="Scroll Left" ref={prevRef}>
           <img
-            className="w-[34px] h-[34px] md:w-[48px] md:h-[48px]"
-            src="/svgIcons/slidericonleft.svg"
+            className="w-[34px] h-[34px] md:w-[48px] md:h-[48px] rotate-180"
+            src="/svgIcons/slidericon.svg"
           />
         </button>
         <button className="text-3xl" aria-label="Scroll Right" ref={nextRef}>

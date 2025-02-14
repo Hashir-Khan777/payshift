@@ -42,13 +42,13 @@ const RISliderComponent = ({
 
   return (
     <div
-      className="container rounded-lg mx-auto mt-20 md:py-20 px-3 md:px-16 border-[2px] border-white"
+      className="container rounded-lg mx-auto mt-20 py-20 px-3 md:px-16 border-[2px] border-white"
       style={{
         background: "linear-gradient(0deg, #E8F3FF 15.92%, #92A8FF 100%)",
         boxShadow: "0px 4px 24px 0px rgba(0, 69, 197, 0.64)",
       }}
     >
-      <h1 className="text-center text-[28px] md:text-4xl md:mb-16 mb-10 md:mt-0 mt-16 font-medium font-cashdisplay">
+      <h1 className="text-center text-[28px] md:text-5xl mb-16 font-medium font-cashdisplay">
         <span className="text-white">{headingWhite}</span> {headingBlack}
       </h1>
 
@@ -68,10 +68,17 @@ const RISliderComponent = ({
       </nav>
 
       {/* ====== location ====== */}
-      <div className="flex flex-row gap-[20px] items-center justify-center mx-auto bg-black mt-8 w-[120px] h-[21px] rounded-[20px] px-[6px] py-[10px] ">
+      <div className="flex flex-row gap-[20px] items-center justify-center mx-auto bg-black mt-8 max-w-max h-[48px] rounded-full py-[6px] px-[10px] md:px-[48px]">
         <div className="flex flex-row gap-[4px] items-center">
           <MdLocationPin className="text-white" />
-          <span className="text-white underline">Dubai</span>
+          <p className="flex items-center text-white font-light md:font-normal text-xs md:text-base gap-2">
+            <span className="font-medium">Dubai</span>
+            <div
+              className="w-[8px] h-[8px] rounded-full"
+              style={{ backgroundColor: "rgba(217, 217, 217, 1)" }}
+            />
+            <span>2BHK, 2BR</span>
+          </p>
         </div>
 
         <img src="svgIcons/pen.svg" alt="edit" className="w-[17px] " />
@@ -84,43 +91,53 @@ const RISliderComponent = ({
           length: Math.ceil(filteredCards.length / 4),
         }).map((_, slideIndex) => ( */}
         {/* <SwiperSlide key={slideIndex}> */}
-        <div className="w-full my-4 grid grid-cols-1 md:grid-cols-3 md:gap-10 gap-5 md:p-5 p-1">
+        <div className="w-full my-4 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 md:gap-10 gap-5 md:p-5 p-1">
           {filteredCards.map((card, index) => (
             <div
               key={index}
-              className="w-full shadow-lg border-2 border-white rounded-md flex md:flex-col flex-row items-center md:items-start"
+              className="w-full shadow-lg p-[16px] gap-[16px] md:gap-[0] border-2 border-white rounded-md flex md:flex-col items-center flex-row md:items-start"
               style={{
-                background: "linear-gradient(0deg,#C2DEFF 20%,#FFFFFF 100%)",
-                boxShadow: "2px 2px 10px rgba(0, 0, 0, 0.2)", // Lighter shadow
+                background:
+                  "linear-gradient(180deg, #FFFFFF 16%, #C2DEFF 100%)",
+                boxShadow: "0px 4px 24px 0px rgba(0, 69, 197, 0.48)",
               }}
             >
-              <div className="w-[50%] md:w-[93%] rounded-sm md:mx-auto md:my-5 md:h-[270px] m-2">
+              <div className="w-[135px] md:w-full rounded-[10px] h-[108px] md:h-[253px] md:mb-[36px]">
                 <img
                   src={card.image}
                   alt="Property Image"
-                  className="object-cover w-full h-full rounded-xl"
+                  className="object-cover w-full h-full rounded-[10px]"
                 />
               </div>
 
-              <div className="flex flex-col gap-1 my-3 md:ms-8 w-[50%]">
-                <h1 className="font-semibold font-cashdisplay md:text-[20px] text-[18px]">
-                  {card.name}
-                </h1>
-                <p className="flex flex-row items-center gap-2">
-                  <img src="svgIcons/star.svg" alt="Rating" className="" />
-                  <span className="md:text-[16px] text-[12px]">
-                    {card.rating}
-                  </span>
-                </p>
-                <p className="font-lexend font-bold md:text-[16px] text-[12px]">
+              <div className="w-[135px] md:w-full">
+                <div className="w-full flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center md:mb-[30px]">
+                  <h1 className="font-semibold font-lexend mb-[18.5px] md:mb-0 md:text-[24px] text-[18px]">
+                    {card.name}
+                  </h1>
+                  <p className="flex flex-row items-center gap-2">
+                    <img src="svgIcons/star.svg" alt="Rating" className="" />
+                    <span className="md:text-[16px] text-[12px]">
+                      {card.rating}
+                    </span>
+                  </p>
+                </div>
+                <p className="font-lexend font-semibold md:text-[16px] text-[12px] md:mb-[10px] mb-[18.5px]">
                   {card.price}
                 </p>
                 <p className="font-lexend font-normal flex flex-row justify-start items-center gap-1 md:text-base md:text-[16px] text-[12px]">
                   <img
                     src="svgIcons/location.svg"
-                    className="w-[20px] h-[20px]"
+                    className="md:w-[20px] md:h-[20px] w-[7px] h-[9px]"
                   />
-                  <span>{card.loc}</span>
+                  <p className="flex items-center gap-[6.4px] font-lexend font-light text-xs">
+                    <span>{card.loc}</span>
+                    <div
+                      className="w-[6.4px] h-[6.4px] rounded-full opacity-50"
+                      style={{ backgroundColor: "rgba(0, 0, 0, 1)" }}
+                    />
+                    <span>1400 SQFT</span>
+                  </p>
                 </p>
               </div>
             </div>
@@ -131,7 +148,7 @@ const RISliderComponent = ({
         {/* </Swiper> */}
       </div>
 
-      <div className="text-center mt-[60px] font-lexend">
+      <div className="hidden md:block text-center mt-[60px] font-lexend">
         <Link
           href="/"
           className="text-black text-sm md:text-base underline font-medium"

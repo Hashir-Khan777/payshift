@@ -1,3 +1,6 @@
+"use client";
+
+import { useRouter } from "next/navigation";
 import React from "react";
 import {
   FaFileAlt,
@@ -8,10 +11,15 @@ import {
   FaUserFriends,
 } from "react-icons/fa";
 
-const CardSection = () => {
+const CardSection = ({ setActiveTab }) => {
+  const router = useRouter();
+
   const cards = [
     {
       title: "Requests",
+      func: () => {
+        router.push("/my-request");
+      },
       icon: (
         <img
           src="/svgIcons/file.svg"
@@ -22,6 +30,12 @@ const CardSection = () => {
     },
     {
       title: "Services",
+      func: () => {
+        setActiveTab("Services");
+        if (typeof window !== "undefined") {
+          localStorage.setItem("activeTab", "Services");
+        }
+      },
       icon: (
         <img
           src="/svgIcons/service.svg"
@@ -32,6 +46,12 @@ const CardSection = () => {
     },
     {
       title: "Properties",
+      func: () => {
+        setActiveTab("My Properties");
+        if (typeof window !== "undefined") {
+          localStorage.setItem("activeTab", "My Properties");
+        }
+      },
       icon: (
         <img
           src="/svgIcons/property.svg"
@@ -42,6 +62,11 @@ const CardSection = () => {
     },
     {
       title: "Appointments",
+      func: () => {
+        setActiveTab("Home");
+        localStorage.setItem("activeTab", "Home");
+        router.push("#appointments");
+      },
       icon: (
         <img
           src="/svgIcons/appointment.svg"
@@ -51,6 +76,9 @@ const CardSection = () => {
       ),
     },
     {
+      func: () => {
+        router.push("#contact");
+      },
       title: "Support",
       icon: (
         <img
@@ -62,6 +90,12 @@ const CardSection = () => {
     },
     {
       title: "Refer",
+      func: () => {
+        setActiveTab("Refer a Friend");
+        if (typeof window !== "undefined") {
+          localStorage.setItem("activeTab", "Refer a Friend");
+        }
+      },
       icon: (
         <img
           src="/svgIcons/referFriend.svg"
@@ -86,6 +120,7 @@ const CardSection = () => {
       <div className="z-10 container grid grid-cols-3 lg:grid-cols-6 py-5 px-2 md:w-[80vw] w-[90vw] sm:w-full md:gap-5 gap-2 overflow-hidden">
         {cards.map((card, index) => (
           <div
+            onClick={() => card.func()}
             key={index}
             className="bg-gradient-to-b from-white to-[#C2DEFF] shadow-xl cursor-pointer backdrop-blur-md rounded-sm flex flex-col items-center justify-center gap-2 text-center hover:scale-105 transition-transform duration-300 py-8 px-7"
           >

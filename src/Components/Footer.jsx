@@ -24,14 +24,24 @@ const Footer = () => {
           <p className="text-2xl font-lexend font-medium text-white mb-16 tracking-wide">
             Lets Do This Together
           </p>
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between" id="contact">
             <p className="uppercase text-white text-[24px] md:text-[32px] font-semibold">
               Contact Us
             </p>
-            <img
-              src="/svgIcons/footericon.svg"
-              className="w-[48px] text-white"
-            />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="48"
+              height="48"
+              viewBox="0 0 52 52"
+              fill="white"
+            >
+              <path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M4 26C4 13.8497 13.8497 4 26 4C38.1503 4 48 13.8497 48 26C48 38.1503 38.1503 48 26 48C13.8497 48 4 38.1503 4 26ZM26 0C11.6406 0 0 11.6406 0 26C0 40.3594 11.6406 52 26 52C40.3594 52 52 40.3594 52 26C52 11.6406 40.3594 0 26 0ZM23.4521 16.4775L32.3901 24.6315H25.8H14V28.6315H25.8H32.2407L23.4805 36.3228L26.1195 39.3287L38.8695 28.1344L40.5488 26.66L38.8979 25.1539L26.1479 13.5225L23.4521 16.4775Z"
+                fill="white"
+              />
+            </svg>
           </div>
         </div>
         <div
@@ -48,10 +58,20 @@ const Footer = () => {
             <p className="uppercase text-white text-[24px] md:text-[32px] font-semibold">
               Media Centre
             </p>
-            <img
-              src="/svgIcons/footericon.svg"
-              className="w-[48px] text-white"
-            />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="48"
+              height="48"
+              viewBox="0 0 52 52"
+              fill="white"
+            >
+              <path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M4 26C4 13.8497 13.8497 4 26 4C38.1503 4 48 13.8497 48 26C48 38.1503 38.1503 48 26 48C13.8497 48 4 38.1503 4 26ZM26 0C11.6406 0 0 11.6406 0 26C0 40.3594 11.6406 52 26 52C40.3594 52 52 40.3594 52 26C52 11.6406 40.3594 0 26 0ZM23.4521 16.4775L32.3901 24.6315H25.8H14V28.6315H25.8H32.2407L23.4805 36.3228L26.1195 39.3287L38.8695 28.1344L40.5488 26.66L38.8979 25.1539L26.1479 13.5225L23.4521 16.4775Z"
+                fill="white"
+              />
+            </svg>
           </div>
         </div>
       </div>
@@ -63,7 +83,10 @@ const Footer = () => {
         <FaInstagram className="w-9 h-9 text-white" />
         <FaXTwitter className="w-9 h-9 text-white" />
         <RiYoutubeLine className="w-9 h-9 text-white" />
-        <img src="/svgIcons/facebook.svg" className="w-9 h-9 text-white" />
+        <img
+          src="/svgIcons/facebook.svg"
+          className="w-9 h-9 text-white fill-white"
+        />
       </div>
       <p className="text-2xl font-normal text-white/65 text-center mb-8 font-lexend">
         ©PayShift 2024. All rights reserved

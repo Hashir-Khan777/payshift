@@ -15,9 +15,17 @@ import CustomButton from "./Button";
 
 const ProfileMyItems = ({ cards, headingWhite, headingBlack }) => {
   const [activeIndex, setActiveIndex] = useState(1);
+  const [mounted, setMounted] = useState(false);
 
   const prevRef = useRef(null);
   const nextRef = useRef(null);
+
+  useEffect(() => {
+    setMounted(true);
+    if (prevRef.current && nextRef.current) {
+      console.log("Refs initialized:", prevRef.current, nextRef.current);
+    }
+  }, []);
 
   useEffect(() => {
     if (window) {
@@ -97,7 +105,7 @@ const ProfileMyItems = ({ cards, headingWhite, headingBlack }) => {
                 <div className="flex flex-row w-full justify-between gap-5 items-center ">
                   <p className="w-[30%] flex flex-row gap-2 justify-start items-center">
                     <img
-                      src="./svgIcons/location.svg"
+                      src="/svgIcons/location.svg"
                       alt="Location Icon"
                       className="w-[16px] h-[16px]"
                     />
@@ -141,8 +149,8 @@ const ProfileMyItems = ({ cards, headingWhite, headingBlack }) => {
       <div className="flex justify-end items-end gap-4 container">
         <button className="text-3xl" aria-label="Scroll Left" ref={prevRef}>
           <img
-            className="w-[34px] h-[34px] md:w-[48px] md:h-[48px]"
-            src="/svgIcons/slidericonleft.svg"
+            className="w-[34px] h-[34px] md:w-[48px] md:h-[48px] rotate-180"
+            src="/svgIcons/slidericon.svg"
           />
         </button>
         <button className="text-3xl" aria-label="Scroll Right" ref={nextRef}>

@@ -39,36 +39,34 @@ const MyReportSliderComponent = ({
       </h1>
 
       {/* ========== Buttons ========= */}
-      <div className="flex md:flex-row flex-col justify-between gap-10 items-center md:px-24 px-2 w-[100vw]">
-        <div className="flex md:flex-row flex-col gap-5 md:h-[57px] md:w-[40%]  w-full px-10">
-          <div
-            className="py-[16px] px-[20px] rounded-[4px] flex flex-row justify-between items-center gap-5 shadow-md"
-            style={{
-              background: "linear-gradient(90deg, #ffffff, #aed2ff)",
-            }}
-          >
-            <span className="font-lexend md:text-[20px]/[25px] text-[16px] font-[600] tracking-[4%] whitespace-nowrap">
-              Choose Document
-            </span>
-            <FaArrowDown className="md:text-[24px] text-[18px]" />
-          </div>
-
-          <div
-            className="py-[16px] px-[20px] rounded-[4px] flex flex-row justify-between items-center gap-5 shadow-md"
-            style={{
-              background: "linear-gradient(90deg, #ffffff, #aed2ff)",
-            }}
-          >
-            <span className="font-lexend md:text-[20px]/[25px] text-[16px] font-[600] tracking-[4%] whitespace-nowrap">
-              Date Range
-            </span>
-            <FaArrowDown className="md:text-[24px] text-[18px]" />
-          </div>
+      <div className="grid lg:grid-cols-3 grid-cols-1 gap-6 w-full md:px-20 px-5 items-center">
+        <div
+          className="py-[24px] px-[20px] rounded-[4px] flex flex-row justify-between items-center gap-5 shadow-md"
+          style={{
+            background: "linear-gradient(90deg, #ffffff, #aed2ff)",
+          }}
+        >
+          <span className="font-lexend md:text-[20px] text-[16px] font-[600] tracking-[4%]">
+            Property Owner Name
+          </span>
+          <FaArrowDown className="md:text-[24px] text-[18px]" />
         </div>
 
-        <div>
-          <CustomButton>Search</CustomButton>
+        <div
+          className="py-[24px] px-[20px] rounded-[4px] flex flex-row justify-between items-center gap-5 shadow-md"
+          style={{
+            background: "linear-gradient(90deg, #ffffff, #aed2ff)",
+          }}
+        >
+          <span className="font-lexend md:text-[20px] text-[16px] font-[600] tracking-[4%]">
+            Property Details
+          </span>
+          <FaArrowDown className="md:text-[24px] text-[18px]" />
         </div>
+
+        <CustomButton btnClass="md:w-[310px] w-full mx-auto">
+          Search
+        </CustomButton>
       </div>
 
       {/* Table */}
@@ -143,8 +141,8 @@ const MyReportSliderComponent = ({
             disabled={currentPage === 1}
           >
             <img
-              className="w-[34px] h-[34px] md:w-[48px] md:h-[48px]"
-              src="/svgIcons/slidericonleft.svg"
+              className="w-[34px] h-[34px] md:w-[48px] md:h-[48px] rotate-180"
+              src="/svgIcons/slidericon.svg"
             />
           </button>
           <button
@@ -160,13 +158,15 @@ const MyReportSliderComponent = ({
         </div>
       </div>
 
-      <div className="flex flex-row justify-between md:mt-20 mt-10 w-[100vw] md:px-20 px-5">
-        <div className="flex flex-row justify-center items-center gap-5">
-          <CustomButton>Print</CustomButton>
-          <CustomButton>Download pdf</CustomButton>
+      <div className="flex flex-wrap flex-row justify-between md:mt-20 mt-10 w-[100vw] md:px-20 px-5">
+        <div className="flex flex-row gap-5 flex-1">
+          <CustomButton btnClass="w-full lg:w-auto">Print</CustomButton>
+          <CustomButton btnClass="w-full lg:w-auto">Export</CustomButton>
         </div>
 
-        <CustomButton>Export</CustomButton>
+        <CustomButton btnClass="w-full lg:w-auto mt-3 lg:mt-0">
+          Download pdf
+        </CustomButton>
       </div>
     </div>
   );
