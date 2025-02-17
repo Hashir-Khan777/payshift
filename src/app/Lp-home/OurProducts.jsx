@@ -27,13 +27,10 @@ const OurProductCards = [
 
 function OurProducts({headingWhite,headingBlack}) {
   return (
-    <section className="bg-blue-600 relative w-full min-h-full py-[100px] bg-cover bg-center flex justify-center items-center"
-    style={{
-      // background: "url('/Lpbg1.png') no-repeat",
-    }}>
+    <section className="bg-cover bg-no-repeat md:bg-right-top bg-center relative w-full min-h-full py-[100px]  flex justify-center items-center"
+    style={{ backgroundImage: "url('/Images/industrySolBg.svg')" }}>
       {/* Background Image */}
 
-      
       <div
         className="z-10 w-full flex flex-col justify-center items-center gap-[20px]"
        >

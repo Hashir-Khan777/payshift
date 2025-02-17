@@ -10,13 +10,17 @@ const cashdisplay = localFont({
 
 const LpHero = () => {
   return (
-    <section className="relative w-full min-h-[100vh]">
+    <section className="relative w-full min-h-[100vh] bg-cover bg-no-repeat bg-center"
+    style={{
+      backgroundImage:"url('/Lpbg1.png')"
+    }}
+    >
       {/* Background Image */}
-      <img
+      {/* <img
         className="w-full h-[calc(100vh-100px)] object-cover object-center"
         src="/Lpbg1.png"
         alt="Background"
-      />
+      /> */}
 
       {/* Centered Content */}
       <div

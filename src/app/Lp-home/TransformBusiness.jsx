@@ -29,7 +29,7 @@ function TransformBusiness({headingWhite,headingBlack}) {
   return (
     <section className="relative w-full min-h-full bg-blue-300 py-[100px] bg-cover bg-center flex justify-center items-center"
     style={{
-      // background: "url('/Lpbg1.png') no-repeat",
+      backgroundImage:"url('/Images/transformBusinessBg.png')"
     }}>
       {/* Background Image */}
 
