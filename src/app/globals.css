@@ -85,21 +85,21 @@
 .splash-img1 {
   max-width: 1500px !important;
   height: 100% !important;
-  animation: moveUp 2.5s ease-in-out forwards;
+  animation: moveUp 3.5s ease-in-out forwards;
 }
 
 .splash-img2 {
   max-width: 1500px !important;
   height: 100% !important;
-  animation: moveUp2 2.5s ease-in-out forwards;
+  animation: moveUp2 3.5s ease-in-out forwards;
 }
 
 .header {
-  animation: headerMoveDown 2s ease-in-out forwards;
+  animation: headerMoveDown 3s ease-in-out forwards;
 }
 
 .component {
-  animation: componentMoveup 2s ease-in-out forwards;
+  animation: componentMoveup 3s ease-in-out forwards;
 }
 
 @media screen and (max-width: 1535px) {

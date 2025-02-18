@@ -89,7 +89,7 @@ const Footer = () => {
         />
       </div>
       <p className="text-2xl font-normal text-white/65 text-center mb-8 font-lexend">
-        ©PayShift 2024. All rights reserved
+        ©PayShift {new Date().getFullYear()}. All rights reserved
       </p>
     </div>
   );
