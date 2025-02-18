@@ -6,6 +6,7 @@ import TransformBusiness from './TransformBusiness'
 import Footer from '@/Components/Footer'
 import SecurityMeasures from './SecurityMeasures'
 import { IndustrySolutions } from './IndustrySolutions'
+import { IndustrySolMob } from './IndustrySolMob'
 
 
 const blackHeadingTransformBusiness = ["Transform","With Us"]
@@ -20,7 +21,12 @@ function page() {
             <LpNavbar />
             <LpHero />
             <OurProducts headingWhite="Our" headingBlack="Products" />
+            <div className='hidden lg:block'>
             <IndustrySolutions headingBlack={blackHeadingIndustrySolutions} headingWhite="Industry-Specific"/>
+            </div>
+            <div className='lg:hidden block'>
+            <IndustrySolMob headingBlack={blackHeadingIndustrySolutions} headingWhite="Industry-Specific"/>
+            </div>
             <TransformBusiness headingWhite="Your Business" headingBlack={blackHeadingTransformBusiness} />
             <SecurityMeasures headingBlack={blackHeadingSecurityMeasures} headingWhite="Advance Security" />
             <Footer />
