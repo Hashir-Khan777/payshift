@@ -3,24 +3,24 @@ import React from 'react'
 
 const OurProductCards = [
   {
-    image: "/Images/lpHomeimg1.png",
-    title: "Payment Gateway",
-    info: "We offer a range of payment options, including PayByLinks,QR codes, and recurring billing, along with e-invoicing and other features. Our advanced fraud prevention tools provide added protection."
+    image: "/Images/transformBus1.svg",
+    title: "Implement",
+    info: "Choose the Right Solutions."
   },
   {
-    image: "/Images/lpHomeimg1.png",
-    title: "Payment Gateway",
-    info: "We offer a range of payment options, including PayByLinks,QR codes, and recurring billing, along with e-invoicing and other features. Our advanced fraud prevention tools provide added protection."
+    image: "/Images/transformBus2.svg",
+    title: "Integrate",
+    info: "Connect with your systems."
   },
   {
-    image: "/Images/lpHomeimg1.png",
-    title: "Payment Gateway",
-    info: "We offer a range of payment options, including PayByLinks,QR codes, and recurring billing, along with e-invoicing and other features. Our advanced fraud prevention tools provide added protection."
+    image: "/Images/transformBus3.svg",
+    title: "Optimize",
+    info: "Improve performance and experience."
   },
   {
-    image: "/Images/lpHomeimg1.png",
-    title: "Payment Gateway",
-    info: "We offer a range of payment options, including PayByLinks,QR codes, and recurring billing, along with e-invoicing and other features. Our advanced fraud prevention tools provide added protection."
+    image: "/Images/transformBus4.svg",
+    title: "Implement",
+    info: "Choose the Right Solutions."
   },
 ]
 

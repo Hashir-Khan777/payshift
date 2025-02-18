@@ -10,7 +10,7 @@ const cashdisplay = localFont({
 
 const LpHero = () => {
   return (
-    <section className="relative w-full min-h-[100vh] bg-cover bg-no-repeat bg-center"
+    <section className="relative w-full min-h-[100vh] bg-cover bg-no-repeat bg-center md:mt-10 mt-20"
     style={{
       backgroundImage:"url('/Lpbg1.png')"
     }}
