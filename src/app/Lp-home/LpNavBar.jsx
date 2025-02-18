@@ -187,7 +187,7 @@ const LpNavbar = () => {
               <Link href="/" className="text-[18px]/[22.14px] font-[600] font-cashdisplay text-[#030055]">
                 Payment Portal
               </Link>
-              <img src="/Images/LpNavicon.svg" alt="divider" />
+              <img src="/Images/LpNavicon.svg" alt="Payment Portal" />
             </div>
           </div>
 
@@ -227,10 +227,10 @@ const LpNavbar = () => {
               <div className="w-[48px] border-t border-[1px] border-gray-700 my-4"></div>
               {/* <Link href="/" className="text-black font-cashdisplay font-[500] text-[24px]/[30px]" >Payment Portal</Link> */}
               <div className="flex justify-center items-center gap-[12px]">
-              <Link href="/" className="text-[24px]/[30px] font-[600] font-cashdisplay text-[#030055]" onClick={() => setMobNav(false)}>
+              <Link href="/" className="text-[24px]/[29px] font-[600] font-cashdisplay text-[#030055]" onClick={() => setMobNav(false)}>
                 Payment Portal
               </Link>
-              <img src="/Images/LpNavicon.svg" alt="divider" />
+              <img src="/Images/LpNavicon.svg" alt="Payment Portal" />
             </div>
             </nav>
           </div>
