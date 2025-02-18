@@ -57,28 +57,28 @@ export function IndustrySolutions({ headingBlack = ["Our", "Solutions"], heading
                     {timelineItems.map((item, index) => (
                         <div
                             key={index}
-                            className={`w-full md:h-[500px] flex justify-between md:gap-20 mb-16 lg:mb-32 ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"} animate-slideUp`}
+                            className={`w-full  lg:h-[500px] flex justify-between items-center md:gap-20 mb-32 ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"} animate-slideUp`}
                         >
                             {/* Image Section */}
-                            <div className="flex-1 "
+                            <div className="flex-1 h-[250px] md:h-[300px] lg:h-[350px] xl:h-full"
                             style={{
                                 boxShadow:"1px 3px 20px 10px #8b96dd"
                             }}>
-                                <div className="relative h-full w-full overflow-hidden shadow-2xl object-center">
+                                <div className="relative h-full w-full overflow-hidden shadow-2xl object-center object-cover">
                                     <img
                                         src={item.image || "/placeholder.svg"}
                                         alt={item.alt}
-                                        className="w-full h-full object-cover drop-shadow-[0_0_30px_rgba(106,177,49,0.5)]"
+                                        className="w-full h-full object-cover"
                                     />
                                 </div>
                             </div>
 
                             {/* Text Content Section */}
                             <div className="flex-1 flex flex-col gap-[24px] justify-center text-center py-5 px-4">
-                                <h4 className="text-lg sm:text-[32px]/[40px] font-[700] text-black font-lexend break-words hyphens-auto">
+                                <h4 className="text-[25px]/[30px] lg:text-[32px]/[40px] font-[700] text-black font-lexend break-words hyphens-auto">
                                     {item.title}
                                 </h4>
-                                <p className="text-sm sm:text-[24px]/[30px] font-lexend break-words hyphens-auto text-black">
+                                <p className="lg:text-[24px]/[30px] text-[15px]/[20px] font-lexend break-words hyphens-auto text-black">
                                     {item.description}
                                 </p>
                             </div>

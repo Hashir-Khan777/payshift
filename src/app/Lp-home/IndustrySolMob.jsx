@@ -64,21 +64,21 @@ export function IndustrySolMob({ headingBlack = ["Our", "Solutions"], headingWhi
                         >
                             {/* Image Section */}
                             
-                                <div className="relative h-full w-full overflow-hidden shadow-2xl object-center">
+                                <div className="relative h-full w-full overflow-hidden shadow-2xl object-center object-cover min-h-[158px]">
                                     <img
                                         src={item.image || "/placeholder.svg"}
                                         alt={item.alt}
-                                        className="w-full h-full object-cover drop-shadow-[0_0_30px_rgba(106,177,49,0.5)]"
+                                        className="w-full h-full drop-shadow-[0_0_30px_rgba(106,177,49,0.5)]"
                                     />
                                 </div>
                            
 
                             {/* Text Content Section */}
                          
-                                <h4 className="mb-2 text-lg sm:text-[32px]/[40px] font-[700] text-black font-lexend break-words hyphens-auto">
+                                <h4 className="mb-2 text-lg sm:text-[32px]/[40px] font-[700] text-black font-lexend break-words hyphens-auto text-center">
                                     {item.title}
                                 </h4>
-                                <p className="text-sm sm:text-[24px]/[30px] font-lexend break-words hyphens-auto text-black">
+                                <p className="text-sm sm:text-[24px]/[30px] font-lexend break-words hyphens-auto text-black text-center">
                                     {item.description}
                                 </p>
                          
