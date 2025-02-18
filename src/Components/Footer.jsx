@@ -9,11 +9,7 @@ const Footer = () => {
       className="relative bg-cover bg-center py-[119px] px-[12px] md:px-[162px]"
       style={{ backgroundImage: `url(/Images/footerbg.png)` }}
     >
-      <p className="text-center text-[36px] md:text-[50px] font-medium text-white mb-10">
-        Thanks For Using PayShift
-      </p>
-
-      <div className="flex flex-wrap gap-10 justify-center items-center mb-20">
+      <div className="flex flex-wrap gap-10 justify-center items-center mt-10 mb-20">
         <div
           className="w-full md:w-[400px] bg-white/10 rounded-[4px] py-[36px] px-[24px] shadow-md shrink-0 border-[4px]"
           style={{
