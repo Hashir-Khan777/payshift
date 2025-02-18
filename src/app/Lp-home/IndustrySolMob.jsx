@@ -34,14 +34,14 @@ const timelineItems = [
 export function IndustrySolMob({ headingBlack = ["Our", "Solutions"], headingWhite }) {
     return (
         <section
-            className="bg-cover bg-center bg-no-repeat  px-4 sm:px-6 py-16 sm:py-24 evolution"
+            className="bg-cover bg-center bg-no-repeat  p-[40px] evolution"
             style={{ backgroundImage: "url('/Images/industrySolBg.svg')" }}
         >
 
-            <div className="w-full mx-auto md:px-[100px]">
+            <div className="w-full mx-auto md:px-[100px] flex flex-col gap-[40px]">
                 {/* Header */}
-                <div className="mb-12 sm:mb-16 text-center animate-fadeIn">
-                    <h1 className="text-center text-xl md:text-4xl font-medium font-cashdisplay">
+                <div className="text-center">
+                    <h1 className="text-center text-[28px]/[34.44px] md:text-4xl font-medium font-cashdisplay">
                         {headingBlack?.[0] || ""}
                         <span className="text-white px-2">{headingWhite}</span>
                         {headingBlack?.[1] || ""}
@@ -50,13 +50,15 @@ export function IndustrySolMob({ headingBlack = ["Our", "Solutions"], headingWhi
                 </div>
 
                 {/* Timeline */}
-                <div className="w-full relative px-2 ">
+                <div className="w-full relative">
                     {/* Timeline Line */}
-                    <div className="w-full flex flex-col gap-20 " />
+                    <div className="w-full flex flex-col gap-[40px] " />
 
                     {timelineItems.map((item, index) => (
                         <div className="shadow-2xl mb-[40px] bg-cover bg-no-repeat bg-center"
-                         style={{ backgroundImage: "url('/Images/industrySolBg.svg')" }}
+                         style={{ backgroundImage: "url('/Images/industrySolBg.svg')",
+                         boxShadow:"1px 2px 20px 5px #8b96dd"
+                          }}
                         >
                         <div
                             key={index}
@@ -64,21 +66,21 @@ export function IndustrySolMob({ headingBlack = ["Our", "Solutions"], headingWhi
                         >
                             {/* Image Section */}
                             
-                                <div className="relative h-full w-full overflow-hidden shadow-2xl object-center">
+                                <div className="relative h-full w-full overflow-hidden shadow-2xl object-center object-cover min-h-[158px]">
                                     <img
                                         src={item.image || "/placeholder.svg"}
                                         alt={item.alt}
-                                        className="w-full h-full object-cover drop-shadow-[0_0_30px_rgba(106,177,49,0.5)]"
+                                        className="w-full h-full drop-shadow-[0_0_30px_rgba(106,177,49,0.5)]"
                                     />
                                 </div>
                            
 
                             {/* Text Content Section */}
                          
-                                <h4 className="mb-2 text-lg sm:text-[32px]/[40px] font-[700] text-black font-lexend break-words hyphens-auto">
+                                <h4 className="mb-2 text-lg sm:text-[32px]/[40px] font-[700] text-black font-lexend break-words hyphens-auto text-center">
                                     {item.title}
                                 </h4>
-                                <p className="text-sm sm:text-[24px]/[30px] font-lexend break-words hyphens-auto text-black">
+                                <p className="text-sm sm:text-[24px]/[30px] font-lexend break-words hyphens-auto text-black text-center">
                                     {item.description}
                                 </p>
                          

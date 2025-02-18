@@ -4,6 +4,46 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes moveUp {
+  from {
+    top: 86%;
+    left: -100%;
+  }
+  to {
+    top: -100%;
+    left: 0;
+  }
+}
+
+@keyframes moveUp2 {
+  from {
+    top: 75%;
+    left: 0;
+  }
+  to {
+    top: -100%;
+    left: -100%;
+  }
+}
+
+@keyframes componentMoveup {
+  from {
+    bottom: -100%;
+  }
+  to {
+    bottom: 0;
+  }
+}
+
+@keyframes headerMoveDown {
+  from {
+    top: -100%;
+  }
+  to {
+    top: 0;
+  }
+}
+
 .scroll::-webkit-scrollbar {
   display: none;
 }
@@ -40,6 +80,26 @@
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
   clip-path: inherit;
   z-index: -1;
+}
+
+.splash-img1 {
+  max-width: 1500px !important;
+  height: 100% !important;
+  animation: moveUp 2.5s ease-in-out forwards;
+}
+
+.splash-img2 {
+  max-width: 1500px !important;
+  height: 100% !important;
+  animation: moveUp2 2.5s ease-in-out forwards;
+}
+
+.header {
+  animation: headerMoveDown 2s ease-in-out forwards;
+}
+
+.component {
+  animation: componentMoveup 2s ease-in-out forwards;
 }
 
 @media screen and (max-width: 1535px) {

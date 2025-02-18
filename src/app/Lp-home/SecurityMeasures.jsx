@@ -125,31 +125,40 @@ function SecurityMeasures({ headingWhite, headingBlack }) {
             style={{
                 backgroundImage: "url('/Images/securityMeasureBg.png')"
             }}>
-            <div className="z-10 w-full flex flex-col justify-center items-center md:gap-8 gap-[10px]">
-                <h1 className="text-center text-xl md:text-4xl font-medium font-cashdisplay">
+            <div className="z-10 w-full flex flex-col justify-center items-center gap-[40px]">
+                <h1 className="text-center text-[28px]/[34.44px] md:text-4xl font-medium font-cashdisplay">
                     {headingBlack[0]}
                     <span className="text-white px-2">{headingWhite}</span>
                     {headingBlack[1]}
                 </h1>
 
-                <div className="w-full flex lg:flex-row flex-col flex-wrap lg:flex-nowrap justify-center items-center gap-6 md:gap-10">
+                <div className="w-full flex lg:flex-row flex-col flex-wrap lg:flex-nowrap justify-center items-center gap-[40px]">
                     {/* Left Image for Desktop */}
                     <div className="hidden lg:block flex-1 max-w-[600px] object-cover object-center">
                         <img src="/lphomeimg2.svg" alt="Security" className=" w-full h-full " />
                     </div>
 
                     {/* Left Image for Mobile */}
-                    <div className=" flex-1 lg:hidden md:w-full md:h-full w-[325px] h-[268px] object-cover object-center">
-                        <img src="/Images/lphomeiimg3.svg" alt="Security" className="w-full h-full" />
+                    <div className="lg:hidden w-full h-full flex justify-center items-center border-[4px] rounded-[3px] border-white bg-cover bg-center bg-no-repeat overflow-hidden"
+                        style={{
+                            backgroundImage: "url('/Images/industrySolBg.svg')",
+                            boxShadow: "1px 2px 20px 5px #8b96dd"
+                        }}
+                    >
+                        <img src="/Images/lphomeimg3.svg"
+                            alt="Security"
+                            className="min-w-[325px] sm:w-full h-[272px] sm:h-full object-cover" />
                     </div>
+
+
 
                     {/* Text Section */}
                     <div className='flex-1 w-full '>
-                    {
-                        OurProductCards.map((card,index) => {
-                            return (
-                                <div key={index} className="w-full flex flex-col md:px-6 md:mb-10 mb-5">
-    
+                        {
+                            OurProductCards.map((card, index) => {
+                                return (
+                                    <div key={index} className="w-full flex flex-col md:px-6 md:mb-10 mb-5">
+
                                         <div className="flex flex-row gap-4 items-center">
                                             <img src="/svgIcons/grCheckmark.svg" alt="Checkmark" className="w-6 md:w-8 h-6 md:h-8" />
                                             <p className="tracking-wide font-lexend font-bold text-base md:text-xl">
@@ -157,14 +166,14 @@ function SecurityMeasures({ headingWhite, headingBlack }) {
                                                 <span className="font-normal ps-1">{card.descrption}</span>
                                             </p>
                                         </div>
-                                
-                                </div>
-                            )
-                        })
-                    }
+
+                                    </div>
+                                )
+                            })
+                        }
 
                     </div>
-                    
+
 
 
                 </div>

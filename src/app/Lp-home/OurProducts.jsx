@@ -24,23 +24,23 @@ const OurProductCards = [
   },
 ]
 
-function OurProducts({headingWhite,headingBlack}) {
+function OurProducts({ headingWhite, headingBlack }) {
   return (
     <section className="bg-cover bg-no-repeat md:bg-right-top bg-center relative w-full min-h-full py-[100px]  flex justify-center items-center"
-    style={{ backgroundImage: "url('/Images/industrySolBg.svg')" }}>
+      style={{ backgroundImage: "url('/Images/industrySolBg.svg')" }}>
       {/* Background Image */}
 
       <div
         className="z-10 w-full flex flex-col justify-center items-center gap-[20px]"
-       >
+      >
         <h1 className="text-center text-[28px]/[34.44px] md:text-4xl font-medium font-cashdisplay">
-        <span className="text-white px-2">{headingWhite}</span>{headingBlack}
-      </h1>
+          <span className="text-white px-2">{headingWhite}</span>{headingBlack}
+        </h1>
 
-      <div className='flex flex-row flex-wrap justify-center items-center gap-[20px] p-[80px]'>
-        {
-          OurProductCards.map((card, index) => <Card4 key={index} cards={card} />)
-        }
+        <div className='flex flex-row flex-wrap justify-center items-center gap-[20px] p-[80px]'>
+          {
+            OurProductCards.map((card, index) => <Card4 key={index} cards={card} />)
+          }
         </div>
 
       </div>
