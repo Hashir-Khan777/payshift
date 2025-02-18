@@ -5,28 +5,28 @@ const timelineItems = [
         title: "Education",
         description:
             "Streamline your processes with our secure, PCI DSS compliant platform. Accept online payments, set flexible payment plans, automate reconciliation and much more for a seamless, integrated payment experience",
-        image: "/Images/industrySol1.jfif",
+        image: "/Images/industrySol1.jpg",
         alt: "Education",
     },
     {
         title: "Real Estate",
         description:
             "Automate customer payment collections of installment, rent, service charge,Collect payment through cards, bank transfer, auto debits and gain advanced data insights with our real estate platform. Seamless integration with your CRM and ERP enhances the experience for customers, developers, and agents.",
-        image: "/Images/industrySol2.jfif",
+        image: "/Images/industrySol2.jpg",
         alt: "Real Estate",
     },
     {
         title: "Hospitality",
         description:
             "Our platform enables businesses to seamlessly accept payments, integrate with booking systems, and offer flexible payment options for customers. By enhancing the payment experience, our solution boosts operational efficiency and customer satisfaction, ensuring a smooth process from booking to dining and checkout. Automated reconciliation streamlines financial tracking, making it easier for businesses to manage transactions.",
-        image: "/Images/industrySol3.jfif",
+        image: "/Images/industrySol3.jpg",
         alt: "Hospitality",
     },
     {
         title: "SME",
         description:
             "Our SME payment solutions enable secure online and offline payments with options like Payment Gateway, SoftPOS, PayByLink, and invoicing. Integrated with cash registers, accounting, and CRM systems, businesses can streamline transactions and improve efficiency. Automated reconciliation simplifies financial tracking, letting SMEs focus on growth and customer experience.",
-        image: "/Images/industrySol4.jfif",
+        image: "/Images/industrySol4.jpg",
         alt: "SME",
     },
 ]
