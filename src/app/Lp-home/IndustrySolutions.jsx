@@ -34,13 +34,13 @@ const timelineItems = [
 export function IndustrySolutions({ headingBlack = ["Our", "Solutions"], headingWhite }) {
     return (
         <section
-            className="bg-cover bg-center bg-no-repeat  px-4 sm:px-6 py-16 sm:py-24 evolution"
+            className="bg-cover bg-center bg-no-repeat  px-4 sm:px-6 md:pt-[100px] evolution"
             style={{ backgroundImage: "url('/Images/industrySolBg.svg')" }}
         >
 
-            <div className="w-full mx-auto md:px-[100px]">
+            <div className="w-full flex flex-col gap-[80px] px-[100px]">
                 {/* Header */}
-                <div className="mb-12 sm:mb-16 text-center animate-fadeIn">
+                <div className="text-center">
                     <h1 className="text-center text-xl md:text-4xl font-medium font-cashdisplay">
                         {headingBlack?.[0] || ""}
                         <span className="text-white px-2">{headingWhite}</span>
@@ -57,7 +57,7 @@ export function IndustrySolutions({ headingBlack = ["Our", "Solutions"], heading
                     {timelineItems.map((item, index) => (
                         <div
                             key={index}
-                            className={`w-full  lg:h-[500px] flex justify-between items-center md:gap-20 mb-32 ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"} animate-slideUp`}
+                            className={`w-full  lg:h-[500px] flex justify-between items-center md:gap-20 mb-[200px] ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"} animate-slideUp`}
                         >
                             {/* Image Section */}
                             <div className="flex-1 h-[250px] md:h-[300px] lg:h-[350px] xl:h-full"
