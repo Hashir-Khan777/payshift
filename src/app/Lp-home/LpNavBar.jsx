@@ -196,7 +196,7 @@ const LpNavbar = () => {
 
           {/* Mobile Menu Button */}
           <div className="md:hidden block" onClick={() => setMobNav(true)}>
-            <img src="/Images/menuBtn.svg" alt="Menu" />
+            <img src="/Images/menubtn.svg" alt="Menu" />
           </div>
         </div>
       </nav>

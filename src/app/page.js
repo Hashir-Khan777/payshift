@@ -5,6 +5,7 @@ import Hero from "@/Components/Hero";
 import CardSection from "@/Components/CardSection";
 import MenuSection from "@/Components/MenuSection";
 import Footer from "@/Components/Footer";
+import LpHome from "@/app/Lp-home/page"
 import { useState } from "react";
 
 export default function Home() {
@@ -12,13 +13,14 @@ export default function Home() {
 
   return (
     <>
-      <div className="flex flex-col h-screen overflow-hidden">
+      {/* <div className="flex flex-col h-screen overflow-hidden">
         <Navbar />
         <Hero />
         <CardSection setActiveTab={setActiveTab} />
       </div>
       <MenuSection activeTab={activeTab} setActiveTab={setActiveTab} />
-      <Footer />
+      <Footer /> */}
+      <LpHome />
     </>
   );
 }
