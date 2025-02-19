@@ -8,12 +8,15 @@ function Card4({cards}) {
     boxShadow:"1px 2px 20px 5px #8b96dd"
      }}
     >
-    <img src={cards.image} alt="image" className='' />
-    <h1 className='font-lexend text-[20px]/[25px] font-[700]'>{cards.title}</h1>
+    <img src={cards.image} alt="image" className='h-[200px] w-[200px]' />
+   
+    <h1 className='font-lexend text-[20px]/[25px] font-[700] uppercase'>{cards.title}</h1>
     <p className='font-lexend text-[16px]/[20px] font-[400] text-center'>{cards.info}</p>
-      
+
+   
     </div>
   )
 }
 
 export default Card4
+

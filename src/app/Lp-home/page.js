@@ -9,6 +9,8 @@ import { IndustrySolutions } from './IndustrySolutions'
 import { IndustrySolMob } from './IndustrySolMob'
 import OurProductSlider from './OurProSlider'
 import TranformBusinessSlider from './TransformbusSlider'
+import Link from "next/link";
+
 
 
 const blackHeadingTransformBusiness = ["Transform", "With Us"]
@@ -18,16 +20,17 @@ const blackHeadingSecurityMeasures = ["Our", "Measures"]
 
 
 function page() {
+
     return (
         <div className='overflow-hidden'>
             <LpNavbar />
             <LpHero />
 
-            <div className='md:block hidden'>
+            <div className='md:block hidden' id='products'>
                 <OurProducts headingWhite="Our" headingBlack="Products" />
             </div>
 
-            <div className='block md:hidden'>
+            <div className='block md:hidden' id='products'>
                 <OurProductSlider headingWhite="Our" headingBlack="Products" />
             </div>
 
@@ -47,7 +50,7 @@ function page() {
             </div>
 
 
-            <SecurityMeasures headingBlack={blackHeadingSecurityMeasures} headingWhite="Advance Security" />
+            <SecurityMeasures headingBlack={blackHeadingSecurityMeasures} headingWhite="Advanced Security" />
             <Footer />
         </div>
     )

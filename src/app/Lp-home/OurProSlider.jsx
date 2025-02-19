@@ -64,7 +64,7 @@ const OurProductSlider = ({ cards, headingWhite, headingBlack }) => {
     }, []);
 
     return (
-        <div
+        <div 
             className="bg-cover bg-no-repeat md:bg-right-top bg-center py-20 px-1 md:px-16  flex flex-col justify-center items-center"
             style={{ backgroundImage: "url('/Images/industrySolBg.svg')" }}
         >
