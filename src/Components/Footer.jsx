@@ -4,7 +4,9 @@ import React, { useState } from "react";
 import { FaRegCircleRight, FaInstagram, FaXTwitter } from "react-icons/fa6";
 import { RiYoutubeLine } from "react-icons/ri";
 import { AiOutlineFacebook } from "react-icons/ai";
+import { IoCloseCircleOutline } from "react-icons/io5";
 import CustomButton from "./Button";
+import Link from 'next/link'
 
 const Footer = () => {
   const [showPopup, setShowPopup] = useState(false);
@@ -94,11 +96,13 @@ const Footer = () => {
       <div className="flex justify-center gap-8 mb-6">
         {/* <FaInstagram className="w-9 h-9 text-white" />
         <FaXTwitter className="w-9 h-9 text-white" />
-        <RiYoutubeLine className="w-9 h-9 text-white" />
-        <img
-          src="/svgIcons/facebook.svg"
-          className="w-9 h-9 text-white fill-white"
-        /> */}
+        <RiYoutubeLine className="w-9 h-9 text-white" /> */}
+        <Link href="https://www.linkedin.com/company/payshift/" target="_blank">
+          <img
+            src="/Images/linkedin.svg"
+            className="w-9 h-9 text-white fill-white"
+          />
+        </Link>
       </div>
       <p className="text-2xl font-normal text-white/65 text-center mb-8 font-lexend">
         ©PayShift {new Date().getFullYear()}. All rights reserved
@@ -115,6 +119,9 @@ const Footer = () => {
             style={{ backgroundImage: "url('/Images/popUpbg.png')" }}
           >
             <div className="w-full mx-auto flex flex-col justify-center items-center gap-6 md:gap-10">
+              <div onClick={() => setShowPopup(false)} className="self-end cursor-pointer">
+                <IoCloseCircleOutline onClick={closePopup} className="w-[30px] h-[30px] text-[30px] text-white" />
+              </div>
               <div className="w-full flex flex-col gap-4">
                 <div className="w-full mx-auto  flex flex-col justify-center items-start gap-2">
                   <label className="font-lexend font-[400] text-[16px]">
@@ -146,7 +153,7 @@ const Footer = () => {
                   </div>
                 </div>
 
-                {/* <div className="w-full mx-auto flex flex-col justify-center items-start gap-2 relative">
+                <div className="w-full mx-auto flex flex-col justify-center items-start gap-2 relative">
                   <label className="font-lexend font-[400] text-[16px]">
                     Mobile
                   </label>
@@ -156,24 +163,8 @@ const Footer = () => {
                       type="text"
                       className="w-full h-[40px] pl-[70px] pr-[40px] font-lexend shadow-xl outline-none"
                     />
-
-                    <img
-                      src="/Images/flag.svg"
-                      alt="UAE Flag"
-                      className="absolute left-3 top-1/2 transform -translate-y-1/2"
-                    />
-
-                    <span className="absolute left-9 top-1/2 transform -translate-y-1/2 text-black font-lexend font-medium">
-                      +971
-                    </span>
-
-                    <img
-                      src="/Images/arrowdown.svg"
-                      alt="Dropdown"
-                      className="absolute left-20 top-1/2 transform -translate-y-1/2 cursor-pointer"
-                    />
                   </div>
-                </div> */}
+                </div>
 
                 <div className="w-full mx-auto  flex flex-col justify-center items-start gap-2">
                   <label className="font-lexend font-[400] text-[16px]">

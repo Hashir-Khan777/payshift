@@ -6,6 +6,7 @@ import CustomButton from "../../Components/Button";
 import CustomButton2 from "../../Components/Button2";
 import FormPopUp from "@/Components/FormPopUp";
 import Link from "next/link";
+import { IoCloseCircleOutline } from "react-icons/io5";
 
 const cashdisplay = localFont({
   src: "../../fonts/ClashDisplay-Variable.ttf",
@@ -116,6 +117,9 @@ const LpHero = () => {
             style={{ backgroundImage: "url('/Images/popUpbg.png')" }}
           >
             <div className="w-full mx-auto flex flex-col justify-center items-center gap-6 md:gap-10">
+                            <div onClick={() => setShowPopup(false)} className="self-end cursor-pointer">
+                              <IoCloseCircleOutline onClick={closePopup} className="w-[30px] h-[30px] text-[30px] text-white" />
+                            </div>
               <div className="w-full flex flex-col gap-4">
                 <div className="w-full mx-auto  flex flex-col justify-center items-start gap-2">
                   <label className="font-lexend font-[400] text-[16px]">
@@ -147,7 +151,7 @@ const LpHero = () => {
                   </div>
                 </div>
 
-                {/* <div className="w-full mx-auto flex flex-col justify-center items-start gap-2 relative">
+                <div className="w-full mx-auto flex flex-col justify-center items-start gap-2 relative">
                   <label className="font-lexend font-[400] text-[16px]">
                     Mobile
                   </label>
@@ -157,24 +161,8 @@ const LpHero = () => {
                       type="text"
                       className="w-full h-[40px] pl-[70px] pr-[40px] font-lexend shadow-xl outline-none"
                     />
-
-                    <img
-                      src="/Images/flag.svg"
-                      alt="UAE Flag"
-                      className="absolute left-3 top-1/2 transform -translate-y-1/2"
-                    />
-
-                    <span className="absolute left-9 top-1/2 transform -translate-y-1/2 text-black font-lexend font-medium">
-                      +971
-                    </span>
-
-                    <img
-                      src="/Images/arrowdown.svg"
-                      alt="Dropdown"
-                      className="absolute left-20 top-1/2 transform -translate-y-1/2 cursor-pointer"
-                    />
                   </div>
-                </div> */}
+                </div>
 
                 <div className="w-full mx-auto  flex flex-col justify-center items-start gap-2">
                   <label className="font-lexend font-[400] text-[16px]">
