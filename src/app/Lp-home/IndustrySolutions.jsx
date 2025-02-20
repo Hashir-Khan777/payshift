@@ -97,7 +97,7 @@ export function IndustrySolutions({ headingBlack = ["Our", "Solutions"], heading
                                 <h4 className="text-[25px]/[30px] lg:text-[32px]/[40px] font-[700] text-black font-lexend break-words hyphens-auto">
                                     {item.title}
                                 </h4>
-                                <p className="lg:text-[24px]/[30px] text-[15px]/[20px] font-lexend hyphens-auto text-black" style={{ wordBreak: "auto-phrase" }}>
+                                <p className="word-break-auto-phrase lg:text-[24px]/[30px] text-[15px]/[20px] font-lexend hyphens-auto text-black" style={{ wordBreak: "auto-phrase" }}>
                                     {item.description}
                                 </p>
                             </motion.div>

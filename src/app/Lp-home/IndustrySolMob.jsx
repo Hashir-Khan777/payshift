@@ -81,7 +81,7 @@ export function IndustrySolMob({ headingBlack = ["Our", "Solutions"], headingWhi
                                 <h4 className="mb-2 text-lg sm:text-[32px]/[40px] font-[700] text-black font-lexend break-words hyphens-auto text-center">
                                     {item.title}
                                 </h4>
-                                <p className="text-sm sm:text-[24px]/[30px] font-lexend hyphens-auto text-black text-center" style={{wordBreak: "auto-phrase"}}>
+                                <p className="word-break-auto-phrase text-sm sm:text-[24px]/[30px] font-lexend hyphens-auto text-black text-center" style={{wordBreak: "auto-phrase"}}>
                                     {item.description}
                                 </p>
                          
