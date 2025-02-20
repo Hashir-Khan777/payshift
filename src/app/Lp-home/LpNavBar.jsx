@@ -281,13 +281,13 @@ const LpNavbar = () => {
               {navLinks.map((link, index) => (
                 <React.Fragment key={index}>
                   <Link
-                    href={link.href}
+                    href={`${link.href}`}
                     className={`text-black font-lexend text-[24px]/[30px] ${
                       pathname === link.href || activeSection === link.href
                         ? "font-[600]"
                         : "font-[500]"
                     }`}
-                    onClick={(e) => handleNavigation(e, link.href)}
+                    onClick={() => setMobNav(false)}
                   >
                     {link.name}
                   </Link>
@@ -301,7 +301,8 @@ const LpNavbar = () => {
               {/* Added border for consistency */}
               {/* 🔹 MODIFIED: Centered Developers link and made spacing uniform */}
               <Link
-                href="/"
+                href="https://api.paydart.co/"
+                target="_blank"
                 className="text-[24px] font-[600] font-cashdisplay text-[#030055] flex items-center gap-4 uppercase"
                 onClick={() => setMobNav(false)}
               >
