@@ -16,26 +16,26 @@ import Card4 from "@/Components/Card4";
 
 
 const OurProductCards = [
-  {
-    image: "/Images/transformBus1.svg",
-    title: "Implement",
-    info: "Choose the Right Solutions."
-  },
-  {
-    image: "/Images/transformBus2.svg",
-    title: "Integrate",
-    info: "Connect with your systems."
-  },
-  {
-    image: "/Images/transformBus3.svg",
-    title: "Optimize",
-    info: "Improve performance and experience."
-  },
-  {
-    image: "/Images/transformBus4.svg",
-    title: "Implement",
-    info: "Choose the Right Solutions."
-  },
+    {
+        image: "/Images/transformBus1.svg",
+        title: "IMPLEMENT",
+        info: "Choose the Right Solutions."
+      },
+      {
+        image: "/Images/transformBus2.svg",
+        title: "INTEGRATE",
+        info: "Connect with your systems."
+      },
+      {
+        image: "/Images/transformBus3.svg",
+        title: "OPTIMIZE",
+        info: "Improve performance and experience."
+      },
+      {
+        image: "/Images/transformBus4.svg",
+        title: "GROW",
+        info: "Expand your business."
+      },
 ]
 
 const TranformBusinessSlider = ({ cards, headingWhite, headingBlack }) => {

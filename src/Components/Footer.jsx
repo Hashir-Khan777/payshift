@@ -8,6 +8,7 @@ import CustomButton from "./Button";
 
 const Footer = () => {
   const [showPopup, setShowPopup] = useState(false);
+  const [message, setMessage] = useState(null);
 
   const closePopup = (e) => {
     if (e.target.id === "popup-overlay") {
@@ -91,13 +92,13 @@ const Footer = () => {
         Follow Us On
       </h2>
       <div className="flex justify-center gap-8 mb-6">
-        <FaInstagram className="w-9 h-9 text-white" />
+        {/* <FaInstagram className="w-9 h-9 text-white" />
         <FaXTwitter className="w-9 h-9 text-white" />
         <RiYoutubeLine className="w-9 h-9 text-white" />
         <img
           src="/svgIcons/facebook.svg"
           className="w-9 h-9 text-white fill-white"
-        />
+        /> */}
       </div>
       <p className="text-2xl font-normal text-white/65 text-center mb-8 font-lexend">
         ©PayShift {new Date().getFullYear()}. All rights reserved
@@ -129,54 +130,50 @@ const Footer = () => {
                     Business Registered Country
                   </label>
                   {/* <div className="w-full">
-            <input type="text" className="w-[95%] h-[40px] px-3 font-lexend shadow-xl border border-gray-300" />
-            <img src="/Images/arrowdown.svg" alt="" className="w-[5%]" />
-          </div> */}
+                    <input type="text" className="w-[95%] h-[40px] px-3 font-lexend shadow-xl border border-gray-300" />
+                    <img src="/Images/arrowdown.svg" alt="" className="w-[5%]" />
+                  </div> */}
                   <div className="w-full relative">
                     <input
                       type="text"
                       className="w-full h-[40px] px-3 pr-10 font-lexend shadow-xl outline-none"
                     />
-                    <img
+                    {/* <img
                       src="/Images/arrowdown.svg"
                       alt=""
                       className="absolute right-3 top-1/2 transform -translate-y-1/2 md:px-3 "
-                    />
+                    /> */}
                   </div>
                 </div>
 
-                <div className="w-full mx-auto flex flex-col justify-center items-start gap-2 relative">
+                {/* <div className="w-full mx-auto flex flex-col justify-center items-start gap-2 relative">
                   <label className="font-lexend font-[400] text-[16px]">
                     Mobile
                   </label>
 
                   <div className="w-full relative">
-                    {/* Input Field */}
                     <input
                       type="text"
                       className="w-full h-[40px] pl-[70px] pr-[40px] font-lexend shadow-xl outline-none"
                     />
 
-                    {/* Country Flag */}
                     <img
                       src="/Images/flag.svg"
                       alt="UAE Flag"
                       className="absolute left-3 top-1/2 transform -translate-y-1/2"
                     />
 
-                    {/* Country Code */}
                     <span className="absolute left-9 top-1/2 transform -translate-y-1/2 text-black font-lexend font-medium">
                       +971
                     </span>
 
-                    {/* Arrow Down Icon */}
                     <img
                       src="/Images/arrowdown.svg"
                       alt="Dropdown"
                       className="absolute left-20 top-1/2 transform -translate-y-1/2 cursor-pointer"
                     />
                   </div>
-                </div>
+                </div> */}
 
                 <div className="w-full mx-auto  flex flex-col justify-center items-start gap-2">
                   <label className="font-lexend font-[400] text-[16px]">
@@ -188,10 +185,16 @@ const Footer = () => {
                   />
                 </div>
               </div>
-              <CustomButton onClick={() => setShowPopup(false)}>
+              <CustomButton onClick={() => setMessage("We appreciate you reaching out! Our team is excited to assist you and will connect with you as soon as possible.")}>
                 Register
               </CustomButton>
+             <div class="bg-teal-600 rounded-b px-4 py-3 shadow-md">
+               <p class="text-sm text-white">{message}</p>
+             </div>
             </div>
+            {/* {message ? */}
+             
+              {/* : null} */}
           </div>
         </div>
       )}

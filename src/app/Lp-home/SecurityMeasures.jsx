@@ -25,7 +25,7 @@ const OurProductCards = [
 
 function SecurityMeasures({ headingWhite, headingBlack=["Our", "Measures"] }) {
 
-    const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.05 })
+    const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.5 })
 
     return (
         <section 

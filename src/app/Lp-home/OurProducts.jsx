@@ -29,7 +29,7 @@ const OurProductCards = [
 ];
 
 function OurProducts({ headingWhite, headingBlack }) {
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.05 });
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.5 });
 
   return (
     <section

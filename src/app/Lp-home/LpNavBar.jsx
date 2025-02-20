@@ -160,7 +160,7 @@ const LpNavbar = () => {
         <div className="container h-[100px] flex flex-wrap items-center px-5 md:px-0 justify-between mx-auto py-4">
           {/* Logo */}
           <Link href="/Lp-home" className="flex items-center space-x-3">
-            <img src="/Images/logo.svg" className="h-[40px]" alt="Logo" />
+            <img src="/Images/logo.png" className="h-[40px]" alt="Logo" />
           </Link>
 
           {/* Desktop Navigation */}
@@ -187,7 +187,8 @@ const LpNavbar = () => {
             <img src="/Images/divider.svg" alt="divider" />
             <div className="flex justify-center items-center gap-4">
               <Link
-                href="/"
+                href="https://api.paydart.co/"
+                target="_blank"
                 className="text-[24px] font-[600] font-cashdisplay text-[#030055]"
                 onClick={() => setMobNav(false)}
               >

@@ -12,7 +12,7 @@ const Navbar = () => {
           href="/"
           className="flex items-center space-x-3 rtl:space-x-reverse"
         >
-          <img src="/Images/logo.svg" className=" h-[40px]" alt="Logo" />
+          <img src="/Images/logo.png" className=" h-[40px]" alt="Logo" />
         </Link>
         <div className="flex flex-row gap-2 text-xl font-bold">
           <Link href="tel:+971502464747" className="cursor-pointer w-[30px]">

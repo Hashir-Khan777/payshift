@@ -31,7 +31,7 @@ const OurProductCards = [
 
 function TransformBusiness({ headingWhite, headingBlack }) {
 
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.05 });
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.5 });
 
   return (
     <section ref={ref} className="relative w-full min-h-full py-[100px] bg-cover bg-center flex justify-center items-center"

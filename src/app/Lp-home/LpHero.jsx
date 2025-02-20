@@ -5,6 +5,7 @@ import localFont from "next/font/local";
 import CustomButton from "../../Components/Button";
 import CustomButton2 from "../../Components/Button2";
 import FormPopUp from "@/Components/FormPopUp";
+import Link from "next/link"
 
 const cashdisplay = localFont({
   src: "../../fonts/ClashDisplay-Variable.ttf",
@@ -13,6 +14,7 @@ const cashdisplay = localFont({
 
 const LpHero = () => {
   const [showPopup, setShowPopup] = useState(false);
+  const [message, setMessage] = useState(null);
 
   const closePopup = (e) => {
     if (e.target.id === "popup-overlay") {
@@ -43,7 +45,9 @@ const LpHero = () => {
             <br /> Payment
           </h1>
           <div className="flex flex-col gap-4 mt-6">
-            <CustomButton>Sign Up</CustomButton>
+            <Link href="https://uat-merchant.payshift.ae/console/merchant-signup" target="_blank">
+              <CustomButton>Sign Up</CustomButton>
+            </Link>
             <CustomButton2 onClick={() => setShowPopup(true)}>
               Connect
             </CustomButton2>
@@ -179,10 +183,16 @@ const LpHero = () => {
                   />
                 </div>
               </div>
-              <CustomButton onClick={() => setShowPopup(false)}>
+              <CustomButton onClick={() => setMessage("We appreciate you reaching out! Our team is excited to assist you and will connect with you as soon as possible.")}>
                 Register
               </CustomButton>
+            <div class="bg-teal-600 rounded-b px-4 py-3 shadow-md">
+              <p class="text-sm text-white">{message}</p>
             </div>
+            </div>
+            {/* {message ? */}
+             
+            {/* //  : null} */}
           </div>
         </div>
       )}
