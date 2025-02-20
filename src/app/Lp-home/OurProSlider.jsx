@@ -96,7 +96,10 @@ const OurProductSlider = ({ cards, headingWhite, headingBlack }) => {
                     width: "100%",  // Ensure full width
                 }}
                 modules={[Navigation]}
-                onSlideChange={(e) => {/* ... */ }}
+                navigation={{
+                    prevEl: prevRef.current,
+                    nextEl: nextRef.current,
+                }}
             >
                 {OurProductCards.map((card, index) => (
                     <SwiperSlide

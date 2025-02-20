@@ -34,11 +34,11 @@ function page() {
                 <OurProductSlider headingWhite="Our" headingBlack="Products" />
             </div>
 
-            <div className='hidden md:block'>
+            <div className='hidden md:block' id='solutions'>
                 <IndustrySolutions headingBlack={blackHeadingIndustrySolutions} headingWhite="Industry-Specific" />
             </div>
 
-            <div className='lg:hidden block'>
+            <div className='lg:hidden block' id='solutions'>
                 <IndustrySolMob headingBlack={blackHeadingIndustrySolutions} headingWhite="Industry-Specific" />
             </div>
 

@@ -22,7 +22,7 @@ const OurProductCards = [
 
 function SecurityMeasures({ headingWhite, headingBlack }) {
     return (
-        <section className="relative w-full min-h-screen bg-blue-600 py-12 px-6 md:px-12 bg-cover bg-center bg-no-repeat flex justify-center items-center"
+        <section className="relative w-full min-h-screen py-12 px-6 md:px-12 bg-cover bg-center bg-no-repeat flex justify-center items-center"
             style={{
                 backgroundImage: "url('/Images/securityMeasureBg.png')"
             }}>

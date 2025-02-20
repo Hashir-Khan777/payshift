@@ -4,30 +4,30 @@ import React from 'react'
 const OurProductCards = [
   {
     image: "/Images/transformBus1.svg",
-    title: "Implement",
+    title: "IMPLEMENT",
     info: "Choose the Right Solutions."
   },
   {
     image: "/Images/transformBus2.svg",
-    title: "Integrate",
+    title: "INTEGRATE",
     info: "Connect with your systems."
   },
   {
     image: "/Images/transformBus3.svg",
-    title: "Optimize",
+    title: "OPTIMIZE",
     info: "Improve performance and experience."
   },
   {
     image: "/Images/transformBus4.svg",
-    title: "Implement",
-    info: "Choose the Right Solutions."
+    title: "GROW",
+    info: "Expand your business."
   },
 ]
 
 
 function TransformBusiness({headingWhite,headingBlack}) {
   return (
-    <section className="relative w-full min-h-full bg-blue-300 py-[100px] bg-cover bg-center flex justify-center items-center"
+    <section className="relative w-full min-h-full py-[100px] bg-cover bg-center flex justify-center items-center"
     style={{
       backgroundImage:"url('/Images/transformBusinessBg.png')"
     }}>

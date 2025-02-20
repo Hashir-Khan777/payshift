@@ -92,8 +92,6 @@
 
 // export default LpNavbar;
 
-
-
 // Navbar 2
 
 "use client";
@@ -109,9 +107,9 @@ const LpNavbar = () => {
 
   const navLinks = [
     { name: "Home", href: "/Lp-home" },
-    { name: "Product", href: "#products" },
-    { name: "Services", href: "/services" },
-    { name: "Contact", href: "/contact" },
+    { name: "Products", href: "#products" },
+    { name: "Solutions", href: "#solutions" },
+    // { name: "Contact", href: "/contact" },
   ];
 
   // Enable smooth scrolling globally
@@ -147,7 +145,8 @@ const LpNavbar = () => {
       event.preventDefault();
       const section = document.querySelector(href);
       if (section) {
-        const offset = section.getBoundingClientRect().top + window.scrollY - 80; // Adjust for fixed navbar
+        const offset =
+          section.getBoundingClientRect().top + window.scrollY - 80; // Adjust for fixed navbar
         window.scrollTo({ top: offset, behavior: "smooth" });
       }
       setMobNav(false); // Close mobile menu after clicking
@@ -170,10 +169,11 @@ const LpNavbar = () => {
               <React.Fragment key={index}>
                 <Link
                   href={link.href}
-                  className={`text-[20px]/[25px] font-lexend ${pathname === link.href || activeSection === link.href
-                    ? "font-[600]"
-                    : "font-[500] text-gray-600"
-                    }`}
+                  className={`text-[20px]/[25px] font-lexend ${
+                    pathname === link.href || activeSection === link.href
+                      ? "font-[600]"
+                      : "font-[500] text-gray-600"
+                  }`}
                   onClick={(e) => handleNavigation(e, link.href)}
                 >
                   {link.name}
@@ -181,14 +181,17 @@ const LpNavbar = () => {
                 {index < navLinks.length - 1 && (
                   <img src="/Images/divider.svg" alt="divider" />
                 )}
-
               </React.Fragment>
             ))}
 
             <img src="/Images/divider.svg" alt="divider" />
             <div className="flex justify-center items-center gap-4">
-              <Link href="/" className="text-[24px] font-[600] font-cashdisplay text-[#030055]" onClick={() => setMobNav(false)}>
-                Developers
+              <Link
+                href="/"
+                className="text-[24px] font-[600] font-cashdisplay text-[#030055]"
+                onClick={() => setMobNav(false)}
+              >
+                DEVELOPERS
               </Link>
               <img src="/Images/LpNavicon.svg" alt="Payment Portal" />
             </div>
@@ -253,67 +256,63 @@ const LpNavbar = () => {
         </div>
       )} */}
 
-
       {mobNav && (
-  <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-[9999] flex justify-center items-center">
-    {/* Full-Screen Menu */}
-    <div
-      className="w-full h-full bg-white flex flex-col items-center justify-center gap-6 p-6 transition-transform duration-300 ease-in-out"
-      style={{
-        backgroundImage: "url('/Lpbg1.png')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
-      {/* Close Button */}
-      <button className="absolute top-6 right-6 text-3xl" onClick={() => setMobNav(false)}>
-        <IoCloseOutline />
-      </button>
-
-      {/* Mobile Links */}
-      <nav className="w-full flex flex-col items-center justify-center text-center gap-6">
-        {navLinks.map((link, index) => (
-          <React.Fragment key={index}>
-            <Link
-              href={link.href}
-              className={`text-black font-lexend text-[24px]/[30px] ${
-                pathname === link.href || activeSection === link.href
-                  ? "font-[600]"
-                  : "font-[500]"
-              }`}
-              onClick={(e) => handleNavigation(e, link.href)}
+        <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-[9999] flex justify-center items-center">
+          {/* Full-Screen Menu */}
+          <div
+            className="w-full h-full bg-white flex flex-col items-center justify-center gap-6 p-6 transition-transform duration-300 ease-in-out"
+            style={{
+              backgroundImage: "url('/Lpbg1.png')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          >
+            {/* Close Button */}
+            <button
+              className="absolute top-6 right-6 text-3xl"
+              onClick={() => setMobNav(false)}
             >
-              {link.name}
-            </Link>
-            {index < navLinks.length - 1 && (
-              <div className="w-[48px] border-t border-[1px] border-gray-700 my-2"></div>
-            )}
-          </React.Fragment>
-        ))}
+              <IoCloseOutline />
+            </button>
 
-        {/* 🔹 MODIFIED: Moved "Developers" section inside the nav and applied the same spacing */}
-        <div className="w-[48px] border-t border-[1px] border-gray-700 my-2"></div> {/* Added border for consistency */}
-
-        {/* 🔹 MODIFIED: Centered Developers link and made spacing uniform */}
-        <Link
-          href="/"
-          className="text-[24px] font-[600] font-cashdisplay text-[#030055] flex items-center gap-4"
-          onClick={() => setMobNav(false)}
-        >
-          Developers
-          <img src="/Images/LpNavicon.svg" alt="Developers" />
-        </Link>
-      </nav>
-    </div>
-  </div>
-)}
-
-
-
+            {/* Mobile Links */}
+            <nav className="w-full flex flex-col items-center justify-center text-center gap-6">
+              {navLinks.map((link, index) => (
+                <React.Fragment key={index}>
+                  <Link
+                    href={link.href}
+                    className={`text-black font-lexend text-[24px]/[30px] ${
+                      pathname === link.href || activeSection === link.href
+                        ? "font-[600]"
+                        : "font-[500]"
+                    }`}
+                    onClick={(e) => handleNavigation(e, link.href)}
+                  >
+                    {link.name}
+                  </Link>
+                  {index < navLinks.length - 1 && (
+                    <div className="w-[48px] border-t border-[1px] border-gray-700 my-2"></div>
+                  )}
+                </React.Fragment>
+              ))}
+              {/* 🔹 MODIFIED: Moved "Developers" section inside the nav and applied the same spacing */}
+              <div className="w-[48px] border-t border-[1px] border-gray-700 my-2"></div>{" "}
+              {/* Added border for consistency */}
+              {/* 🔹 MODIFIED: Centered Developers link and made spacing uniform */}
+              <Link
+                href="/"
+                className="text-[24px] font-[600] font-cashdisplay text-[#030055] flex items-center gap-4"
+                onClick={() => setMobNav(false)}
+              >
+                Developers
+                <img src="/Images/LpNavicon.svg" alt="Developers" />
+              </Link>
+            </nav>
+          </div>
+        </div>
+      )}
     </header>
   );
 };
 
 export default LpNavbar;
-
-
