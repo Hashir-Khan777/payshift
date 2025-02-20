@@ -1,11 +1,13 @@
-import Card4 from '@/Components/Card4'
-import React from 'react'
+import Card4 from '@/Components/Card4';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 const OurProductCards = [
   {
     image: "/Images/ourProduct1.svg",
     title: "Payment Gateway",
-    info: "We offer a range of payment options, including PayByLinks,QR codes, and recurring billing, along with e-invoicing and other features. Our advanced fraud prevention tools provide added protection."
+    info: "We offer a range of payment options, including PayByLinks, QR codes, and recurring billing, along with e-invoicing and other features. Our advanced fraud prevention tools provide added protection."
   },
   {
     image: "/Images/ourProduct2.svg",
@@ -20,32 +22,48 @@ const OurProductCards = [
   {
     image: "/Images/ourProduct4.svg",
     title: "DCC",
-    info: "Maximize revenue, gain rate transparency, leverage real- time exchange, and stay compliant with all regulations and scheme rules."
+    info: "Maximize revenue, gain rate transparency, leverage real-time exchange, and stay compliant with all regulations and scheme rules."
   },
-]
+];
 
 function OurProducts({ headingWhite, headingBlack }) {
-  return (
-    <section  className="bg-cover bg-no-repeat md:bg-right-top bg-center relative w-full min-h-full py-[100px]  flex justify-center items-center"
-      style={{ backgroundImage: "url('/Images/industrySolBg.png')" }}>
-      {/* Background Image */}
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.05 });
 
-      <div
-        className="z-10 w-full flex flex-col justify-center items-center gap-[20px]"
-      >
-        <h1 className="text-center text-[28px]/[34.44px] md:text-4xl font-medium font-cashdisplay">
+  return (
+    <section
+      ref={ref}
+      className="bg-cover bg-no-repeat md:bg-right-top bg-center relative w-full min-h-full py-[100px] flex justify-center items-center"
+      style={{ backgroundImage: "url('/Images/industrySolBg.png')" }}
+    >
+      {/* Background Image */}
+      <div className="z-10 w-full flex flex-col justify-center items-center gap-[20px]">
+        {/* Animated Heading */}
+        <motion.h1
+          initial={{ y: -50, opacity: 0 }}
+          animate={inView ? { y: 0, opacity: 1 } : {}}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="text-center text-[28px]/[34.44px] md:text-4xl font-medium font-cashdisplay"
+        >
           <span className="text-white px-2">{headingWhite}</span>{headingBlack}
-        </h1>
+        </motion.h1>
 
         <div className='flex flex-row flex-wrap justify-center items-center gap-[20px] p-[80px]'>
-          {
-            OurProductCards.map((card, index) => <Card4 key={index} cards={card} />)
-          }
+          {OurProductCards.map((card, index) => (
+            <motion.div
+              key={index}
+              initial={{ y: 100, opacity: 0 }}
+              animate={inView ? { y: 0, opacity: 1 } : {}}
+              transition={{ duration: 0.8, delay: index * 0.2, ease: "easeOut" }}
+            >
+              <Card4 cards={card} />
+            </motion.div>
+          ))}
         </div>
-
       </div>
     </section>
-  )
+  );
 }
 
-export default OurProducts
+export default OurProducts;
+
+

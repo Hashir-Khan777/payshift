@@ -1,4 +1,6 @@
 import Image from "next/image"
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 const timelineItems = [
     {
@@ -32,8 +34,11 @@ const timelineItems = [
 ]
 
 export function IndustrySolutions({ headingBlack = ["Our", "Solutions"], headingWhite }) {
+
+    const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.05 });
+
     return (
-        <section
+        <section ref={ref}
             className="bg-cover bg-center bg-no-repeat  px-4 sm:px-6 md:pt-[100px] evolution"
             style={{ backgroundImage: "url('/Images/industrySolBg.svg')" }}
         >
@@ -41,11 +46,15 @@ export function IndustrySolutions({ headingBlack = ["Our", "Solutions"], heading
             <div className="w-full flex flex-col gap-[80px] px-[100px]">
                 {/* Header */}
                 <div className="text-center">
-                    <h1 className="text-center text-xl md:text-4xl font-medium font-cashdisplay">
+                    <motion.h1
+                        initial={{ y: -50, opacity: 0 }}
+                        animate={inView ? { y: 0, opacity: 1 } : {}}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        className="text-center text-xl md:text-4xl font-medium font-cashdisplay">
                         {headingBlack?.[0] || ""}
                         <span className="text-white px-2">{headingWhite}</span>
                         {headingBlack?.[1] || ""}
-                    </h1>
+                    </motion.h1>
 
                 </div>
 
@@ -60,10 +69,15 @@ export function IndustrySolutions({ headingBlack = ["Our", "Solutions"], heading
                             className={`w-full  lg:h-[500px] flex justify-between items-center md:gap-20 mb-[200px] ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"} animate-slideUp`}
                         >
                             {/* Image Section */}
-                            <div className="flex-1 h-[250px] md:h-[300px] lg:h-[350px] xl:h-full"
-                            style={{
-                                boxShadow:"1px 3px 20px 10px #8b96dd"
-                            }}>
+                            <motion.div
+                                initial={{ x: index % 2 === 0 ? -100 : 100, opacity: 0 }}
+                                animate={inView ? { x: 0, opacity: 1 } : {}}
+                                transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
+                                className="flex-1 h-[250px] md:h-[300px] lg:h-[350px] xl:h-full"
+                                style={{
+                                    boxShadow: "1px 3px 20px 10px #8b96dd"
+                                }}>
+
                                 <div className="relative h-full w-full overflow-hidden shadow-2xl object-center object-cover">
                                     <img
                                         src={item.image || "/placeholder.svg"}
@@ -71,49 +85,25 @@ export function IndustrySolutions({ headingBlack = ["Our", "Solutions"], heading
                                         className="w-full h-full object-cover"
                                     />
                                 </div>
-                            </div>
+
+                            </motion.div>
 
                             {/* Text Content Section */}
-                            <div className="flex-1 flex flex-col gap-[24px] justify-center text-center py-5 px-4">
+                            <motion.div
+                                initial={{ x: index % 2 === 0 ? 100 : -100, opacity: 0 }}
+                                animate={inView ? { x: 0, opacity: 1 } : {}}
+                                transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
+                                className="flex-1 flex flex-col gap-[24px] justify-center text-center py-5 px-4">
                                 <h4 className="text-[25px]/[30px] lg:text-[32px]/[40px] font-[700] text-black font-lexend break-words hyphens-auto">
                                     {item.title}
                                 </h4>
-                                <p className="lg:text-[24px]/[30px] text-[15px]/[20px] font-lexend hyphens-auto text-black" style={{wordBreak: "auto-phrase"}}>
+                                <p className="lg:text-[24px]/[30px] text-[15px]/[20px] font-lexend hyphens-auto text-black" style={{ wordBreak: "auto-phrase" }}>
                                     {item.description}
                                 </p>
-                            </div>
+                            </motion.div>
                         </div>
                     ))}
 
-
-
-
-                    {/* {timelineItems.map((item, index) => (
-                        <div
-                            key={index}
-                            className={`relative  mb-16 lg:mb-32 ${index % 2 === 0 ? "pr-1/2" : "pl-1/2"} animate-slideUp`}
-                        >
-                            <div className="flex flex-row items-center justify-center gap-4 ">
-                                <div className={`w-1/2 ${index % 2 === 0 ? "pr-8" : "pl-8 order-last"}`}>
-                                    <div className="relative h-[500px] w-[650px] shadow-2xl object-cover overflow-hidden object-center">
-                                        <img
-                                            src={item.image || "/placeholder.svg"}
-                                            alt={item.alt} className="drop-shadow-[0_0_30px_rgba(106,177,49,0.5)]"
-                                        />
-                                    </div>
-                                </div>
-                                <div className="absolute left-1/2 -translate-x-1/2">
-                                    <div className="h-3 w-3 rounded-full bg-primary" />
-                                </div>
-
-                                <div className={`w-1/2 text-center  py-5  ${index % 2 === 0 ? "pl-8" : "pr-8"}`}>
-                                    <h3 className="mb-2 text-xl font-bold text-primary">{item.date}</h3>
-                                    <h4 className="mb-2 text-lg sm:text-[32px]/[40px] font-[700] text-black font-lexend break-words hyphens-auto">{item.title}</h4>
-                                    <p className="text-sm sm:text-[24px]/[30px] font-lexend  break-words hyphens-auto text-black">{item.description}</p>
-                                </div>
-                            </div>
-                        </div>
-                    ))} */}
                 </div>
             </div>
         </section>

@@ -1,5 +1,6 @@
-import Card4 from '@/Components/Card4'
 import React from 'react'
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 const OurProductCards = [
     {
@@ -20,24 +21,45 @@ const OurProductCards = [
     },
 ];
 
-function SecurityMeasures({ headingWhite, headingBlack }) {
+function SecurityMeasures({ headingWhite, headingBlack=["Our", "Measures"] }) {
+
+    const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.05 })
+
     return (
-        <section className="relative w-full min-h-screen py-12 px-6 md:px-12 bg-cover bg-center bg-no-repeat flex justify-center items-center"
+        <section 
+        ref={ref}
+        className="relative w-full min-h-screen py-12 px-6 md:px-12 bg-cover bg-center bg-no-repeat flex justify-center items-center"
             style={{
                 backgroundImage: "url('/Images/securityMeasureBg.png')"
             }}>
             <div className="z-10 w-full flex flex-col justify-center items-center gap-[40px]">
-                <h1 className="text-center text-[28px]/[34.44px] md:text-4xl font-medium font-cashdisplay">
+                <motion.h1 initial={{y:-50,opacity:0}}
+                animate={inView ? { y: 0, opacity: 1 } : {}}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="text-center text-[28px]/[34.44px] md:text-4xl font-medium font-cashdisplay">
                     {headingBlack[0]}
                     <span className="text-white px-2">{headingWhite}</span>
                     {headingBlack[1]}
-                </h1>
+                </motion.h1>
+                {/* <motion.h1
+                    initial={{ y: -30, opacity: 0 }}
+                    animate={inView ? { y: 0, opacity: 1 } : {}}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                    className="text-center text-[28px]/[34.44px] md:text-4xl font-medium font-cashdisplay"
+                >
+                    {headingBlack[0]}<span className="text-white pe-2">{headingWhite}</span>{headingBlack[1]}
+                </motion.h1> */}
+
 
                 <div className="w-full flex lg:flex-row flex-col flex-wrap lg:flex-nowrap justify-center items-center gap-[40px]">
                     {/* Left Image for Desktop */}
-                    <div className="hidden lg:block flex-1 max-w-[600px] object-cover object-center">
+                    <motion.div
+                        initial={{ x: -100, opacity: 0 }}
+                        animate={inView ? { x: 0, opacity: 1 } : {}}
+                        transition={{ duration: 0.6,delay:0.02, ease: "easeOut" }}
+                        className="hidden lg:block flex-1 max-w-[600px] object-cover object-center">
                         <img src="/lphomeimg2.svg" alt="Security" className=" w-full h-full " />
-                    </div>
+                    </motion.div>
 
                     {/* Left Image for Mobile */}
                     <div className="lg:hidden w-full h-full flex justify-center items-center border-[4px] rounded-[3px] border-white bg-cover bg-center bg-no-repeat overflow-hidden"
@@ -54,7 +76,11 @@ function SecurityMeasures({ headingWhite, headingBlack }) {
 
 
                     {/* Text Section */}
-                    <div className='flex-1 w-full '>
+                    <motion.div
+                        initial={{ x: 100, opacity: 0 }}
+                        animate={inView ? { x: 0, opacity: 1 } : {}}
+                        transition={{ duration: 0.6, delay:0.02, ease: "easeOut" }}
+                        className='flex-1 w-full '>
                         {
                             OurProductCards.map((card, index) => {
                                 return (
@@ -73,7 +99,7 @@ function SecurityMeasures({ headingWhite, headingBlack }) {
                             })
                         }
 
-                    </div>
+                    </motion.div>
 
 
 

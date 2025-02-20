@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import localFont from "next/font/local";
 import CustomButton from "../../Components/Button";
 import CustomButton2 from "../../Components/Button2";
@@ -20,10 +21,11 @@ const LpHero = () => {
   };
 
   return (
-    <section
+    <section id="home"
       className="relative w-full min-h-screen bg-cover bg-no-repeat sm:bg-center bg-left-top flex items-center justify-center md:mt-10 mt-20 px-4 sm:py-10 py-20"
       style={{ backgroundImage: "url('/Lpbg1.png')" }}
     >
+
       <div className="flex flex-col-reverse md:flex-row items-center justify-center w-full max-w-7xl ">
         {/* Card Section */}
         <div
@@ -66,6 +68,25 @@ const LpHero = () => {
 
         {/* Image Section */}
         <div className="relative  md:right-8 lg:right-10 w-full sm:w-1/2 max-w-md md:max-w-lg lg:max-w-xl flex justify-center">
+          {/* Dollar Icons Animation
+          {[...Array(10)].map((_, i) => (
+            <motion.img
+              key={i}
+              src="/dollar.png"
+              alt="Dollar Icon"
+              className="absolute w-10 h-10"
+              initial={{ y: "-100%", opacity: 0 }}
+              animate={{ y: "110%", opacity: 1 }}
+              transition={{
+                duration: Math.random() * 3 + 2,
+                repeat: Infinity,
+                ease: "linear",
+                delay: Math.random() * 2,
+              }}
+              style={{ left: `${Math.random() * 100}%` }}
+            />
+          ))} */}
+
           <img
             src="/lpHero.gif"
             className="w-full h-auto object-cover"
@@ -115,7 +136,7 @@ const LpHero = () => {
                     {/* Input Field */}
                     <input
                       type="text"
-                    
+
                       className="w-full h-[40px] pl-[70px] pr-[40px] font-lexend shadow-xl outline-none"
                     />
 
