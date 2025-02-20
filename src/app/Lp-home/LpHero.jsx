@@ -5,7 +5,7 @@ import localFont from "next/font/local";
 import CustomButton from "../../Components/Button";
 import CustomButton2 from "../../Components/Button2";
 import FormPopUp from "@/Components/FormPopUp";
-import Link from "next/link"
+import Link from "next/link";
 
 const cashdisplay = localFont({
   src: "../../fonts/ClashDisplay-Variable.ttf",
@@ -45,7 +45,10 @@ const LpHero = () => {
             <br /> Payment
           </h1>
           <div className="flex flex-col gap-4 mt-6">
-            <Link href="https://uat-merchant.payshift.ae/console/merchant-signup" target="_blank">
+            <Link
+              href="https://uat-merchant.payshift.ae/console/merchant-signup"
+              target="_blank"
+            >
               <CustomButton>Sign Up</CustomButton>
             </Link>
             <CustomButton2 onClick={() => setShowPopup(true)}>
@@ -183,16 +186,21 @@ const LpHero = () => {
                   />
                 </div>
               </div>
-              <CustomButton onClick={() => setMessage("We appreciate you reaching out! Our team is excited to assist you and will connect with you as soon as possible.")}>
+              <CustomButton
+                onClick={() =>
+                  setMessage(
+                    "We appreciate you reaching out! Our team is excited to assist you and will connect with you as soon as possible."
+                  )
+                }
+              >
                 Register
               </CustomButton>
-            <div className="bg-teal-600 rounded-b px-4 py-3 shadow-md">
-              <p className="text-base text-white">{message}</p>
+              {message ? (
+                <div className="bg-teal-600 rounded-b px-4 py-3 shadow-md">
+                  <p className="text-base text-white">{message}</p>
+                </div>
+              ) : null}
             </div>
-            </div>
-            {/* {message ? */}
-             
-            {/* //  : null} */}
           </div>
         </div>
       )}

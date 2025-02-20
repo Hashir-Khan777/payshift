@@ -185,16 +185,21 @@ const Footer = () => {
                   />
                 </div>
               </div>
-              <CustomButton onClick={() => setMessage("We appreciate you reaching out! Our team is excited to assist you and will connect with you as soon as possible.")}>
+              <CustomButton
+                onClick={() =>
+                  setMessage(
+                    "We appreciate you reaching out! Our team is excited to assist you and will connect with you as soon as possible."
+                  )
+                }
+              >
                 Register
               </CustomButton>
-             <div className="bg-teal-600 rounded-b px-4 py-3 shadow-md">
-               <p className="text-base text-white">{message}</p>
-             </div>
+              {message ? (
+                <div className="bg-teal-600 rounded-b px-4 py-3 shadow-md">
+                  <p className="text-base text-white">{message}</p>
+                </div>
+              ) : null}
             </div>
-            {/* {message ? */}
-             
-              {/* : null} */}
           </div>
         </div>
       )}
