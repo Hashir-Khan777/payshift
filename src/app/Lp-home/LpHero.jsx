@@ -159,7 +159,7 @@ const LpHero = () => {
                   <div className="w-full relative">
                     <input
                       type="text"
-                      className="w-full h-[40px] pl-[70px] pr-[40px] font-lexend shadow-xl outline-none"
+                      className="w-full h-[40px] pr-[40px] font-lexend shadow-xl outline-none"
                     />
                   </div>
                 </div>
