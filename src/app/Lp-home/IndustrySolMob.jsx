@@ -2,21 +2,21 @@ import Image from "next/image"
 
 const timelineItems = [
     {
-        title: "Education",
+        title: "EDUCATION",
         description:
             "Streamline your processes with our secure, PCI DSS compliant platform. Accept online payments, set flexible payment plans, automate reconciliation and much more for a seamless, integrated payment experience",
         image: "/Images/industrySol1.jfif",
         alt: "Education",
     },
     {
-        title: "Real Estate",
+        title: "REAL ESTATE",
         description:
             "Automate customer payment collections of installment, rent, service charge,Collect payment through cards, bank transfer, auto debits and gain advanced data insights with our real estate platform. Seamless integration with your CRM and ERP enhances the experience for customers, developers, and agents.",
         image: "/Images/industrySol2.jfif",
         alt: "Real Estate",
     },
     {
-        title: "Hospitality",
+        title: "HOSPITALITY",
         description:
             "Our platform enables businesses to seamlessly accept payments, integrate with booking systems, and offer flexible payment options for customers. By enhancing the payment experience, our solution boosts operational efficiency and customer satisfaction, ensuring a smooth process from booking to dining and checkout. Automated reconciliation streamlines financial tracking, making it easier for businesses to manage transactions.",
         image: "/Images/industrySol3.jfif",
@@ -35,6 +35,7 @@ export function IndustrySolMob({ headingBlack = ["Our", "Solutions"], headingWhi
     return (
         <section
             className="bg-cover bg-center bg-no-repeat  p-[40px] evolution"
+            id="solutions"
             style={{ backgroundImage: "url('/Images/industrySolBg.svg')" }}
         >
 
@@ -80,7 +81,7 @@ export function IndustrySolMob({ headingBlack = ["Our", "Solutions"], headingWhi
                                 <h4 className="mb-2 text-lg sm:text-[32px]/[40px] font-[700] text-black font-lexend break-words hyphens-auto text-center">
                                     {item.title}
                                 </h4>
-                                <p className="text-sm sm:text-[24px]/[30px] font-lexend break-words hyphens-auto text-black text-center">
+                                <p className="text-sm sm:text-[24px]/[30px] font-lexend hyphens-auto text-black text-center" style={{wordBreak: "auto-phrase"}}>
                                     {item.description}
                                 </p>
                          
