@@ -1,3 +1,5 @@
+"use client"
+
 import Card4 from '@/Components/Card4'
 import React from 'react'
 import { motion } from 'framer-motion';

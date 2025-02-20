@@ -103,9 +103,9 @@
 }
 
 .word-break-auto-phrase {
-  "-webkit-word-break": auto-phrase;
-  "-moz-word-break": auto-phrase;
-  "-o-word-break": auto-phrase;
+  -webkit-word-break: auto-phrase;
+  -moz-word-break: auto-phrase;
+  -o-word-break: auto-phrase;
 }
 
 @media screen and (max-width: 1535px) {
