@@ -102,6 +102,12 @@
   animation: componentMoveup 3s ease-in-out forwards;
 }
 
+.word-break-auto-phrase {
+  "-webkit-word-break": auto-phrase;
+  "-moz-word-break": auto-phrase;
+  "-o-word-break": auto-phrase;
+}
+
 @media screen and (max-width: 1535px) {
   .slider-btn {
     display: flex;
