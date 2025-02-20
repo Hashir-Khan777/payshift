@@ -132,46 +132,42 @@ const LpHero = () => {
                       type="text"
                       className="w-full h-[40px] px-3 pr-10 font-lexend shadow-xl outline-none"
                     />
-                    <img
+                    {/* <img
                       src="/Images/arrowdown.svg"
                       alt=""
                       className="absolute right-3 top-1/2 transform -translate-y-1/2 md:px-3 "
-                    />
+                    /> */}
                   </div>
                 </div>
 
-                <div className="w-full mx-auto flex flex-col justify-center items-start gap-2 relative">
+                {/* <div className="w-full mx-auto flex flex-col justify-center items-start gap-2 relative">
                   <label className="font-lexend font-[400] text-[16px]">
                     Mobile
                   </label>
 
                   <div className="w-full relative">
-                    {/* Input Field */}
                     <input
                       type="text"
                       className="w-full h-[40px] pl-[70px] pr-[40px] font-lexend shadow-xl outline-none"
                     />
 
-                    {/* Country Flag */}
                     <img
                       src="/Images/flag.svg"
                       alt="UAE Flag"
                       className="absolute left-3 top-1/2 transform -translate-y-1/2"
                     />
 
-                    {/* Country Code */}
                     <span className="absolute left-9 top-1/2 transform -translate-y-1/2 text-black font-lexend font-medium">
                       +971
                     </span>
 
-                    {/* Arrow Down Icon */}
                     <img
                       src="/Images/arrowdown.svg"
                       alt="Dropdown"
                       className="absolute left-20 top-1/2 transform -translate-y-1/2 cursor-pointer"
                     />
                   </div>
-                </div>
+                </div> */}
 
                 <div className="w-full mx-auto  flex flex-col justify-center items-start gap-2">
                   <label className="font-lexend font-[400] text-[16px]">
