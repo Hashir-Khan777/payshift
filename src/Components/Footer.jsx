@@ -188,8 +188,8 @@ const Footer = () => {
               <CustomButton onClick={() => setMessage("We appreciate you reaching out! Our team is excited to assist you and will connect with you as soon as possible.")}>
                 Register
               </CustomButton>
-             <div class="bg-teal-600 rounded-b px-4 py-3 shadow-md">
-               <p class="text-sm text-white">{message}</p>
+             <div className="bg-teal-600 rounded-b px-4 py-3 shadow-md">
+               <p className="text-base text-white">{message}</p>
              </div>
             </div>
             {/* {message ? */}
