@@ -56,7 +56,7 @@ export function IndustrySolMob({ headingBlack = ["Our", "Solutions"], headingWhi
                     <div className="w-full flex flex-col gap-[40px] " />
 
                     {timelineItems.map((item, index) => (
-                        <div className="shadow-2xl mb-[40px] bg-cover bg-no-repeat bg-center"
+                        <div key={index} className="shadow-2xl mb-[40px] bg-cover bg-no-repeat bg-center"
                          style={{ backgroundImage: "url('/Images/industrySolBg.svg')",
                          boxShadow:"1px 2px 20px 5px #8b96dd"
                           }}

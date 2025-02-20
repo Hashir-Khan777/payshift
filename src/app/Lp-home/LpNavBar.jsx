@@ -102,11 +102,11 @@ import { IoCloseOutline } from "react-icons/io5";
 
 const LpNavbar = () => {
   const [mobNav, setMobNav] = useState(false);
-  const [activeSection, setActiveSection] = useState("/Lp-home"); // Default active: Home
+  const [activeSection, setActiveSection] = useState("#home"); // Default active: Home
   const pathname = usePathname(); // Get current route
 
   const navLinks = [
-    { name: "Home", href: "/Lp-home" },
+    { name: "Home", href: "#home" },
     { name: "Products", href: "#products" },
     { name: "Solutions", href: "#solutions" },
     // { name: "Contact", href: "/contact" },
@@ -301,7 +301,7 @@ const LpNavbar = () => {
               {/* 🔹 MODIFIED: Centered Developers link and made spacing uniform */}
               <Link
                 href="/"
-                className="text-[24px] font-[600] font-cashdisplay text-[#030055] flex items-center gap-4"
+                className="text-[24px] font-[600] font-cashdisplay text-[#030055] flex items-center gap-4 uppercase"
                 onClick={() => setMobNav(false)}
               >
                 Developers
