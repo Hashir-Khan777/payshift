@@ -27,7 +27,7 @@ const OurProductCards = [
 function OurProducts({ headingWhite, headingBlack }) {
   return (
     <section  className="bg-cover bg-no-repeat md:bg-right-top bg-center relative w-full min-h-full py-[100px]  flex justify-center items-center"
-      style={{ backgroundImage: "url('/Images/industrySolBg.svg')" }}>
+      style={{ backgroundImage: "url('/Images/industrySolBg.png')" }}>
       {/* Background Image */}
 
       <div

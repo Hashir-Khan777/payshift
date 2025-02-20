@@ -66,7 +66,7 @@ const TranformBusinessSlider = ({ cards, headingWhite, headingBlack }) => {
     return (
         <div
             className="bg-cover bg-no-repeat md:bg-right-top bg-center py-20 px-[40px] md:px-16  flex flex-col justify-center items-center"
-            style={{ backgroundImage: "url('/Images/industrySolBg.svg')" }}
+            style={{ backgroundImage: "url('/Images/transformBusinessBg.png')" }}
         >
             <h1 className="text-center text-[28px]/[34.44px] md:text-4xl font-medium font-cashdisplay">
         {headingBlack[0]}<span className="text-white pe-2">{headingWhite}</span>{headingBlack[1]}
