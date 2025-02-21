@@ -6,7 +6,7 @@ import { RiYoutubeLine } from "react-icons/ri";
 import { AiOutlineFacebook } from "react-icons/ai";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import CustomButton from "./Button";
-import Link from 'next/link'
+import Link from "next/link";
 
 const Footer = () => {
   const [showPopup, setShowPopup] = useState(false);
@@ -23,9 +23,9 @@ const Footer = () => {
       className="relative bg-cover bg-center py-[119px] px-[12px] md:px-[162px]"
       style={{ backgroundImage: `url(/Images/footerbg.png)` }}
     >
-      <p className="text-center text-[36px] md:text-[50px] font-medium text-white mb-10">
+      {/* <p className="text-center text-[36px] md:text-[50px] font-medium text-white mb-10">
         Thanks For Using PayShift
-      </p>
+      </p> */}
       <div className="flex flex-wrap gap-10 justify-center items-center mt-10 mb-20">
         <div
           onClick={() => setShowPopup(true)}
@@ -119,8 +119,14 @@ const Footer = () => {
             style={{ backgroundImage: "url('/Images/popUpbg.png')" }}
           >
             <div className="w-full mx-auto flex flex-col justify-center items-center gap-6 md:gap-10">
-              <div onClick={() => setShowPopup(false)} className="self-end cursor-pointer">
-                <IoCloseCircleOutline onClick={closePopup} className="w-[30px] h-[30px] text-[30px] text-white" />
+              <div
+                onClick={() => setShowPopup(false)}
+                className="self-end cursor-pointer"
+              >
+                <IoCloseCircleOutline
+                  onClick={closePopup}
+                  className="w-[30px] h-[30px] text-[30px] text-white"
+                />
               </div>
               <div className="w-full flex flex-col gap-4">
                 <div className="w-full mx-auto  flex flex-col justify-center items-start gap-2">
@@ -161,7 +167,7 @@ const Footer = () => {
                   <div className="w-full relative">
                     <input
                       type="text"
-                      className="w-full h-[40px] pr-[40px] font-lexend shadow-xl outline-none"
+                      className="w-full h-[40px] px-3 font-lexend shadow-xl outline-none"
                     />
                   </div>
                 </div>

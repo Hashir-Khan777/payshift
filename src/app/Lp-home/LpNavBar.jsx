@@ -187,9 +187,9 @@ const LpNavbar = () => {
             <img src="/Images/divider.svg" alt="divider" />
             <div className="flex justify-center items-center gap-4">
               <Link
-                href="https://api.paydart.co/"
+                href="https://uat-api.payshift.ae/"
                 target="_blank"
-                className="text-[24px] font-[600] font-cashdisplay text-[#030055]"
+                className="text-[20px] font-[600] font-cashdisplay text-[#030055]"
                 onClick={() => setMobNav(false)}
               >
                 DEVELOPERS
@@ -301,9 +301,9 @@ const LpNavbar = () => {
               {/* Added border for consistency */}
               {/* 🔹 MODIFIED: Centered Developers link and made spacing uniform */}
               <Link
-                href="https://api.paydart.co/"
+                href="https://uat-api.payshift.ae/"
                 target="_blank"
-                className="text-[24px] font-[600] font-cashdisplay text-[#030055] flex items-center gap-4 uppercase"
+                className="text-[20px] font-[600] font-cashdisplay text-[#030055] flex items-center gap-4 uppercase"
                 onClick={() => setMobNav(false)}
               >
                 Developers
