@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import localFont from "next/font/local";
 import CustomButton from "../../Components/Button";
@@ -75,11 +75,11 @@ const LpHero = () => {
 
   // === for registered countries ====
   return (
-    <section id="home"
+    <section
+      id="home"
       className="relative w-full min-h-screen bg-cover bg-no-repeat sm:bg-center bg-left-top flex items-center justify-center md:mt-10 mt-20 px-4 sm:py-10 py-20"
       style={{ backgroundImage: "url('/Lpbg1.png')" }}
     >
-
       <div className="flex flex-col-reverse md:flex-row items-center justify-center w-full max-w-7xl ">
         {/* Card Section */}
         <div
@@ -115,7 +115,9 @@ const LpHero = () => {
           </h1>
           <div className="flex flex-col gap-4 mt-6 w-[200px]">
             <CustomButton>Sign Up</CustomButton>
-            <CustomButton2 onClick={() => setShowPopup(true)}>Connect</CustomButton2>
+            <CustomButton2 onClick={() => setShowPopup(true)}>
+              Connect
+            </CustomButton2>
           </div>
         </div>
         {/* FOr SMaller Screens */}
@@ -151,26 +153,33 @@ const LpHero = () => {
 
       {/* Popup */}
       {showPopup && (
-
-        <div id="popup-overlay" className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50" onClick={closePopup}>
-
-          <div className="bg-white lg:w-[800px] md:w-[90%] h-[600px] lg:px-[148px] md:px-[100px] md:py-[80px] py-[50px] px-[20px] sm:px-[50px] shadow-lg w-[90%] sm:w-[95%] overflow-hidden transform transition-transform duration-300 ease-in-out translate-y-full animate-popup bg-cover bg-center bg-no-repeat flex flex-col justify-center items-center"
-            style={{ backgroundImage: "url('/Images/popUpbg.png')" }}>
-
+        <div
+          id="popup-overlay"
+          className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50"
+          onClick={closePopup}
+        >
+          <div
+            className="bg-white lg:w-[800px] md:w-[90%] h-[600px] lg:px-[148px] md:px-[100px] md:py-[80px] py-[50px] px-[20px] sm:px-[50px] shadow-lg w-[90%] sm:w-[95%] overflow-hidden transform transition-transform duration-300 ease-in-out translate-y-full animate-popup bg-cover bg-center bg-no-repeat flex flex-col justify-center items-center"
+            style={{ backgroundImage: "url('/Images/popUpbg.png')" }}
+          >
             <div className="w-full mx-auto flex flex-col justify-center items-center gap-6 md:gap-10">
               <div className="w-full flex flex-col gap-4">
-                {/* Businesss Name */}
-                <div className="w-full mx-auto  flex flex-col justify-center items-start gap-2">
-                  <label className="font-lexend font-[400] text-[16px]">Business Name</label>
-                  <input type="text" className="w-full h-[40px] px-3 font-lexend shadow-xl outline-none" />
-                </div>
-                {/* Businesss Name */}
 
-                {/* Register country  */}
-                <div className="w-full mx-auto flex flex-col justify-center items-start gap-2">
+                <div className="w-full mx-auto  flex flex-col justify-center items-start gap-2">
                   <label className="font-lexend font-[400] text-[16px]">
-                    Business Registered Country
+                    Business Name
                   </label>
+                  <input
+                    type="text"
+                    className="w-full h-[40px] px-3 font-lexend shadow-xl outline-none"
+                  />
+                </div>
+                <div className="w-full mx-auto  flex flex-col justify-center items-start gap-2">
+                  <label className="font-lexend font-[400] text-[16px]">Business Registered Country</label>
+                  {/* <div className="w-full">
+                    <input type="text" className="w-[95%] h-[40px] px-3 font-lexend shadow-xl border border-gray-300" />
+                    <img src="/Images/arrowdown.svg" alt="" className="w-[5%]" />
+                  </div> */}
                   <div className="w-full relative">
                     {/* Input Field */}
                     <input
@@ -232,11 +241,14 @@ const LpHero = () => {
 
                 <div className="w-full mx-auto flex flex-col justify-center items-start gap-2 relative">
                   <label className="font-lexend font-[400] text-[16px]">Mobile</label>
-                  {/* Input Field */}
-                  <input
-                    type="text"
-                    className="w-full h-[40px] pl-[120px] pr-[40px] font-lexend shadow-xl outline-none"
-                  />
+
+                  <div className="w-full relative">
+                    {/* Input Field */}
+                    <input
+                      type="text"
+
+                      className="w-full h-[40px] pl-[70px] pr-[40px] font-lexend shadow-xl outline-none"
+                    />
 
                   <div className="flex flex-row items-center justify-center gap-2 absolute left-3 top-12 transform -translate-y-1/2  cursor-pointer bg-white z-10"
                     onClick={() => setShowDropdown(!showDropdown)}
@@ -287,20 +299,19 @@ const LpHero = () => {
                   )}
                 </div>
 
-                {/* Email */}
+
                 <div className="w-full mx-auto  flex flex-col justify-center items-start gap-2">
                   <label className="font-lexend font-[400] text-[16px]">Email</label>
-                  <input type="email" className="w-full h-[40px] px-3 font-lexend shadow-xl outline-none" />
+                  <input type="text" className="w-full h-[40px] px-3 font-lexend shadow-xl outline-none" />
                 </div>
-                {/* Email */}
+
               </div>
-              <CustomButton onClick={() => setShowPopup(false)}>Register</CustomButton>
+              <CustomButton onClick={() => setShowPopup(false)}>
+                Register
+              </CustomButton>
             </div>
           </div>
-
         </div>
-
-
       )}
 
       {/* Popup Animation */}
@@ -322,4 +333,3 @@ const LpHero = () => {
 };
 
 export default LpHero;
-
