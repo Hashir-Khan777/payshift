@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import localFont from "next/font/local";
 import CustomButton from "../../Components/Button";
@@ -20,6 +20,60 @@ const LpHero = () => {
     }
   };
 
+  const [countries, setCountries] = useState([]);
+  const [selectedCountry, setSelectedCountry] = useState({
+    flag: "/Images/flag.svg",
+    code: "+971",
+  });
+  const [showDropdown, setShowDropdown] = useState(false);
+  const [showRegisterCountry, setRegisterCountry] = useState(false);
+
+  useEffect(() => {
+    const fetchCountries = async () => {
+      try {
+        const response = await fetch("https://restcountries.com/v3.1/all");
+        const data = await response.json();
+
+        // Extract country name, flag, and code, then sort alphabetically
+        const sortedCountries = data
+          .map((country) => ({
+            name: country.name.common,
+            flag: country.flags.svg,
+            code:
+              country.idd?.root +
+              (country.idd?.suffixes ? country.idd.suffixes[0] : ""),
+          }))
+          .sort((a, b) => a.name.localeCompare(b.name)); // Sort alphabetically
+
+        setCountries(sortedCountries);
+      } catch (error) {
+        console.error("Error fetching country data:", error);
+      }
+    };
+
+    fetchCountries();
+  }, []);
+
+  const handleSelectCountry = (country) => {
+    setSelectedCountry({ flag: country.flag, code: country.code });
+    setShowDropdown(false);
+    setSearchTerm(country.name); // Set selected country in input
+    console.log(searchTerm)
+  };
+
+  // === for registered countries ====
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const filteredCountries = countries.filter((country) =>
+    country.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  // const filteredCountries = countries.filter((item) =>
+  //   item.nam.toString().toLowerCase().includes(item.name.toLowerCase())
+  // );
+
+
+  // === for registered countries ====
   return (
     <section id="home"
       className="relative w-full min-h-screen bg-cover bg-no-repeat sm:bg-center bg-left-top flex items-center justify-center md:mt-10 mt-20 px-4 sm:py-10 py-20"
@@ -105,68 +159,140 @@ const LpHero = () => {
 
             <div className="w-full mx-auto flex flex-col justify-center items-center gap-6 md:gap-10">
               <div className="w-full flex flex-col gap-4">
-
+                {/* Businesss Name */}
                 <div className="w-full mx-auto  flex flex-col justify-center items-start gap-2">
                   <label className="font-lexend font-[400] text-[16px]">Business Name</label>
                   <input type="text" className="w-full h-[40px] px-3 font-lexend shadow-xl outline-none" />
                 </div>
-                <div className="w-full mx-auto  flex flex-col justify-center items-start gap-2">
-                  <label className="font-lexend font-[400] text-[16px]">Business Registered Country</label>
-                  {/* <div className="w-full">
-                    <input type="text" className="w-[95%] h-[40px] px-3 font-lexend shadow-xl border border-gray-300" />
-                    <img src="/Images/arrowdown.svg" alt="" className="w-[5%]" />
-                  </div> */}
-                  <div className="w-full relative">
-                    <input
-                      type="text"
-                      className="w-full h-[40px] px-3 pr-10 font-lexend shadow-xl outline-none"
-                    />
-                    <img
-                      src="/Images/arrowdown.svg"
-                      alt=""
-                      className="absolute right-3 top-1/2 transform -translate-y-1/2 md:px-3 "
-                    />
-                  </div>
-                </div>
+                {/* Businesss Name */}
 
-                <div className="w-full mx-auto flex flex-col justify-center items-start gap-2 relative">
-                  <label className="font-lexend font-[400] text-[16px]">Mobile</label>
-
+                {/* Register country  */}
+                <div className="w-full mx-auto flex flex-col justify-center items-start gap-2">
+                  <label className="font-lexend font-[400] text-[16px]">
+                    Business Registered Country
+                  </label>
                   <div className="w-full relative">
                     {/* Input Field */}
                     <input
                       type="text"
-
-                      className="w-full h-[40px] pl-[70px] pr-[40px] font-lexend shadow-xl outline-none"
+                      value={searchTerm}
+                      onChange={(e) => setSearchTerm(e.target.value)}
+                      onFocus={() => setRegisterCountry(true)} // Show dropdown on focus
+                      className="w-full h-[40px] px-3 pr-10 font-lexend shadow-xl outline-none"
+                      placeholder="Select a country"
                     />
 
-                    {/* Country Flag */}
-                    <img
-                      src="/Images/flag.svg"
-                      alt="UAE Flag"
-                      className="absolute left-3 top-1/2 transform -translate-y-1/2"
-                    />
-
-                    {/* Country Code */}
-                    <span className="absolute left-9 top-1/2 transform -translate-y-1/2 text-black font-lexend font-medium">
-                      +971
-                    </span>
-
-                    {/* Arrow Down Icon */}
+                    {/* Dropdown Toggle Icon */}
                     <img
                       src="/Images/arrowdown.svg"
                       alt="Dropdown"
-                      className="absolute left-20 top-1/2 transform -translate-y-1/2 cursor-pointer"
+                      className="absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer"
+                      onClick={() => setRegisterCountry(!showRegisterCountry)}
                     />
+
+                    {/* Dropdown List */}
+                    {showRegisterCountry && (
+                      <div className="absolute top-full left-0 w-full bg-white shadow-lg max-h-60 overflow-auto z-50 border mt-1">
+                        {countries.map((country, index) => (
+                          <div
+                            key={index}
+                            className="p-2 hover:bg-gray-200 cursor-pointer"
+                            onClick={() => handleSelectCountry(country)}
+                          >
+                            {country.name}
+                          </div>
+                        ))
+                        }
+                      </div>
+                    )}
+
+                    {/* Filter countries */}
+                    {/* {showDropdown && (
+          <div className="absolute top-full left-0 w-full bg-white shadow-lg max-h-60 overflow-auto z-10 border mt-1">
+            {filteredCountries.length > 0 ? (
+              filteredCountries.map((country, index) => (
+                <div
+                  key={index}
+                  className="p-2 hover:bg-gray-200 cursor-pointer"
+                  onClick={() => handleSelectCountry(country)}
+                >
+                  {country.name}
+                </div>
+              ))
+            ) : (
+              <div className="p-2 text-gray-500">No results found</div>
+            )}
+          </div>
+        )} */}
                   </div>
                 </div>
 
+                {/* Register country  */}
+                {/* Country Input number */}
 
-                <div className="w-full mx-auto  flex flex-col justify-center items-start gap-2">
-                  <label className="font-lexend font-[400] text-[16px]">Email</label>
-                  <input type="text" className="w-full h-[40px] px-3 font-lexend shadow-xl outline-none" />
+                <div className="w-full mx-auto flex flex-col justify-center items-start gap-2 relative">
+                  <label className="font-lexend font-[400] text-[16px]">Mobile</label>
+                  {/* Input Field */}
+                  <input
+                    type="text"
+                    className="w-full h-[40px] pl-[120px] pr-[40px] font-lexend shadow-xl outline-none"
+                  />
+
+                  <div className="flex flex-row items-center justify-center gap-2 absolute left-3 top-12 transform -translate-y-1/2  cursor-pointer bg-white z-10"
+                    onClick={() => setShowDropdown(!showDropdown)}
+                    style={{ pointerEvents: "auto" }}
+                  >
+                    {/* Country Flag */}
+                    <img
+                      src={selectedCountry.flag}
+                      alt="Country Flag"
+                      className="w-6 h-4"
+                    />
+
+                    {/* Country Code */}
+                    <span className="text-black font-lexend font-medium">
+                      {selectedCountry.code}
+                    </span>
+
+                    {/* Dropdown Toggle */}
+                    <img
+                      src="/Images/arrowdown.svg"
+                      alt="Dropdown"
+                      className="cursor-pointer"
+                    />
+
+                  </div>
+
+                  {/* Transparent Overlay to Block Input in Flag/Code Area */}
+                  <div
+                    className="absolute left-0 top-0 h-[40px] w-[70px] bg-transparent z-20"
+                    style={{ pointerEvents: "none" }} // Prevents interaction in this area
+                  ></div>
+
+                  {/* Dropdown List */}
+                  {showDropdown && (
+                    <div className="absolute top-[60px] left-0 w-full bg-white shadow-lg max-h-60 overflow-auto z-50">
+                      {countries.map((country, index) => (
+                        <div
+                          key={index}
+                          className="flex items-center gap-2 p-2 hover:bg-gray-200 cursor-pointer"
+                          onClick={() => handleSelectCountry(country)}
+                        >
+                          <img src={country.flag} alt={country.name} className="w-6 h-4" />
+                          <span>{country.name}</span>
+                          <span className="ml-auto text-gray-500">{country.code}</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
 
+                {/* Email */}
+                <div className="w-full mx-auto  flex flex-col justify-center items-start gap-2">
+                  <label className="font-lexend font-[400] text-[16px]">Email</label>
+                  <input type="email" className="w-full h-[40px] px-3 font-lexend shadow-xl outline-none" />
+                </div>
+                {/* Email */}
               </div>
               <CustomButton onClick={() => setShowPopup(false)}>Register</CustomButton>
             </div>
