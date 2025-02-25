@@ -13,14 +13,13 @@ export default function Home() {
 
   return (
     <>
-      {/* <div className="flex flex-col h-screen overflow-hidden">
+      <div className="flex flex-col h-screen overflow-hidden">
         <Navbar />
         <Hero />
         <CardSection setActiveTab={setActiveTab} />
       </div>
       <MenuSection activeTab={activeTab} setActiveTab={setActiveTab} />
-      <Footer /> */}
-      <LpHome />
+      <Footer />
     </>
   );
 }
