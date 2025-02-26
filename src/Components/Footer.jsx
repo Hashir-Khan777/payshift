@@ -7,14 +7,30 @@ import { AiOutlineFacebook } from "react-icons/ai";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import CustomButton from "./Button";
 import Link from "next/link";
+import axios from "axios";
 
 const Footer = () => {
   const [showPopup, setShowPopup] = useState(false);
   const [message, setMessage] = useState(null);
+  const [form, setForm] = useState({
+    name: "",
+    country: "",
+    number: "",
+    email: "",
+  });
 
   const closePopup = (e) => {
     if (e.target.id === "popup-overlay") {
       setShowPopup(false);
+    }
+  };
+
+  const submitForm = async () => {
+    try {
+      const { data } = await axios.post("http://localhost:5000/submit", form);
+      setMessage(data.message);
+    } catch (error) {
+      console.log(error, "error");
     }
   };
 
@@ -134,6 +150,7 @@ const Footer = () => {
                     Business Name
                   </label>
                   <input
+                    onChange={(e) => setForm({ ...form, name: e.target.value })}
                     type="text"
                     className="w-full h-[40px] px-3 font-lexend shadow-xl outline-none"
                   />
@@ -145,9 +162,12 @@ const Footer = () => {
                   {/* <div className="w-full">
                     <input type="text" className="w-[95%] h-[40px] px-3 font-lexend shadow-xl border border-gray-300" />
                     <img src="/Images/arrowdown.svg" alt="" className="w-[5%]" />
-                  </div> */}
+                    </div> */}
                   <div className="w-full relative">
                     <input
+                      onChange={(e) =>
+                        setForm({ ...form, country: e.target.value })
+                      }
                       type="text"
                       className="w-full h-[40px] px-3 pr-10 font-lexend shadow-xl outline-none"
                     />
@@ -155,7 +175,7 @@ const Footer = () => {
                       src="/Images/arrowdown.svg"
                       alt=""
                       className="absolute right-3 top-1/2 transform -translate-y-1/2 md:px-3 "
-                    /> */}
+                      /> */}
                   </div>
                 </div>
 
@@ -166,6 +186,9 @@ const Footer = () => {
 
                   <div className="w-full relative">
                     <input
+                      onChange={(e) =>
+                        setForm({ ...form, number: e.target.value })
+                      }
                       type="text"
                       className="w-full h-[40px] px-3 font-lexend shadow-xl outline-none"
                     />
@@ -177,20 +200,15 @@ const Footer = () => {
                     Email
                   </label>
                   <input
+                    onChange={(e) =>
+                      setForm({ ...form, email: e.target.value })
+                    }
                     type="text"
                     className="w-full h-[40px] px-3 font-lexend shadow-xl outline-none"
                   />
                 </div>
               </div>
-              <CustomButton
-                onClick={() =>
-                  setMessage(
-                    "We appreciate you reaching out! Our team is excited to assist you and will connect with you as soon as possible."
-                  )
-                }
-              >
-                Register
-              </CustomButton>
+              <CustomButton onClick={submitForm}>Register</CustomButton>
               {message ? (
                 <div className="bg-teal-600 rounded-b px-4 py-3 shadow-md">
                   <p className="text-base text-white">{message}</p>
