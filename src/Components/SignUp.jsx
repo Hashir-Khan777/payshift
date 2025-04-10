@@ -3,10 +3,27 @@ import { BsEye, BsEyeSlash } from "react-icons/bs";
 import { useState } from "react";
 import Link from "next/link";
 import CustomButton from "./Button";
+import { useDispatch } from "react-redux";
+import { register } from "@/store/actions/auth";
 
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [registerForm, setRegisterForm] = useState({
+    name: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
+
+  const dispatch = useDispatch();
+
+  const registerUser = () => {
+    console.log(registerForm);
+    if (registerForm.password === registerForm.confirmPassword) {
+      dispatch(register(registerForm));
+    }
+  };
 
   return (
     <>
@@ -20,6 +37,10 @@ const SignUp = () => {
             Full Name
           </label>
           <input
+            onChange={(e) =>
+              setRegisterForm({ ...registerForm, name: e.target.value })
+            }
+            value={registerForm.name}
             type="text"
             className="w-full md:h-[60px] h-[40px] px-10 shadow-lg outline-none rounded-sm font-lexend"
             id="fullName"
@@ -34,6 +55,10 @@ const SignUp = () => {
             Email
           </label>
           <input
+            onChange={(e) =>
+              setRegisterForm({ ...registerForm, email: e.target.value })
+            }
+            value={registerForm.email}
             type="email"
             className="w-full md:h-[60px] h-[40px] px-10 shadow-lg outline-none rounded-sm font-lexend"
             id="email"
@@ -50,6 +75,10 @@ const SignUp = () => {
 
           <div className="w-full flex flex-row justify-center items-center  md:h-[60px] h-[40px] rounded-sm bg-white shadow-lg">
             <input
+              onChange={(e) =>
+                setRegisterForm({ ...registerForm, password: e.target.value })
+              }
+              value={registerForm.password}
               type={showPassword ? "text" : "password"}
               className="md:w-[95%] w-[85%] h-full px-10  outline-none font-lexend"
               id="password"
@@ -76,6 +105,13 @@ const SignUp = () => {
           <div className="w-full flex flex-row justify-center items-center  md:h-[60px] h-[40px] rounded-sm bg-white shadow-lg">
             <input
               type={showConfirmPassword ? "text" : "password"}
+              onChange={(e) =>
+                setRegisterForm({
+                  ...registerForm,
+                  confirmPassword: e.target.value,
+                })
+              }
+              value={registerForm.confirmPassword}
               className="md:w-[95%] w-[85%] h-full px-10  outline-none font-lexend"
               id="confirmPassword"
             />
@@ -114,7 +150,7 @@ const SignUp = () => {
       {/* ======= FORM ======== */}
 
       {/* ========= Buttons ========= */}
-      <CustomButton>Sign Up</CustomButton>
+      <CustomButton onClick={registerUser}>Sign Up</CustomButton>
 
       <div className="text-center text-gray-600 font-lexend text-[14px]/[17.5px] font-[300] tracking-[4%]">
         <div className="flex flex-row items-center gap-2">

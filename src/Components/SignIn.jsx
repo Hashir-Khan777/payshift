@@ -3,10 +3,22 @@ import { BsEye, BsEyeSlash } from "react-icons/bs";
 import { useState } from "react";
 import Link from "next/link";
 import CustomButton from "./Button";
+import { useDispatch } from "react-redux";
+import { login } from "@/store/actions/auth";
 
 const SignIn = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [loginForm, setLoginForm] = useState({
+    email: "",
+    password: "",
+  });
+
+  const dispatch = useDispatch();
+
+  const loginUser = () => {
+    dispatch(login(loginForm));
+  };
 
   return (
     <>
@@ -21,6 +33,10 @@ const SignIn = () => {
           </label>
           <input
             type="email"
+            onChange={(e) =>
+              setLoginForm({ ...loginForm, email: e.target.value })
+            }
+            value={loginForm.email}
             className="w-full md:h-[60px] h-[40px] px-10 shadow-lg outline-none rounded-sm font-lexend"
             id="email/mobile"
           />
@@ -37,6 +53,10 @@ const SignIn = () => {
           <div className="w-full flex flex-row justify-center items-center  md:h-[60px] h-[40px] rounded-sm bg-white shadow-lg">
             <input
               type={showPassword ? "text" : "password"}
+              onChange={(e) =>
+                setLoginForm({ ...loginForm, password: e.target.value })
+              }
+              value={loginForm.password}
               className="md:w-[95%] w-[85%] h-full px-10  outline-none font-lexend"
               id="password"
             />
@@ -84,7 +104,7 @@ const SignIn = () => {
 
       {/* ==== Buttons ===== */}
 
-      <CustomButton>Sign In</CustomButton>
+      <CustomButton onClick={loginUser}>Sign In</CustomButton>
 
       <div className="text-center text-gray-600 font-lexend text-[14px]/[17.5px] font-[300] tracking-[4%]">
         <div className="flex flex-row items-center gap-2">

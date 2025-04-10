@@ -8,8 +8,6 @@ import SignIn from "./SignIn";
 const SignComponent = () => {
   const pathname = usePathname();
 
-  console.log(pathname, "pathname");
-
   return (
     <>
       {/* Navigation Links */}

@@ -1,5 +1,6 @@
 import localFont from "next/font/local";
 import "./globals.css";
+import { ReduxProvider } from "@/store/provider";
 
 const clashVariable = localFont({
   src: "../fonts/ClashDisplay-Variable.ttf", // Path relative to the public folder
@@ -14,7 +15,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${clashVariable.className}`}>{children}</body>
+      <body className={`${clashVariable.className}`}>
+        <ReduxProvider>{children}</ReduxProvider>
+      </body>
     </html>
   );
 }
