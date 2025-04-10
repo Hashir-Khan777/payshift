@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BsEye, BsEyeSlash } from "react-icons/bs";
 import { useState } from "react";
 import Link from "next/link";
 import CustomButton from "./Button";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { login } from "@/store/actions/auth";
+import { useRouter } from "next/navigation";
 
 const SignIn = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -14,11 +15,20 @@ const SignIn = () => {
     password: "",
   });
 
+  const { data } = useSelector((state) => state.AuthReducer);
+
   const dispatch = useDispatch();
+  const router = useRouter();
 
   const loginUser = () => {
     dispatch(login(loginForm));
   };
+
+  useEffect(() => {
+    if (localStorage.getItem("user") || data?.token) {
+      router.push("/");
+    }
+  }, [localStorage.getItem("user"), data]);
 
   return (
     <>
@@ -92,7 +102,7 @@ const SignIn = () => {
             </div>
 
             <Link
-              href="/sign-in"
+              href="/reset-password"
               className="text-black font-[500] text-[14px]/[17.5px] underline font-lexend"
             >
               Reset

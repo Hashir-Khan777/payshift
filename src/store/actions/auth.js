@@ -43,19 +43,13 @@ export const verifyEmail = createAsyncThunk(
     try {
       const { data } = await axios.post(
         `${process.env.NEXT_PUBLIC_API_URL}/api/auth/verify/email`,
-        emailVerificationForm.data,
+        emailVerificationForm,
         {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         }
       );
-      if (emailVerificationForm?.resetPass) {
-        localStorage.setItem("token", data.token);
-        return {};
-      } else {
-        localStorage.removeItem("token");
-        localStorage.setItem("user", data.token);
-        return data;
-      }
+      localStorage.setItem("token", data.token);
+      return data;
     } catch (err) {
       return rejectWithValue(
         err.response.data.message ? err.response.data.message : err.message

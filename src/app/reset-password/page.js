@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -9,11 +9,29 @@ import ResetPassword1 from "./ResetPassword1";
 import ResetPassword2 from "./ResetPassword2";
 import ResetPassword3 from "./ResetPassword3";
 import CustomButton from "@/Components/Button";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  forgotPassword,
+  resetPassword,
+  verifyEmail,
+} from "@/store/actions/auth";
+import { useRouter } from "next/navigation";
 
 const Page = () => {
   const pathname = usePathname();
   const [replaceComponet, setReplaceComponent] = useState(1);
   const [back, setBack] = useState("");
+  const [form, setForm] = useState({
+    email: "",
+    password: "",
+    comfirmPassword: "",
+    code: "",
+  });
+
+  const { data, token, success } = useSelector((state) => state.AuthReducer);
+
+  const dispatch = useDispatch();
+  const router = useRouter();
 
   function changeComponent() {
     if (replaceComponet >= 1 && replaceComponet <= 2) {
@@ -23,8 +41,34 @@ const Page = () => {
 
   function goBack() {
     if (replaceComponet > 1 && replaceComponet <= 3)
-      setBack(replaceComponet - 1);
+      setReplaceComponent(replaceComponet - 1);
   }
+
+  const submit = () => {
+    if (replaceComponet === 1) {
+      dispatch(forgotPassword({ email: form.email }));
+    }
+    if (replaceComponet === 2) {
+      dispatch(verifyEmail({ code: form.code }));
+    }
+    if (replaceComponet === 3) {
+      if (form.password === form.comfirmPassword) {
+        dispatch(resetPassword({ password: form.password }));
+      }
+    }
+  };
+
+  useEffect(() => {
+    if (replaceComponet === 1 && token) {
+      changeComponent();
+    }
+    if (replaceComponet === 2 && data?.email) {
+      changeComponent();
+    }
+    if (replaceComponet === 3 && success) {
+      router.push("/sign-in");
+    }
+  }, [success, data, token]);
 
   return (
     <section className="w-full overflow-x-hidden">
@@ -62,7 +106,10 @@ const Page = () => {
 
       {/* ===== Go Back ====== */}
       <div className="w-full bg-white">
-        <div className="container flex flex-row justify-start items-center gap-5 py-6 px-5 md:px-0 cursor-pointer -z-10 mx-auto">
+        <div
+          onClick={goBack}
+          className="container flex flex-row justify-start items-center gap-5 py-6 px-5 md:px-0 cursor-pointer -z-10 mx-auto"
+        >
           <img src="/svgIcons/leftArrow.svg" />
           <p className="text-black/50 md:text-[20px]/[25px] text-[14px]/[17.5px] tracking-[4%] font-lexend font-[500]">
             Go Back
@@ -79,15 +126,21 @@ const Page = () => {
         }}
       >
         {/* ===== Form ===== */}
-        {replaceComponet == 1 ? <ResetPassword1 /> : null}
-        {replaceComponet == 2 ? <ResetPassword2 /> : null}
-        {replaceComponet == 3 ? <ResetPassword3 /> : null}
+        {replaceComponet == 1 ? (
+          <ResetPassword1 form={form} setForm={setForm} />
+        ) : null}
+        {replaceComponet == 2 ? (
+          <ResetPassword2 form={form} setForm={setForm} />
+        ) : null}
+        {replaceComponet == 3 ? (
+          <ResetPassword3 form={form} setForm={setForm} />
+        ) : null}
         {/* ===== Form ===== */}
 
         <div className="flex flex-col justify-center items-center my-5">
           {replaceComponet == 1 ? (
             <>
-              <CustomButton onClick={changeComponent}>Continue</CustomButton>
+              <CustomButton onClick={submit}>Continue</CustomButton>
 
               <p className="text-center text-gray-600 font-lexend text-[14px]/[17.5px] font-[300] tracking-[4%] flex flex-row gap-2 justify-center items-center py-5">
                 <span>Don't have an account?</span>
@@ -103,17 +156,13 @@ const Page = () => {
           ) : null}
           {replaceComponet == 2 ? (
             <>
-              <CustomButton onClick={changeComponent}>
-                Verify & Proceed
-              </CustomButton>
+              <CustomButton onClick={submit}>Verify & Proceed</CustomButton>
             </>
           ) : null}
 
           {replaceComponet == 3 ? (
             <>
-              <CustomButton onClick={changeComponent}>
-                Reset Password
-              </CustomButton>
+              <CustomButton onClick={submit}>Reset Password</CustomButton>
               <p className="text-center text-gray-600 font-lexend md:text-[14px]/[17.5px] text-[12px]/[12..5px] font-[300] tracking-[4%] flex flex-row gap-2 justify-center items-center py-5">
                 <span>Password was last changed on</span>
                 <span className="text-black font-medium md:text-[16px] text-[14px]">

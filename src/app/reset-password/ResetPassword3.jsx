@@ -4,7 +4,7 @@ import { useState } from "react";
 import { BsEye, BsEyeSlash } from "react-icons/bs";
 import Link from "next/link";
 
-const ResetPassword3 = () => {
+const ResetPassword3 = ({ form, setForm }) => {
   const pathname = usePathname();
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
@@ -33,6 +33,8 @@ const ResetPassword3 = () => {
         <div className="w-full flex flex-row justify-center items-center md:h-[60px] h-[40px] rounded-sm bg-white shadow-lg">
           <input
             type={showPassword ? "text" : "password"}
+            onChange={(e) => setForm({ ...form, password: e.target.value })}
+            value={form.password}
             className="md:w-[95%] w-[85%] h-full px-10  outline-none font-lexend"
             id="password"
           />
@@ -58,6 +60,10 @@ const ResetPassword3 = () => {
         <div className="w-full flex flex-row justify-center items-center  md:h-[60px] h-[40px] rounded-sm bg-white shadow-lg">
           <input
             type={showConfirmPassword ? "text" : "password"}
+            onChange={(e) =>
+              setForm({ ...form, comfirmPassword: e.target.value })
+            }
+            value={form.comfirmPassword}
             className="md:w-[95%] w-[85%] h-full px-10  outline-none font-lexend"
             id="confirmPassword"
           />

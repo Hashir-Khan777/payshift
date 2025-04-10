@@ -3,7 +3,7 @@
 import { useState, useRef } from "react";
 // import { Button } from '@/components/ui/button';
 
-export default function ResetPassword2t() {
+export default function ResetPassword2t({ form, setForm }) {
   const [otp, setOtp] = useState(new Array(6).fill(""));
   const inputRefs = useRef([]);
 
@@ -13,6 +13,7 @@ export default function ResetPassword2t() {
     const newOtp = [...otp];
     newOtp[index] = value.substring(value.length - 1);
     setOtp(newOtp);
+    setForm({ ...form, code: newOtp.join("") });
 
     if (value && index < 5) {
       inputRefs.current[index + 1]?.focus();

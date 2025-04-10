@@ -5,12 +5,20 @@ const initialState = {
   loading: false,
   data: {},
   user: {},
+  token: "",
+  success: false,
 };
 
 export default createSlice({
   name: "auth",
   initialState,
   extraReducers: (builder) => {
+    builder.addCase(Auth.forgotPassword.fulfilled, (state, { payload }) => {
+      state.token = payload.token;
+    });
+    builder.addCase(Auth.resetPassword.fulfilled, (state, { payload }) => {
+      state.success = true;
+    });
     builder.addMatcher(
       isAnyOf(Auth.verifyUser.fulfilled, Auth.logout.fulfilled),
       (state, { payload }) => {
@@ -44,9 +52,7 @@ export default createSlice({
         Auth.register.fulfilled,
         Auth.register.rejected,
         Auth.verifyEmail.rejected,
-        Auth.forgotPassword.fulfilled,
         Auth.forgotPassword.rejected,
-        Auth.resetPassword.fulfilled,
         Auth.resetPassword.rejected
       ),
       (state) => {

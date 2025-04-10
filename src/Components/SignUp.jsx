@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BsEye, BsEyeSlash } from "react-icons/bs";
 import { useState } from "react";
 import Link from "next/link";
 import CustomButton from "./Button";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { register } from "@/store/actions/auth";
+import { useRouter } from "next/navigation";
 
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -16,7 +17,10 @@ const SignUp = () => {
     confirmPassword: "",
   });
 
+  const { data } = useSelector((state) => state.AuthReducer);
+
   const dispatch = useDispatch();
+  const router = useRouter();
 
   const registerUser = () => {
     console.log(registerForm);
@@ -24,6 +28,12 @@ const SignUp = () => {
       dispatch(register(registerForm));
     }
   };
+
+  useEffect(() => {
+    if (localStorage.getItem("user") || data?.token) {
+      router.push("/");
+    }
+  }, [localStorage.getItem("user"), data]);
 
   return (
     <>
