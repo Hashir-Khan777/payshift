@@ -23,6 +23,7 @@ import { MdOutlineDashboard } from "react-icons/md";
 import { BsFillPlusCircleFill } from "react-icons/bs";
 import PaymentHomeTab from "./PaymentHomeTab";
 import DashboardTab from "./DashboardTab";
+import NewDebitCardTab from "./NewDebitCardTab.jsx";
 
 const PaymentSection = ({ activePaymentTab, setPaymentActiveTab }) => {
   // For toggle between tabs
@@ -133,7 +134,7 @@ const PaymentSection = ({ activePaymentTab, setPaymentActiveTab }) => {
       <div className="mx-4 md:mx-1 pb-20">
         {activePaymentTab === "Home" && <PaymentHomeTab
         />}
-        {activePaymentTab === "New direct debit" && <HomeTab />}
+        {activePaymentTab === "New direct debit" && <NewDebitCardTab />}
         {activePaymentTab === "Direct debit" && <DashboardTab />}
         {activePaymentTab === "Payments" && <MakePaymentTab />}
         {activePaymentTab === "Daybook" && <RegisterInterestTab />}

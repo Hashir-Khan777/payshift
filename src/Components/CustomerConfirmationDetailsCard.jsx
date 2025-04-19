@@ -44,7 +44,7 @@ export default function CustomerConfirmationDetailsCard() {
   };
 
   return (
-    <div className="bg-[#f4f9ff] shadow p-6 max-w-4xl mx-auto">
+    <div className="bg-[#f4f9ff] shadow p-2 md:p-6 max-w-4xl mx-auto">
       {/* Toggle Icon for Mobile */}
       <div className="md:hidden flex justify-between items-center mb-4">
         <div className="text-lg font-semibold">Details</div>
@@ -80,7 +80,7 @@ export default function CustomerConfirmationDetailsCard() {
       </div>
 
       {/* Tab Content */}
-      <div className="p-6 grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-gray-800">
+      <div className="p-2 md:p-6 grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-gray-800">
         {renderTabContent()}
       </div>
     </div>

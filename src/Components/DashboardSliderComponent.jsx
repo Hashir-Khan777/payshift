@@ -49,7 +49,6 @@ const DasboardSliderComponent = ({ cards, headingWhite, headingBlack }) => {
       <h1 className="text-center text-[28px] md:text-5xl mb-6 md:mb-16 font-medium font-cashdisplay">
         <span className="text-white">{headingWhite}</span> {headingBlack}
       </h1>
-      {/* <div className="mb-4 overflow-hidden"> */}
       <Swiper
         autoplay
         breakpoints={{
@@ -78,62 +77,58 @@ const DasboardSliderComponent = ({ cards, headingWhite, headingBlack }) => {
         {cards?.map((card, index) => (
           <SwiperSlide key={index}>
             <div
-              className={`font-lexend shrink-0 mx-auto w-[310px] md:w-full py-16 px-3 md:px-6 rounded-md  border-4 border-white
-                ${index === activeIndex
+              className={`font-lexend shrink-0 mx-auto w-[90%] max-w-[310px] sm:max-w-md md:max-w-full py-8 sm:py-12 md:py-16 px-4 sm:px-5 md:px-6 rounded-md border-4 border-white
+    ${index === activeIndex
                   ? "bg-gradient-to-b from-white to-[#C2DEFF] shadow-lg my-3"
                   : "bg-white/50 scale-90 opacity-40"
                 }
-              transition-transform duration-300`}
+    transition-transform duration-300`}
               style={{
-                background:
-                  "linear-gradient(180deg, #FFFFFF 16%, #C2DEFF 100%)",
+                background: "linear-gradient(180deg, #FFFFFF 16%, #C2DEFF 100%)",
                 boxShadow: "0px 4px 24px 0px rgba(0, 69, 197, 0.48)",
               }}
             >
-              <div
-                className={`flex flex-col justify-between`}
-              >
+              <div className="flex flex-col justify-between">
                 <div>
-                  <h1
-                    className={`md:text-2xl font-semibold`}
-                  >
+                  <h1 className="text-base sm:text-lg md:text-2xl font-semibold">
                     {card.title}
                   </h1>
-
                 </div>
 
-
-                {card.ref_no ? (
-                  <p className="text-[12px] md:text-md font-light mb-12 bg-purple-300 rounded-xl px-2 py-1 mt-2">
+                {card.ref_no && (
+                  <p className="text-xs sm:text-sm md:text-base font-light mb-8 md:mb-12 bg-purple-300 rounded-xl px-2 py-1 mt-2">
                     DDA Number:{" "}
-                    <span className="text-[12px] md:text-md font-semibold">
-                      {card.ref_no}
-                    </span>
+                    <span className="font-semibold">{card.ref_no}</span>
                   </p>
-                ) : null}
+                )}
 
-                <div className="flex justify-between mb-4">
+                <div className="flex flex-wrap justify-between gap-2 mb-4">
                   <div>
                     <p className="text-xs text-gray-500">Date:</p>
-                    <p className="text-[14px] font-semibold text-[#0B1F4B]">{card.date || "12-May-2025"}</p>
+                    <p className="text-sm sm:text-base font-semibold text-[#0B1F4B]">
+                      {card.date || "12-May-2025"}
+                    </p>
                   </div>
                   <div>
                     <p className="text-xs text-gray-500">Status</p>
-                    <p className="text-[14px] font-semibold text-red-500">{card.status || "Pending"}</p>
+                    <p className="text-sm sm:text-base font-semibold text-red-500">
+                      {card.status || "Pending"}
+                    </p>
                   </div>
                 </div>
-
               </div>
+
               <Link href={card.link || "#"}>
                 <CustomButton
-                  btnClass="mx-auto"
-                  textClass="text-base md:text-xl"
-                  iconClass="w-6 h-6 md:w-[32px] md:h-[32px]"
+                  btnClass="mx-auto mt-4"
+                  textClass="text-sm sm:text-base md:text-xl"
+                  iconClass="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8"
                 >
-                  {'View'}
+                  {"View"}
                 </CustomButton>
               </Link>
             </div>
+
           </SwiperSlide>
         ))}
       </Swiper>
