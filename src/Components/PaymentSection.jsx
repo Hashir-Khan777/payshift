@@ -22,6 +22,7 @@ import { FaHandHoldingUsd } from "react-icons/fa";
 import { MdOutlineDashboard } from "react-icons/md";
 import { BsFillPlusCircleFill } from "react-icons/bs";
 import PaymentHomeTab from "./PaymentHomeTab";
+import DashboardTab from "./DashboardTab";
 
 const PaymentSection = ({ activePaymentTab, setPaymentActiveTab }) => {
   // For toggle between tabs
@@ -132,11 +133,11 @@ const PaymentSection = ({ activePaymentTab, setPaymentActiveTab }) => {
       <div className="mx-4 md:mx-1 pb-20">
         {activePaymentTab === "Home" && <PaymentHomeTab
         />}
-        {activePaymentTab === "New direct debit" && <ServicesTab />}
-        {activePaymentTab === "Direct debit" && <Properties />}
+        {activePaymentTab === "New direct debit" && <HomeTab />}
+        {activePaymentTab === "Direct debit" && <DashboardTab />}
         {activePaymentTab === "Payments" && <MakePaymentTab />}
         {activePaymentTab === "Daybook" && <RegisterInterestTab />}
-        {activePaymentTab === "Dasboard" && <ReferFriendTab />}
+        {activePaymentTab === "Dashboard" && <DashboardTab />}
       </div>
     </section>
   );

@@ -13,7 +13,8 @@ import "swiper/css";
 import "swiper/css/navigation";
 import CustomButton from "./Button";
 
-const SliderComponent = ({ cards, headingWhite, headingBlack }) => {
+const SliderComponent = ({ cards, headingWhite, headingBlack , activePaymentTab}) => {
+  console.log("🚀 ~ SliderComponent ~ activePaymentTab:", activePaymentTab)
   const [activeIndex, setActiveIndex] = useState(1);
   const [mounted, setMounted] = useState(false);
 
